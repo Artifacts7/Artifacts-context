@@ -1,0 +1,10 @@
+# Ignore everything by default
+*
+
+# Track only these
+!.gitignore
+!CLAUDE.md
+!artifacts/
+!artifacts/**
+!commands/
+!commands/**
