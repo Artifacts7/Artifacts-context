@@ -3,6 +3,7 @@
 
 # Track only these
 !.gitignore
+!README.md
 !CLAUDE.md
 !artifacts/
 !artifacts/**
