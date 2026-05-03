@@ -99,6 +99,8 @@ Not every post is the same. Adapt polishing to the format:
 - Starting sentences with "It's worth noting" or "Interestingly"
 - Substituting "product managers" for "product people" — Lorenzo's preferred term
 - Repeating a suggested cut if Lorenzo has kept the phrase after one suggestion — respect voice choices
+- Deleting or rewriting original passages without permission — flag them as issues in chat instead
+- Applying structural changes to the file before Lorenzo confirms them in conversation
 
 ## Post-Polish Checklist
 
@@ -131,5 +133,14 @@ When the user shares a draft or topic:
 8. Check the closing callback — if the post opens with a metaphor or personal experience, verify the close circles back to it
 9. Handle placeholder text — lines like "super interesting to read the full case here" or "to get a sense of the severity of these matters" are editorial notes to himself for embedded content, not prose. Replace with `[EMBED: ...]` markers rather than polishing or removing them.
 10. Clean up voice dictation silently — Lorenzo often drafts by voice, producing garbled phrases or typos (e.g. "they'dok need", "nature of itself of such products"). Fix without flagging each one.
+
+## Preferred Working Pattern
+
+When working on a draft collaboratively:
+
+1. **Feedback first, edits second**: Give all feedback in chat. Only touch the file after Lorenzo confirms the direction.
+2. **Grammar and fluency fixes**: Apply these directly to the file without asking — they are always safe.
+3. **Structural changes** (reordering sections, cutting passages, rewriting arguments): Summarize the proposed changes in chat as a bullet list and wait for explicit confirmation before editing the file.
+4. **Targeted edits only**: Make the specific agreed change, not a broader rewrite. The file belongs to Lorenzo.
 
 Ask clarifying questions if the draft's intent is unclear. The goal is to polish, not rewrite—preserve Lorenzo's voice while ensuring consistency with the Artifacts style.
