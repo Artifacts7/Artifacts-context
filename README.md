@@ -14,27 +14,25 @@ commands/
 
 ## Setup on a new machine
 
-Clone into your `.claude` directory (or merge with an existing one):
+Clone into `~/projects/artifacts/`:
 
 ```bash
-git clone https://github.com/Artifacts7/Artifacts-context.git ~/.claude
+mkdir -p ~/projects
+git clone https://github.com/Artifacts7/Artifacts-context.git ~/projects/artifacts
 ```
 
-If `~/.claude` already exists:
+Then symlink the commands so they're available in all Claude Code sessions:
 
 ```bash
-cd ~/.claude
-git init
-git remote add origin https://github.com/Artifacts7/Artifacts-context.git
-git pull origin main
+ln -s ~/projects/artifacts/commands ~/.claude/commands
 ```
 
-Claude Code picks up `CLAUDE.md` and `commands/` automatically on next launch.
+Claude Code picks up `CLAUDE.md` automatically when you open a session from `~/projects/artifacts/`. The commands are available globally via the symlink.
 
 ## Keeping it in sync
 
-Any edits to `CLAUDE.md`, skills, or new posts saved to `artifacts/` are tracked. Push updates with:
+Any edits to `CLAUDE.md`, commands, or new posts saved to `artifacts/` are tracked. Push updates with:
 
 ```bash
-cd ~/.claude && git push
+cd ~/projects/artifacts && git push
 ```
