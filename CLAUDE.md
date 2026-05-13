@@ -58,6 +58,8 @@ Full text of the 12 most recent issues is in `~/projects/artifacts/artifacts/`. 
 - Use `/artifacts-polish` when Lorenzo shares a draft to review
 - When brainstorming: suggest angles grounded in recent news, propose punchy titles, help develop the central argument
 - Always check: is the interface moment present and sharp? Is it clear who made the decision?
+- **Editing approach**: Light fluency fixes only. Preserve Lorenzo's voice and phrasing even when awkward. Avoid generic rewrites or "AI slop"—his specific language matters.
+- **Event recaps are different**: Don't force the typical interface-as-lede structure. Event recaps are structured as "here's what the bubble is discussing"—different format, different rules.
 - Polish, don't rewrite — preserve Lorenzo's voice
 
 ## General Preferences
