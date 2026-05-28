@@ -118,6 +118,7 @@ When reviewing the draft, ensure:
 10. **Ending**: Provocative question or forward-looking insight
 11. **Length**: Appropriate for the depth of the topic (typically 1,500-2,500 words)
 12. **Tone**: Curious, analytical, accessible
+13. **Concession on constraints**: When the piece defends a friction, limitation, or struggle (e.g. the blank page, slow process, regulation as friction), is the obvious misery conceded first? Otherwise readers default to "good riddance" and dismiss the argument before it lands.
 
 ## How to Use This Skill
 
@@ -133,6 +134,7 @@ When the user shares a draft or topic:
 8. Check the closing callback — if the post opens with a metaphor or personal experience, verify the close circles back to it
 9. Handle placeholder text — lines like "super interesting to read the full case here" or "to get a sense of the severity of these matters" are editorial notes to himself for embedded content, not prose. Replace with `[EMBED: ...]` markers rather than polishing or removing them.
 10. Clean up voice dictation silently — Lorenzo often drafts by voice, producing garbled phrases or typos (e.g. "they'dok need", "nature of itself of such products"). Fix without flagging each one.
+11. **Verify external citations** before letting an argument rest on them — encyclicals, frameworks, quotes, dates, attributions, paper titles. Use WebSearch / WebFetch to check. A misquoted source kills the piece's credibility even when the argument is sound. Flag uncertain ones in chat before the draft goes out.
 
 ## Preferred Working Pattern
 
