@@ -135,6 +135,7 @@ When the user shares a draft or topic:
 9. Handle placeholder text — lines like "super interesting to read the full case here" or "to get a sense of the severity of these matters" are editorial notes to himself for embedded content, not prose. Replace with `[EMBED: ...]` markers rather than polishing or removing them.
 10. Clean up voice dictation silently — Lorenzo often drafts by voice, producing garbled phrases or typos (e.g. "they'dok need", "nature of itself of such products"). Fix without flagging each one.
 11. **Verify external citations** before letting an argument rest on them — encyclicals, frameworks, quotes, dates, attributions, paper titles. Use WebSearch / WebFetch to check. A misquoted source kills the piece's credibility even when the argument is sound. Flag uncertain ones in chat before the draft goes out.
+12. **Idiom & collocation pass**: Beyond grammar, check that expressions are idiomatic English. Lorenzo drafts by voice as a non-native speaker, so watch for collocation drift and Italianisms — e.g. "in case of X" (→ "for X"), "hamper a goal" (→ "undermine"), "different that" (→ "different from"), "in front of" (→ "looking at"), "went back to" a familiar argument (→ "fell back on"). Fix these as fluency, but flag any where the fix risks changing meaning.
 
 ## Preferred Working Pattern
 
@@ -144,5 +145,6 @@ When working on a draft collaboratively:
 2. **Grammar and fluency fixes**: Apply these directly to the file without asking — they are always safe.
 3. **Structural changes** (reordering sections, cutting passages, rewriting arguments): Summarize the proposed changes in chat as a bullet list and wait for explicit confirmation before editing the file.
 4. **Targeted edits only**: Make the specific agreed change, not a broader rewrite. The file belongs to Lorenzo.
+5. **Tracked-changes mode**: When Lorenzo wants to see edits rather than have them applied silently, produce a separate `.md` file with the full text marked up — `~~strikethrough~~` for removals, `**bold**` for additions, plus a one-line legend at the top. Don't touch the original draft. Default to this for any pass that changes more than a handful of words, and offer a clean (changes-accepted) version afterward.
 
 Ask clarifying questions if the draft's intent is unclear. The goal is to polish, not rewrite—preserve Lorenzo's voice while ensuring consistency with the Artifacts style.
