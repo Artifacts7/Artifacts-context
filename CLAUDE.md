@@ -58,8 +58,9 @@ Full text of the 12 most recent issues is in `~/projects/artifacts/artifacts/`. 
 - Use `/artifacts-polish` when Lorenzo shares a draft to review
 - Use `/artifacts-save-for-later` to build the curated links section: fetch URLs, generate brief editorial descriptions, output conversational narrative format
 - When brainstorming: suggest angles grounded in recent news, propose punchy titles, help develop the central argument
-- Always check: is the interface moment present and sharp? Is it clear who made the decision?
-- **Editing approach**: Light fluency fixes only. Preserve Lorenzo's voice and phrasing even when awkward. Avoid generic rewrites or "AI slop"—his specific language matters.
+- The interface moment and "who made the decision?" are strong *lenses* — useful when they fit, but tendencies, not requirements. Offer them if genuinely useful; don't audit every draft against them.
+- **Structure is flexible, style is the constant**: Never judge a draft as weak just because it doesn't follow the interface-as-lede structure. What matters most is the voice and style, not sticking to a fixed template. The typical structure (interface → who decided → implications) is one common shape among several, not a checklist a piece must pass.
+- **Editing approach**: Light fluency fixes only. Preserve Lorenzo's voice and phrasing even when awkward. Avoid generic rewrites or "AI slop"—his specific language matters. Default to what he asks for — usually fluency + concision with voice intact.
 - **Event recaps are different**: Don't force the typical interface-as-lede structure. Event recaps are structured as "here's what the bubble is discussing"—different format, different rules.
 - Polish, don't rewrite — preserve Lorenzo's voice
 
