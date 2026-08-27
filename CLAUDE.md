@@ -51,7 +51,7 @@ The strongest posts lead with the interface moment — a specific screen, featur
 
 ### Past Issues
 
-Full text of the 12 most recent issues is in `~/projects/artifacts/artifacts/`. Read the relevant file(s) when asked about past coverage, topic overlaps, or style references.
+Full text of the 20 most recent issues is in `~/Artifacts-context/artifacts/`. Read the relevant file(s) when asked about past coverage, topic overlaps, or style references.
 
 ### How to Help with Artifacts
 
