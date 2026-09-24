@@ -10,6 +10,11 @@
 !commands/
 !commands/**
 
+# Newsletter context — track only the compounded source-of-truth files
+!newsletter-context/
+!newsletter-context/newsletter-brief.md
+!newsletter-context/voice-profile.md
+
 # Never track macOS cruft
 .DS_Store
 **/.DS_Store
