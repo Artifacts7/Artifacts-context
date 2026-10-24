@@ -1,7 +1,10 @@
 # Who holds the key?
+
 **Subtitle:** Why the new Siri will not make it to Europe and when the design of a technology just clashes with regulations
-**Date:** Jun 19, 2026
+**Date:** 2026-06-19
 **URL:** https://artifactstech.substack.com/p/who-holds-the-key
+**Status:** Published — captured from live article on 2026-10-24
+**Archive format:** Original article text; Markdown formatting conversion. Images retain source URLs; media embeds are linked, not transcribed.
 
 ---
 
@@ -9,7 +12,11 @@ It’s no wonder someone might recently have thought *‘why can’t Siri just b
 
 The tech bubble has welcomed it, [wondering if Siri is](https://www.youtube.com/watch?v=Ituu9ypvaHk) *[finally](https://www.youtube.com/watch?v=Ituu9ypvaHk)* [good](https://www.youtube.com/watch?v=Ituu9ypvaHk). And it does seem so: the new Siri will be an assistant that works across apps, knows who the user is and is far more integrated into day-to-day tasks.
 
+[\[Embedded media — view original\]](https://www.youtube-nocookie.com/embed/2PW5y3zAvPE?rel=0&autoplay=0&showinfo=0&enablejsapi=0)
+
 If you have watched the video to the end, you’ve made it to *‘your data stays protected’* and *‘coming to an iPhone near to you’*, which echoes both Apple’s **obsession with personal data protection** and the successful launch campaign of the iPod promising 1000 songs in your pocket.
+
+[![](https://substackcdn.com/image/fetch/$s_!Ri8u!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F0f89a54d-fe85-4816-bb17-8df401dfc2df_1280x649.jpeg)](https://substackcdn.com/image/fetch/$s_!Ri8u!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F0f89a54d-fe85-4816-bb17-8df401dfc2df_1280x649.jpeg)
 
 And that’s not just a marketing move but the core of how SiriAI has been built: **a personal assistant that uses your own data, processing it directly on your iPhone, while limiting what’s sent to the cloud.** So your Siri and your data literally stay in your pocket - or wherever you keep your iPhone.
 
@@ -51,6 +58,8 @@ Therefore, **opening up to a different AI assistant is definitely different from
 
 If you like metaphors, an AI assistant is **a curious, silly little guy with a master key that can open any door on your phone**, while with other DMA provisions, like the browser, you are dealing with a quiet one with only a few keys :)
 
+[![](https://substackcdn.com/image/fetch/$s_!7qig!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ff3a64d25-f4f2-4ab4-8899-6867667129ea_1254x1254.png)](https://substackcdn.com/image/fetch/$s_!7qig!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ff3a64d25-f4f2-4ab4-8899-6867667129ea_1254x1254.png)
+
 Finally, to give rivals the “equal access” mandated by the DMA to the new Siri, Apple wouldn’t be handing over a feature, but rather **a good part of the iPhone.**
 
 And yet “handing over the phone” is kind of what Apple offered to do, eventually. Remember those *“proposed solutions”* the Commission turned down? The main one was a **Trusted System Agent:** a gateway that would let rival assistants into the phone gradually, through Apple’s own checkpoint.
@@ -67,7 +76,8 @@ Yet, it also shows **how the regulation of AI goes far beyond AI as a technology
 
 In the meantime, we wait for a better Siri and will keep using the existing one for the alarm !
 
-## Save for Later
+> ### **Save for Later**
+
 The UK is about to [ban under-16s from social media](https://www.theverge.com/policy/949679/uk-under-16-social-media-ban-announcement). [Oliver Marsh has the nuance](https://www.linkedin.com/posts/dr-oliver-marsh-a0246b60_my-quick-personal-thoughts-on-social-media-share-7472282478955769856-POxD/) the headlines skip.
 
 Speaking of age checks: nearly [a million passports just leaked](https://www.theverge.com/tech/947157/passports-data-breach-cannabis-club-systems-nefos-puffpal) from PuffPal, an age-verification system for European cannabis clubs.
@@ -80,11 +90,28 @@ Two AI-and-work papers worth your time. [The Broken Ladder](https://papers.ssrn.
 
 Ah, and Meta just [surprised everyone by funding its Oversight Board through 2028](https://www.platformer.news/meta-oversight-board-funding-2028/).
 
-## Where next?
+> ### **Where next?**
+
 Next Thursday, Artifacts will be at the **We Make Future 2026** with some cool people to talk about the **Agentic State**, and thus what AI agents mean when deployed in and from a government and what services they could offer to citizens.
 
-## The Bookshelf
+[![](https://substackcdn.com/image/fetch/$s_!25Sp!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fbb18818b-9536-4eb1-ad49-52db2a324f1f_960x540.png)](https://substackcdn.com/image/fetch/$s_!25Sp!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fbb18818b-9536-4eb1-ad49-52db2a324f1f_960x540.png)
+
+> ### **The Bookshelf**
+
+[![](https://substackcdn.com/image/fetch/$s_!BXI8!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fb615bef4-ef30-4438-aad2-ed24e7e6f07e_1080x1080.png)](https://substackcdn.com/image/fetch/$s_!BXI8!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fb615bef4-ef30-4438-aad2-ed24e7e6f07e_1080x1080.png)
+
 As we speak of Apple, '***Apple in China’*** is THE book to read not on Siri but on how, in general, iPhones have been built over the years and how important China has become for 🍎.
 
-## Nerding
+📚 **All the books** I’ve read and recommended in Artifacts are [here.](https://airtable.com/appK7fMPX1DMkQYzL/shrRh8TgI7GtmgBxM)
+
+> ### **Nerding**
+
+[![](https://substackcdn.com/image/fetch/$s_!8vNF!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fdb4ccd2f-dbdf-4fb5-ab83-2a65f82e4c02_1080x1080.png)](https://substackcdn.com/image/fetch/$s_!8vNF!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fdb4ccd2f-dbdf-4fb5-ab83-2a65f82e4c02_1080x1080.png)
+
 Ok this is **heavy nerding,** but in case you really have nothing better to do, the [Virtual OS Museum](https://virtualosmuseum.org/) is the nerdiest thing to do: see and run old operating systems and just feel the vibe of when we didn’t care much about nice interfaces :)
+
+> ### **☕?**
+
+If you want to know more about Artifacts, where it all started, or just want to connect...
+
+[Let's grab a virtual coffee ☕](https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ2ibxlzyU7rgnuoTgqXb_DFc19dfHmJeu1OAu17IY0_oHrtcJtvtctAJnMabirgZNx5Z5NAPGs0)

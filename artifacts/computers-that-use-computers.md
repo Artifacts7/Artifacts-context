@@ -1,11 +1,16 @@
 # Computers that use computers?
+
 **Subtitle:** The promise of AI agents and how it may change how we use and build technologies
-**Date:** Jul 28, 2026
+**Date:** 2026-07-28
 **URL:** https://artifactstech.substack.com/p/computers-that-use-computers
+**Status:** Published — captured from live article on 2026-10-24
+**Archive format:** Original article text; Markdown formatting conversion. Images retain source URLs; media embeds are linked, not transcribed.
 
 ---
 
 **I’ve been in San Francisco for two weeks now,** and along with the beautiful houses, the good vibe, and some striking nature all around, **most of the tech discourse I’ve run into sounds like this:**
+
+[![](https://substackcdn.com/image/fetch/$s_!Ar0V!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F326170d8-1c48-40e4-b3ea-788fe9f1fa63_1080x1080.gif)](https://substackcdn.com/image/fetch/$s_!Ar0V!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F326170d8-1c48-40e4-b3ea-788fe9f1fa63_1080x1080.gif)
 
 **People are wildly excited about AI agents** — which I like to describe as *virtual entities* that take on tasks once reserved for humans, working alongside us.
 
@@ -21,6 +26,10 @@ Wandering through the past of computing got me thinking about **what comes next*
 
 *(That’s a drastic summary of three hours in the museum.)*
 
+[![Physics History December 1945 \| American Physical Society](https://substackcdn.com/image/fetch/$s_!clYs!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fe1b2eb0e-fffe-47cb-97d3-d84fa00334bf_2500x1597.jpeg "Physics History December 1945 | American Physical Society")](https://substackcdn.com/image/fetch/$s_!clYs!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fe1b2eb0e-fffe-47cb-97d3-d84fa00334bf_2500x1597.jpeg)
+
+the ENIAC: arguably, the first computer ever
+
 They also moved from something legible only to top researchers - dry lines of code - to **beautiful, intuitive interfaces anyone can use** without the faintest idea of how or why they work.
 
 And setting the hardware aside, the striking part is **how computers became usable by anyone.** Interfaces simplified dramatically, all driven by one idea: **making the screen resemble the desk the computer sat on**. Hence the ‘*desktop*’.
@@ -28,6 +37,10 @@ And setting the hardware aside, the striking part is **how computers became usab
 **Computers evolved along metaphors borrowed from the old world of work** - the desktop, the spreadsheet, the bin - aimed first at knowledge workers: what Douglas Engelbart called [“augmenting human intellect”](https://www.dougengelbart.org/pubs/augment-3906.html), and what Xerox imagined as the **“office of the future”.**
 
 People were used to piles of documents laid side by side, so they got multiple **windows**. They were used to picking out a specific document by pointing at it, so they got the **mouse**. And they were used to writing on paper and running numbers on a ledger, then changing their mind, **so they got better versions of those pages**: the first Word, the first spreadsheet.
+
+[![](https://substackcdn.com/image/fetch/$s_!tpNW!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fa234f462-6987-429f-beec-3469be62600a_1254x904.png)](https://substackcdn.com/image/fetch/$s_!tpNW!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fa234f462-6987-429f-beec-3469be62600a_1254x904.png)
+
+well, a mouse, literally
 
 As **Vannevar Bush** had imagined back in 1945, in [“As We May Think”](https://www.theatlantic.com/magazine/archive/1945/07/as-we-may-think/303881/), computers were meant to help humans navigate vast amounts of information. But not only that. By simulating our desks, the computer became, as **Alan Kay** put it, ***“a new medium that would change the thought patterns of an entire civilization”.***
 
@@ -43,6 +56,10 @@ Yet things are changing again, because **humans are no longer the only ones usin
 
 In short: computers are no longer used only by humans, so information is no longer consumed only by humans. [Cloudflare keeps us honest here](https://radar.cloudflare.com/) - more requests to websites now come from bots and agents than from people.
 
+[![](https://substackcdn.com/image/fetch/$s_!glsv!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F14781ff3-9900-4230-8e55-1a9f114c0be1_648x600.png)](https://substackcdn.com/image/fetch/$s_!glsv!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F14781ff3-9900-4230-8e55-1a9f114c0be1_648x600.png)
+
+last week from [Cloudflare radar](https://radar.cloudflare.com/)
+
 ***But what could this shift mean?***
 
 - **First, it lands on anyone designing interfaces.** People are getting used to handling information by ‘just’ typing or speaking in natural language - [we touched on this a while back.](https://artifactstech.substack.com/p/no-one-click-that-button) But it also means whatever you build, a website or an app, **will need to work not just for humans but be readable by agents too.**
@@ -52,6 +69,10 @@ In short: computers are no longer used only by humans, so information is no long
 - And this shapes not only what interfaces look like - or whether they exist at all - but **what information we produce, and how we distribute it.** If agents are the ones reading, we’ll lean toward markdown, easy for machines to parse, over PDFs. \[A Stanford researcher told me she now publishes every paper in markdown, so machines can crawl her work better!\]
 
 All in all, **we’re entering an era where computers use themselves.** And no, it’s not dystopia. Even non-technical people can download Claude Code right now - it’s not just for developers - and ask it to, **[say, tidy up all the screenshots scattered across their laptop.](https://www.instagram.com/reels/Dafatj7lKMt/)** And then, well, have fun.
+
+[![](https://substackcdn.com/image/fetch/$s_!OHTi!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F62abc33e-cf6d-4807-8d5d-52920f868ab3_1124x514.png)](https://substackcdn.com/image/fetch/$s_!OHTi!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F62abc33e-cf6d-4807-8d5d-52920f868ab3_1124x514.png)
+
+and, btw, interfaces are going back to the terminal?
 
 **What’s also interesting is how we’ll study all this.** **“Human–computer interaction”,** the discipline that examines these dynamics, may be opening a new chapter.
 
@@ -63,10 +84,15 @@ Which, recalling Kay on the computer as a medium, puts a new question mark over 
 
 In other words, if I can get from idea to result by handing the computer to an agent, **maybe I’ll understand less and less about the route between the idea and the result?** Interesting times.
 
-## Something new 👀
-**Got breakthrough science stuck in the lab? Let's get it out.**  
+[Leave a comment](https://artifactstech.substack.com/p/computers-that-use-computers/comments)
 
-**[TEF Foundry](https://techeuropefoundation.notion.site/TEF-Foundry-Handbook-WS-0b8fbb6d741f49c5966f288111aeb383)**, launched by by the [Tech Europe Foundation](https://tef.tech/), is a 9-month, no-equity Proof-of-Concept program (Oct 2026–June 2027) **for deep tech teams trying to figure out whether their tech should become a real company.**  
+> ### **Something new 👀**
+
+[![](https://substackcdn.com/image/fetch/$s_!WRbH!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ff4a081c2-a1f6-437a-aded-5930874e0bdb_1200x1200.jpeg)](https://substackcdn.com/image/fetch/$s_!WRbH!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ff4a081c2-a1f6-437a-aded-5930874e0bdb_1200x1200.jpeg)
+
+**Got breakthrough science stuck in the lab? Let's get it out.**<br>
+
+**[TEF Foundry](https://techeuropefoundation.notion.site/TEF-Foundry-Handbook-WS-0b8fbb6d741f49c5966f288111aeb383)**, launched by by the [Tech Europe Foundation](https://tef.tech/), is a 9-month, no-equity Proof-of-Concept program (Oct 2026–June 2027) **for deep tech teams trying to figure out whether their tech should become a real company.**<br>
 
 Think of it as years of trial-and-error compressed into a milestone-based, high-pressure sprint across three gates - with non-dilutive funding (starting from 30 up to €100K total), a dedicated Entrepreneur in Residence, and direct lines to industry, mentors, and investors.
 
@@ -74,7 +100,8 @@ Teams start broad (up to 50) and get narrowed down to the strongest ventures, en
 
 **Applications are open now and close August 30** - the program kicks off September 28. **Discover more and [apply here.](https://eu1.hubs.ly/H0wFfgB0)**
 
-## Save for Later
+> ### **Save for Later**
+
 OpenAI shipped [ChatGPT Work](https://www.theverge.com/ai-artificial-intelligence/963464/openai-gpt-5-6-codex-chatgpt-work), an agent that takes an outcome and grinds at it for hours - and, right on cue, one of its agents [slipped its leash and broke into Hugging Face](https://www.reuters.com/business/nvidia-forms-industry-alliance-open-ai-security-after-hugging-face-hack-2026-07-27/), enough for Nvidia to stand up an open AI-security alliance.
 
 On who gets to know things. The NYT on [Wikipedia digging in as](https://www.nytimes.com/2026/07/05/business/media/wikipedia-ai-elon-musk.html) *[human](https://www.nytimes.com/2026/07/05/business/media/wikipedia-ai-elon-musk.html)* against Musk’s AI-written Grokipedia. Anthropic, for its part, says Claude has grown [a kind of inner workspace](https://www.anthropic.com/research/global-workspace) - a small set of patterns it can actually reflect on. And the Atlantic claims [the age of reading is over](https://www.theatlantic.com/magazine/2026/08/reading-crisis-postliterate-age/687618/).
@@ -85,10 +112,24 @@ Apple is [suing OpenAI](https://www.theverge.com/tech/964350/apple-openai-lawsui
 
 And for the beach: Charlie Warzel and Ian Bogost on [the hidden cost of optimizing everything](https://open.spotify.com/episode/2DLbfmLZoYAnoDBP5o8VzL) - the small frictions we’re deleting.
 
-## The Bookshelf
+[\[The Hidden Cost of Optimizing Everything\]](https://open.spotify.com/episode/2DLbfmLZoYAnoDBP5o8VzL)
+
+> ### **The Bookshelf**
+
+[![](https://substackcdn.com/image/fetch/$s_!VMvy!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fe9bf1662-4b75-470d-8b5c-73c25f1b7fd9_1080x1080.png)](https://substackcdn.com/image/fetch/$s_!VMvy!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fe9bf1662-4b75-470d-8b5c-73c25f1b7fd9_1080x1080.png)
+
 Got a copy of ‘***Insanely Great’*** by Steven Levy at the Computer History Museum: it’s not just about the Macintosh but really how we got to the Macintosh and much more in depth the shrinking process I described above. So much recommended!
 
 📚 **All the books** I’ve read and recommended in Artifacts are [here.](https://airtable.com/appK7fMPX1DMkQYzL/shrRh8TgI7GtmgBxM)
 
-## Nerding
+> ### **Nerding**
+
+[![](https://substackcdn.com/image/fetch/$s_!bAqe!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F7db06974-2d76-4c3c-9231-aa6e50e32d6c_1080x1080.png)](https://substackcdn.com/image/fetch/$s_!bAqe!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F7db06974-2d76-4c3c-9231-aa6e50e32d6c_1080x1080.png)
+
 This may change how you interact with your computer :) [Willow](https://willowvoice.com/) is nothing more than a voice to text but it’s free, unlimited and incredibly accurate. You just speak and it types for you. Give it a try :)
+
+> ### **☕?**
+
+If you want to know more about Artifacts, where it all started, or just want to connect...
+
+[Let's grab a virtual coffee ☕](https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ2ibxlzyU7rgnuoTgqXb_DFc19dfHmJeu1OAu17IY0_oHrtcJtvtctAJnMabirgZNx5Z5NAPGs0)

@@ -1,0 +1,2259 @@
+[
+  {
+    "slug": "thats-the-wave",
+    "title": "That’s the Wave",
+    "subtitle": "What I've learnt from brilliant minds at the flagship tech event in Turin, one year later",
+    "date": "2026-10-10",
+    "url": "https://artifactstech.substack.com/p/thats-the-wave",
+    "captured": "2026-10-24",
+    "file": "artifacts/thats-the-wave.md",
+    "source": ".archive/sources/thats-the-wave.json",
+    "source_sha256": "03baa255112f653bd91bddaedf0e9e65a0d0f3048cbf34fd34746d054560e0c8",
+    "markdown_sha256": "ce6a30d9fc1ad0c1640412b4251dfe4a5653ae1c4548f1a18ac6575b3919ad84",
+    "normalized_text_sha256": "6062b4788fa92d8ff0c7f66bebb2e6cb683dc873ca55c902c455c32348071f85",
+    "words": 1394,
+    "links": 26,
+    "images": 6,
+    "embeds": [],
+    "inline_html_emphasis": false,
+    "removed_ui": {
+      "subscription_widgets": 1,
+      "image_controls": 12
+    },
+    "verification": "text, links, and images round-trip passed"
+  },
+  {
+    "slug": "whats-there-behind-the-wall",
+    "title": "What’s there, behind the wall?",
+    "subtitle": "My Claude going around a paywall and the new format of the Internet, where we’re not alone",
+    "date": "2026-09-22",
+    "url": "https://artifactstech.substack.com/p/whats-there-behind-the-wall",
+    "captured": "2026-10-24",
+    "file": "artifacts/whats-there-behind-the-wall.md",
+    "source": ".archive/sources/whats-there-behind-the-wall.json",
+    "source_sha256": "9aa6671400cde627d859d2881c398e0d326ea62144d99df69fc58ea4dc523b33",
+    "markdown_sha256": "2c566f86118a7f40708235b4ff5aebd531353b96db67b29f2e42abce7f144ec5",
+    "normalized_text_sha256": "8ee8689c6d5297f3f12523ab54957ddd45c0f724b485bb35cea081fde778e150",
+    "words": 1354,
+    "links": 29,
+    "images": 7,
+    "embeds": [],
+    "inline_html_emphasis": false,
+    "removed_ui": {
+      "subscription_widgets": 1,
+      "image_controls": 13
+    },
+    "verification": "text, links, and images round-trip passed"
+  },
+  {
+    "slug": "not-just-the-model",
+    "title": "Not just the model",
+    "subtitle": "A chat with Joshua Tan, CTO at CurrentAI, on the full stack for a truly open AI.",
+    "date": "2026-09-15",
+    "url": "https://artifactstech.substack.com/p/not-just-the-model",
+    "captured": "2026-10-24",
+    "file": "artifacts/not-just-the-model.md",
+    "source": ".archive/sources/not-just-the-model.json",
+    "source_sha256": "3ea32b3ffd6eb82a54c43f450ac3ee75045f3efb8fd642ec3fcbf79bd86e5d95",
+    "markdown_sha256": "58327cf24b6b612f85a1cc15e7be57f5dd1ee41c9538e56f84c0cbf8953b9533",
+    "normalized_text_sha256": "edaf2fd2cbab3a3e11cbd78465faaa891958cfa5f8149298e6f65e0eaff2d39d",
+    "words": 2111,
+    "links": 29,
+    "images": 5,
+    "embeds": [
+      {
+        "type": "video",
+        "url": "https://artifactstech.substack.com/p/not-just-the-model#media-c6322dca-5d1d-4b68-997f-e6760133c0a2",
+        "label": "Embedded video — view original"
+      }
+    ],
+    "inline_html_emphasis": false,
+    "removed_ui": {
+      "subscription_widgets": 1,
+      "image_controls": 6
+    },
+    "verification": "text, links, and images round-trip passed"
+  },
+  {
+    "slug": "its-just-a-start",
+    "title": "It’s just a start",
+    "subtitle": "The opportunities Meta's settlement opens on addictive design, and those it quietly buries",
+    "date": "2026-09-01",
+    "url": "https://artifactstech.substack.com/p/its-just-a-start",
+    "captured": "2026-10-24",
+    "file": "artifacts/its-just-a-start.md",
+    "source": ".archive/sources/its-just-a-start.json",
+    "source_sha256": "358fb897a66608b185e9c93e292647754c9a603a8506fb23be71e2608c5ee660",
+    "markdown_sha256": "acc92f8dca2f3d30e75f8ff42abc534f7a4c059bc8cfd7a217de3c19df34d1a3",
+    "normalized_text_sha256": "833f237e78d1817986f3acde82b08cfd127d3dfda3e87c1fbe3b6211f0098fe5",
+    "words": 1318,
+    "links": 28,
+    "images": 5,
+    "embeds": [],
+    "inline_html_emphasis": true,
+    "removed_ui": {
+      "subscription_widgets": 0,
+      "image_controls": 10
+    },
+    "verification": "text, links, and images round-trip passed"
+  },
+  {
+    "slug": "open-it-up",
+    "title": "Open it up",
+    "subtitle": "A chat with Raffi Krikorian, CTO at Mozilla, on the state of open AI and what’s next",
+    "date": "2026-08-03",
+    "url": "https://artifactstech.substack.com/p/open-it-up",
+    "captured": "2026-10-24",
+    "file": "artifacts/open-it-up.md",
+    "source": ".archive/sources/open-it-up.json",
+    "source_sha256": "fd72965dad6b5398ca42eee51f5a085d5aca7149c24a2f5cd1914d41446baabb",
+    "markdown_sha256": "31ed86a0d8d9351f555356b60d35971602b67593139c07cf1bcdc4df46081be1",
+    "normalized_text_sha256": "81de7fc1cc8ad4c6f3888b20a53d184c01a28e694a458ddacf57b19506c4c61b",
+    "words": 3106,
+    "links": 32,
+    "images": 2,
+    "embeds": [
+      {
+        "type": "video",
+        "url": "https://artifactstech.substack.com/p/open-it-up#media-5142875e-da56-45a7-988c-e8101ca5dc62",
+        "label": "Embedded video — view original"
+      }
+    ],
+    "inline_html_emphasis": true,
+    "removed_ui": {
+      "subscription_widgets": 0,
+      "image_controls": 4
+    },
+    "verification": "text, links, and images round-trip passed"
+  },
+  {
+    "slug": "computers-that-use-computers",
+    "title": "Computers that use computers?",
+    "subtitle": "The promise of AI agents and how it may change how we use and build technologies",
+    "date": "2026-07-28",
+    "url": "https://artifactstech.substack.com/p/computers-that-use-computers",
+    "captured": "2026-10-24",
+    "file": "artifacts/computers-that-use-computers.md",
+    "source": ".archive/sources/computers-that-use-computers.json",
+    "source_sha256": "7d157dedf5246cca0e8e7fbdbd569141c0114afb2953be5006c8fef6b53fef45",
+    "markdown_sha256": "a51354f11be703e5889970816394ca44d2151af9db0c022abd8f72d5f10fe253",
+    "normalized_text_sha256": "0d70d29adcfe837b47e4d80191b9431600747aeee4cfe8c4a01432951b2a4f54",
+    "words": 1457,
+    "links": 36,
+    "images": 8,
+    "embeds": [
+      {
+        "type": "media",
+        "url": "https://open.spotify.com/episode/2DLbfmLZoYAnoDBP5o8VzL",
+        "label": "The Hidden Cost of Optimizing Everything"
+      }
+    ],
+    "inline_html_emphasis": false,
+    "removed_ui": {
+      "subscription_widgets": 0,
+      "image_controls": 16
+    },
+    "verification": "text, links, and images round-trip passed"
+  },
+  {
+    "slug": "it-is-not-normal",
+    "title": "It is not normal",
+    "subtitle": "And why with AI we need to clarify, align and prioritise incentives ",
+    "date": "2026-07-04",
+    "url": "https://artifactstech.substack.com/p/it-is-not-normal",
+    "captured": "2026-10-24",
+    "file": "artifacts/it-is-not-normal.md",
+    "source": ".archive/sources/it-is-not-normal.json",
+    "source_sha256": "99f3828925947ace792df3a5c9d0639210c61d6051b2b78312e8c470aeb28dad",
+    "markdown_sha256": "b845b6612b4ea236b7e7ae4f29dbbdae9d328e21843f7b2a1447c534595575c7",
+    "normalized_text_sha256": "d287c0a48da467a76cd9ecd31445ba57a15e03599836216674a7ac571f349d07",
+    "words": 1462,
+    "links": 24,
+    "images": 4,
+    "embeds": [],
+    "inline_html_emphasis": true,
+    "removed_ui": {
+      "subscription_widgets": 1,
+      "image_controls": 6
+    },
+    "verification": "text, links, and images round-trip passed"
+  },
+  {
+    "slug": "who-holds-the-key",
+    "title": "Who holds the key?",
+    "subtitle": "Why the new Siri will not make it to Europe and when the design of a technology just clashes with regulations",
+    "date": "2026-06-19",
+    "url": "https://artifactstech.substack.com/p/who-holds-the-key",
+    "captured": "2026-10-24",
+    "file": "artifacts/who-holds-the-key.md",
+    "source": ".archive/sources/who-holds-the-key.json",
+    "source_sha256": "f2f61feb36d3a289e9ba58aa18328bacf94788e31bb07fbe4401088292cd0799",
+    "markdown_sha256": "242d54b2a242a33f6a4fb56395c5ca45b61c51a62b5791162a7b666d4d1e4c46",
+    "normalized_text_sha256": "3c9bcce0d7d95a9f857a18f17a5d9b41ec8d93bafa8ad470eb17c2660472d9fe",
+    "words": 1356,
+    "links": 28,
+    "images": 5,
+    "embeds": [
+      {
+        "type": "media",
+        "url": "https://www.youtube-nocookie.com/embed/2PW5y3zAvPE?rel=0&autoplay=0&showinfo=0&enablejsapi=0",
+        "label": "Embedded media — view original"
+      }
+    ],
+    "inline_html_emphasis": false,
+    "removed_ui": {
+      "subscription_widgets": 0,
+      "image_controls": 10
+    },
+    "verification": "text, links, and images round-trip passed"
+  },
+  {
+    "slug": "looking-backwards",
+    "title": "Looking backwards",
+    "subtitle": "When creativity starts from something instead of nothing, because of AI",
+    "date": "2026-05-28",
+    "url": "https://artifactstech.substack.com/p/looking-backwards",
+    "captured": "2026-10-24",
+    "file": "artifacts/looking-backwards.md",
+    "source": ".archive/sources/looking-backwards.json",
+    "source_sha256": "5e3cc62f82bd47b685f2f13800674e62ed4e22c292282c2d2d200af3eddec016",
+    "markdown_sha256": "3100b4f2f0ace5ed35753bf004b955fbe7d84fdf1631f555163a244e2638fb68",
+    "normalized_text_sha256": "45550e96fe5c8d692afdfc43fc79a64156c2d1e686a7343c513514b4bd6c0872",
+    "words": 1210,
+    "links": 34,
+    "images": 7,
+    "embeds": [
+      {
+        "type": "media",
+        "url": "https://open.spotify.com/episode/1VvXQoIehU11eeuTQFfBsy",
+        "label": "The Limits of Predictive AI - Carissa Véliz with Nicholas Thompson"
+      }
+    ],
+    "inline_html_emphasis": true,
+    "removed_ui": {
+      "subscription_widgets": 0,
+      "image_controls": 10
+    },
+    "verification": "text, links, and images round-trip passed"
+  },
+  {
+    "slug": "ask-eu-how",
+    "title": "Ask EU how",
+    "subtitle": "A few of the ideas the Brussels bubble is currently debating on technology",
+    "date": "2026-05-13",
+    "url": "https://artifactstech.substack.com/p/ask-eu-how",
+    "captured": "2026-10-24",
+    "file": "artifacts/ask-eu-how.md",
+    "source": ".archive/sources/ask-eu-how.json",
+    "source_sha256": "34ac8098fcf930df7e9bdc27a639944d2ad5c24981a90c544ef8ef65d756a75d",
+    "markdown_sha256": "c8f492ec358f4f9d5cf8d6906410fb620ce138d47aa4630a0fce798d58c58b24",
+    "normalized_text_sha256": "0981b8cef3d58e856259b94390cb01b1339b337f57a276c24b4ee7e24d1dcc18",
+    "words": 973,
+    "links": 31,
+    "images": 4,
+    "embeds": [],
+    "inline_html_emphasis": false,
+    "removed_ui": {
+      "subscription_widgets": 1,
+      "image_controls": 6
+    },
+    "verification": "text, links, and images round-trip passed"
+  },
+  {
+    "slug": "decoding-it",
+    "title": "Decoding it",
+    "subtitle": "Why building fast doesn't answer the hardest question about software",
+    "date": "2026-04-28",
+    "url": "https://artifactstech.substack.com/p/decoding-it",
+    "captured": "2026-10-24",
+    "file": "artifacts/decoding-it.md",
+    "source": ".archive/sources/decoding-it.json",
+    "source_sha256": "9d154fd76a681fd32055115c39ec691acf081cf830a7888b3e77e4984b07f8c5",
+    "markdown_sha256": "aff8541fac074ce3436543662cc78fe98edb47e6731ec2edf839f70f4d1519a9",
+    "normalized_text_sha256": "9d8e537763950b58aa0cc162d390a04d550824ee4122a3e49355063a2ad91698",
+    "words": 1612,
+    "links": 30,
+    "images": 7,
+    "embeds": [
+      {
+        "type": "media",
+        "url": "https://open.spotify.com/episode/5YrXYV7NH9FQtpaZLEqUhf",
+        "label": "The Vergecast Vergecast, 2026 edition"
+      }
+    ],
+    "inline_html_emphasis": true,
+    "removed_ui": {
+      "subscription_widgets": 1,
+      "image_controls": 12
+    },
+    "verification": "text, links, and images round-trip passed"
+  },
+  {
+    "slug": "you-know-a-good-architect",
+    "title": "You know a good architect?",
+    "subtitle": "So to go fix a few things that may be wrong with the design of social media platforms ",
+    "date": "2026-04-07",
+    "url": "https://artifactstech.substack.com/p/you-know-a-good-architect",
+    "captured": "2026-10-24",
+    "file": "artifacts/you-know-a-good-architect.md",
+    "source": ".archive/sources/you-know-a-good-architect.json",
+    "source_sha256": "c40970a86f3716903b3324c43261ddc3558c8ccf2d58c66fda99791e24dcd241",
+    "markdown_sha256": "c51be2d4c5d1726f58c0637619a36bce1f25857a030c74910918968a353131f1",
+    "normalized_text_sha256": "1f25c97307c50f40c5371188adb91ab47afc90cf3f7e67d7dcae032d105c9ccc",
+    "words": 1518,
+    "links": 37,
+    "images": 8,
+    "embeds": [],
+    "inline_html_emphasis": true,
+    "removed_ui": {
+      "subscription_widgets": 0,
+      "image_controls": 14
+    },
+    "verification": "text, links, and images round-trip passed"
+  },
+  {
+    "slug": "use-with-caution",
+    "title": "Use with caution",
+    "subtitle": "Designing the use of AI, from the debate between Anthropic and the Pentagon",
+    "date": "2026-03-07",
+    "url": "https://artifactstech.substack.com/p/use-with-caution",
+    "captured": "2026-10-24",
+    "file": "artifacts/use-with-caution.md",
+    "source": ".archive/sources/use-with-caution.json",
+    "source_sha256": "fc942f5a526c6c36525e1c0c96b7ad562f95c9fb397d18f6c5983820957fb5bd",
+    "markdown_sha256": "a81c1313af595ae8b514b1d74fdbed1d3b6072bbc7da94932df71600cccbc4d7",
+    "normalized_text_sha256": "036d4604f57f57881338ea5408802cecd179ef90106fdf1bc28e573c8b8f2cc4",
+    "words": 1224,
+    "links": 24,
+    "images": 5,
+    "embeds": [
+      {
+        "type": "media",
+        "url": "https://www.youtube-nocookie.com/embed/VCJET4fj1mE?rel=0&autoplay=0&showinfo=0&enablejsapi=0",
+        "label": "Embedded media — view original"
+      }
+    ],
+    "inline_html_emphasis": false,
+    "removed_ui": {
+      "subscription_widgets": 1,
+      "image_controls": 8
+    },
+    "verification": "text, links, and images round-trip passed"
+  },
+  {
+    "slug": "the-artifacts-i-use-for-artifacts",
+    "title": "The artifacts I use for Artifacts",
+    "subtitle": "How I built an editorial infrastructure of AI agents to help me think and write",
+    "date": "2026-02-25",
+    "url": "https://artifactstech.substack.com/p/the-artifacts-i-use-for-artifacts",
+    "captured": "2026-10-24",
+    "file": "artifacts/the-artifacts-i-use-for-artifacts.md",
+    "source": ".archive/sources/the-artifacts-i-use-for-artifacts.json",
+    "source_sha256": "95bc01fdb6d6bea50af7efd6494207575292ec297f0bf049e350f793d4e00534",
+    "markdown_sha256": "c325b8f932b103f6f593d03a694e8b07385a5a61327dd76cd1050c6de43e7f00",
+    "normalized_text_sha256": "e3f9b1406be6a6fc355bdaffab61aab12984631102069aee598ec1dca86397c0",
+    "words": 1408,
+    "links": 24,
+    "images": 12,
+    "embeds": [],
+    "inline_html_emphasis": false,
+    "removed_ui": {
+      "subscription_widgets": 3,
+      "image_controls": 20
+    },
+    "verification": "text, links, and images round-trip passed"
+  },
+  {
+    "slug": "writing-is-thinking",
+    "title": "Writing is thinking?",
+    "subtitle": "And what is the impact of LLMs on our ability to translate thoughts in words.",
+    "date": "2026-02-10",
+    "url": "https://artifactstech.substack.com/p/writing-is-thinking",
+    "captured": "2026-10-24",
+    "file": "artifacts/writing-is-thinking.md",
+    "source": ".archive/sources/writing-is-thinking.json",
+    "source_sha256": "c3c32c973bc3b1da19ccc5f7e1302291102383f1b412908728c8863b62dccab8",
+    "markdown_sha256": "80d451f589fdc356b13225b667131ce3d3fd9a106805dc4aaba2ac45d6b531e3",
+    "normalized_text_sha256": "6ea92e34a2fdcfe339eee7bedb870d287041471b69d49258c4406edf9493c943",
+    "words": 1152,
+    "links": 24,
+    "images": 5,
+    "embeds": [
+      {
+        "type": "media",
+        "url": "https://www.youtube-nocookie.com/embed/kQRu7DdTTVA?rel=0&autoplay=0&showinfo=0&enablejsapi=0",
+        "label": "Embedded media — view original"
+      }
+    ],
+    "inline_html_emphasis": false,
+    "removed_ui": {
+      "subscription_widgets": 1,
+      "image_controls": 10
+    },
+    "verification": "text, links, and images round-trip passed"
+  },
+  {
+    "slug": "youre-breaking-it",
+    "title": "You're breaking it",
+    "subtitle": "How Iran's block of the Internet contradicts what the Internet is supposed to be",
+    "date": "2026-01-28",
+    "url": "https://artifactstech.substack.com/p/youre-breaking-it",
+    "captured": "2026-10-24",
+    "file": "artifacts/youre-breaking-it.md",
+    "source": ".archive/sources/youre-breaking-it.json",
+    "source_sha256": "a2de3a22f66955bfeb8295a02721a618eae9f9ab74ac51af9e1676d8f9c7bcbc",
+    "markdown_sha256": "4d67f2d83c97f23420c56cd9dd653d7b72998cd0ee39cf526dec83082f03fc93",
+    "normalized_text_sha256": "eb2d2a8386e4ea2736aeb0379f97d8cbc38fec7bb1cdcc2a10f49a1d7f921a11",
+    "words": 1291,
+    "links": 27,
+    "images": 6,
+    "embeds": [],
+    "inline_html_emphasis": true,
+    "removed_ui": {
+      "subscription_widgets": 0,
+      "image_controls": 12
+    },
+    "verification": "text, links, and images round-trip passed"
+  },
+  {
+    "slug": "laying-bare",
+    "title": "Laying bare",
+    "subtitle": "How a poorly designed feature is making it easier to spread sexualised AI-generated content",
+    "date": "2026-01-06",
+    "url": "https://artifactstech.substack.com/p/laying-bare",
+    "captured": "2026-10-24",
+    "file": "artifacts/laying-bare.md",
+    "source": ".archive/sources/laying-bare.json",
+    "source_sha256": "3697da618f1f077eff49f7a3adc6cf7061c055e51ac0811831c53101fd4f878b",
+    "markdown_sha256": "de6826294f30175a58e0d3de3c1c8f84adfab9c2e7ad218126e3ae74471d2100",
+    "normalized_text_sha256": "ed58d383a0ef3bb61163a8bfc2db13c12daedf04044946af21835147df2ff32e",
+    "words": 1360,
+    "links": 36,
+    "images": 9,
+    "embeds": [],
+    "inline_html_emphasis": false,
+    "removed_ui": {
+      "subscription_widgets": 1,
+      "image_controls": 14
+    },
+    "verification": "text, links, and images round-trip passed"
+  },
+  {
+    "slug": "ive-got-nothing-to-predict-for-2026",
+    "title": "I've got nothing to predict for 2026",
+    "subtitle": "But I've a few questions and would love to hear yours!",
+    "date": "2025-12-23",
+    "url": "https://artifactstech.substack.com/p/ive-got-nothing-to-predict-for-2026",
+    "captured": "2026-10-24",
+    "file": "artifacts/ive-got-nothing-to-predict-for-2026.md",
+    "source": ".archive/sources/ive-got-nothing-to-predict-for-2026.json",
+    "source_sha256": "602d263de800940e0d37684045b2990a469c512eff570643dc4daba3076b84fe",
+    "markdown_sha256": "7d0b34db53f44d9e94b1aeea56c20631555598198132c3b33dd49ad67539b283",
+    "normalized_text_sha256": "659ba8252ca3ccc212f6fb99451eb73557c26bde5f97dc730ccc47b0118bc9f6",
+    "words": 1082,
+    "links": 48,
+    "images": 11,
+    "embeds": [
+      {
+        "type": "media",
+        "url": "https://www.youtube-nocookie.com/embed/C7Z11ghwevQ?rel=0&autoplay=0&showinfo=0&enablejsapi=0",
+        "label": "Embedded media — view original"
+      }
+    ],
+    "inline_html_emphasis": false,
+    "removed_ui": {
+      "subscription_widgets": 0,
+      "image_controls": 6
+    },
+    "verification": "text, links, and images round-trip passed"
+  },
+  {
+    "slug": "shut-that-door",
+    "title": "Shut that door",
+    "subtitle": "And what we should really get from age verification",
+    "date": "2025-12-13",
+    "url": "https://artifactstech.substack.com/p/shut-that-door",
+    "captured": "2026-10-24",
+    "file": "artifacts/shut-that-door.md",
+    "source": ".archive/sources/shut-that-door.json",
+    "source_sha256": "392638768372c0c8694c73e07fa3aa723478886b036d3fa2945fb3ad73262e0c",
+    "markdown_sha256": "70c4e81a1c8d7d3a2d8d18b03ccbd3b8134b42e77d6cc770fcc83e622a2fb786",
+    "normalized_text_sha256": "7ebd4fa2a4c6925217f7064b7ad4be01906f01a080de329a56f5d0f603838008",
+    "words": 1347,
+    "links": 30,
+    "images": 6,
+    "embeds": [
+      {
+        "type": "media",
+        "url": "https://www.youtube-nocookie.com/embed/WXuK6gekU1Y?rel=0&autoplay=0&showinfo=0&enablejsapi=0",
+        "label": "Embedded media — view original"
+      }
+    ],
+    "inline_html_emphasis": true,
+    "removed_ui": {
+      "subscription_widgets": 1,
+      "image_controls": 8
+    },
+    "verification": "text, links, and images round-trip passed"
+  },
+  {
+    "slug": "to-better-understand",
+    "title": "To better understand",
+    "subtitle": "How and why access to data of platforms matters for us all, not just for researchers",
+    "date": "2025-11-18",
+    "url": "https://artifactstech.substack.com/p/to-better-understand",
+    "captured": "2026-10-24",
+    "file": "artifacts/to-better-understand.md",
+    "source": ".archive/sources/to-better-understand.json",
+    "source_sha256": "ac0bd9307df33c4d1419954e34fd48b3304708572bd5ee7421f1118f7840eb8d",
+    "markdown_sha256": "ab1e17745d2d8f2a7b58adaced5cef7fed514235bab39fe4422cc304e49a90b6",
+    "normalized_text_sha256": "a4b5f8796e352cf801a23930ebaccd623aedc63423b792b521b80a9ad9f9a253",
+    "words": 1332,
+    "links": 26,
+    "images": 7,
+    "embeds": [],
+    "inline_html_emphasis": false,
+    "removed_ui": {
+      "subscription_widgets": 1,
+      "image_controls": 14
+    },
+    "verification": "text, links, and images round-trip passed"
+  },
+  {
+    "slug": "in-between",
+    "title": "In between",
+    "subtitle": "What is Political Tech and why joining its Summit, in the words of the founder",
+    "date": "2025-11-04",
+    "url": "https://artifactstech.substack.com/p/in-between",
+    "captured": "2026-10-24",
+    "file": "artifacts/in-between.md",
+    "source": ".archive/sources/in-between.json",
+    "source_sha256": "d9685970877e95e07e008d8779a5344c2f8bba1aec35b86f31e33fa6b3fd88c2",
+    "markdown_sha256": "50febfa4dc8ce51f1abddb05beb3d2ed275be1005b4aa78a0f8f56796f80d35a",
+    "normalized_text_sha256": "5c7182e9f00a9068fdd3d319956fe1974b19831462c17531b0c9333a27870e34",
+    "words": 1063,
+    "links": 27,
+    "images": 4,
+    "embeds": [
+      {
+        "type": "media",
+        "url": "https://www.youtube-nocookie.com/embed/Ntf6wXx2Phs?rel=0&autoplay=0&showinfo=0&enablejsapi=0",
+        "label": "Embedded media — view original"
+      }
+    ],
+    "inline_html_emphasis": false,
+    "removed_ui": {
+      "subscription_widgets": 1,
+      "image_controls": 6
+    },
+    "verification": "text, links, and images round-trip passed"
+  },
+  {
+    "slug": "press-command",
+    "title": "Press Command",
+    "subtitle": "Why chatbots are going beyond being platforms, despite what many say",
+    "date": "2025-10-22",
+    "url": "https://artifactstech.substack.com/p/press-command",
+    "captured": "2026-10-24",
+    "file": "artifacts/press-command.md",
+    "source": ".archive/sources/press-command.json",
+    "source_sha256": "2aefaf7882231eb4cffae4ada4c58011f2183d2222b2e4b1a63acaf02ce6a6e2",
+    "markdown_sha256": "cb6eb22bdb75beaa08a16558db3e3f2590e779b7aac76d7f1b9a80255dca8341",
+    "normalized_text_sha256": "fe545756b51457a979fc76064ff1b3ec8c645d6e76aa60e76a96ed382c3a6149",
+    "words": 1026,
+    "links": 30,
+    "images": 7,
+    "embeds": [
+      {
+        "type": "media",
+        "url": "https://www.youtube-nocookie.com/embed/2C4Cs6503gw?rel=0&autoplay=0&showinfo=0&enablejsapi=0",
+        "label": "Embedded media — view original"
+      }
+    ],
+    "inline_html_emphasis": false,
+    "removed_ui": {
+      "subscription_widgets": 1,
+      "image_controls": 12
+    },
+    "verification": "text, links, and images round-trip passed"
+  },
+  {
+    "slug": "take-itw-away",
+    "title": "Take IT(W) Away",
+    "subtitle": "What I've learnt from brilliant minds at the Italian Tech Week",
+    "date": "2025-10-06",
+    "url": "https://artifactstech.substack.com/p/take-itw-away",
+    "captured": "2026-10-24",
+    "file": "artifacts/take-itw-away.md",
+    "source": ".archive/sources/take-itw-away.json",
+    "source_sha256": "5b63b3732db3278de79505920579d39b6b7fe2d2ad4d0fd2896ee995faec71a9",
+    "markdown_sha256": "be771db0c61060bbaf68b23008ec1e601a478a0495953a78169bea8fcae4f6ce",
+    "normalized_text_sha256": "7ac3bddb0ff8a04a09c2eff605356c542d5c6e0c79e87bc3bd8bdfacf3f93602",
+    "words": 874,
+    "links": 25,
+    "images": 8,
+    "embeds": [],
+    "inline_html_emphasis": false,
+    "removed_ui": {
+      "subscription_widgets": 1,
+      "image_controls": 16
+    },
+    "verification": "text, links, and images round-trip passed"
+  },
+  {
+    "slug": "multiplayer",
+    "title": "Multiplayer",
+    "subtitle": "How the landmark antitrust case against Google had to start over, and from somewhere else",
+    "date": "2025-09-17",
+    "url": "https://artifactstech.substack.com/p/multiplayer",
+    "captured": "2026-10-24",
+    "file": "artifacts/multiplayer.md",
+    "source": ".archive/sources/multiplayer.json",
+    "source_sha256": "e92990cb06d81c1a0e0484447cf7bbb78a3569715904eddcaeb604ef1e6ea28a",
+    "markdown_sha256": "76bc5dca7258134d5d6d38e52ebebff78696a8be4c670e3356647ec6c676d52f",
+    "normalized_text_sha256": "5c3ffa535a6a0a8b6a22a504b6e0444950542cb5676cd700c847fdb1991d2eae",
+    "words": 1018,
+    "links": 26,
+    "images": 7,
+    "embeds": [],
+    "inline_html_emphasis": false,
+    "removed_ui": {
+      "subscription_widgets": 3,
+      "image_controls": 10
+    },
+    "verification": "text, links, and images round-trip passed"
+  },
+  {
+    "slug": "by-default",
+    "title": "By default",
+    "subtitle": "Designing a few days of digital detox",
+    "date": "2025-08-05",
+    "url": "https://artifactstech.substack.com/p/by-default",
+    "captured": "2026-10-24",
+    "file": "artifacts/by-default.md",
+    "source": ".archive/sources/by-default.json",
+    "source_sha256": "7182c34c820e78643f1626643ebf6ea5e4f5d4748544a03577e0aaeaa17df0d6",
+    "markdown_sha256": "c16fab072a17d2e273779e0b8a6ee77dd815218a6499ac5e1d3f43dbd61777aa",
+    "normalized_text_sha256": "bd2d271684f835f9c1f6303a119816c0b35aea3868a497c103bbf5c56de97f76",
+    "words": 1109,
+    "links": 19,
+    "images": 4,
+    "embeds": [],
+    "inline_html_emphasis": false,
+    "removed_ui": {
+      "subscription_widgets": 1,
+      "image_controls": 8
+    },
+    "verification": "text, links, and images round-trip passed"
+  },
+  {
+    "slug": "out-of-context",
+    "title": "Out of context",
+    "subtitle": "From tabs to teammates: how AI is changing the browser game",
+    "date": "2025-07-29",
+    "url": "https://artifactstech.substack.com/p/out-of-context",
+    "captured": "2026-10-24",
+    "file": "artifacts/out-of-context.md",
+    "source": ".archive/sources/out-of-context.json",
+    "source_sha256": "f003893cd196c24db69f9d98aeb618e93d79d6984d6df02e86b7bf37f05c364c",
+    "markdown_sha256": "839c00e6a1fd47bb9f6d2a130e26cdd6eb193883c816f46df1f0498a868128aa",
+    "normalized_text_sha256": "6a7462db51fcc557a7113e8f387a0ca1bd4eb01dc92b4b07b316731acf6b73d7",
+    "words": 950,
+    "links": 30,
+    "images": 12,
+    "embeds": [
+      {
+        "type": "media",
+        "url": "https://www.youtube-nocookie.com/embed/YVOw0TAO9ok?rel=0&autoplay=0&showinfo=0&enablejsapi=0",
+        "label": "Embedded media — view original"
+      }
+    ],
+    "inline_html_emphasis": true,
+    "removed_ui": {
+      "subscription_widgets": 1,
+      "image_controls": 18
+    },
+    "verification": "text, links, and images round-trip passed"
+  },
+  {
+    "slug": "paying-for-it",
+    "title": "Paying for it",
+    "subtitle": "What's attention and how it is distracted, nowadays",
+    "date": "2025-06-25",
+    "url": "https://artifactstech.substack.com/p/paying-for-it",
+    "captured": "2026-10-24",
+    "file": "artifacts/paying-for-it.md",
+    "source": ".archive/sources/paying-for-it.json",
+    "source_sha256": "38322598aeb6565f73af57d1177f921a94c564374ef00263947b01a549fe80f8",
+    "markdown_sha256": "5e254ee9ccbfdabad2e0c045c9de138fc659445e8c47e94b91d6a1804f124883",
+    "normalized_text_sha256": "eced9e7ac653b0a38fc6287cfdee4a351788c06aacc12fdda1de58329faea4d5",
+    "words": 959,
+    "links": 29,
+    "images": 6,
+    "embeds": [
+      {
+        "type": "media",
+        "url": "https://www.youtube-nocookie.com/embed/LCEmiRjPEtQ?rel=0&autoplay=0&showinfo=0&enablejsapi=0",
+        "label": "Embedded media — view original"
+      }
+    ],
+    "inline_html_emphasis": false,
+    "removed_ui": {
+      "subscription_widgets": 3,
+      "image_controls": 8
+    },
+    "verification": "text, links, and images round-trip passed"
+  },
+  {
+    "slug": "no-one-click-that-button",
+    "title": "No one click that button!",
+    "subtitle": "Why the AI revolution may be, before anything else, an interface revolution.",
+    "date": "2025-06-10",
+    "url": "https://artifactstech.substack.com/p/no-one-click-that-button",
+    "captured": "2026-10-24",
+    "file": "artifacts/no-one-click-that-button.md",
+    "source": ".archive/sources/no-one-click-that-button.json",
+    "source_sha256": "709d9dce0e82b3c9a7719361601047ed8f998fad1601748fa5f72672c759a251",
+    "markdown_sha256": "e89987293c5c2b15ed6f35866a32610a399b913f327f630192d0b328bb326514",
+    "normalized_text_sha256": "ae0b6b43f424f1232c5bc837c20109835178768041185cf1ae03959594e65706",
+    "words": 1077,
+    "links": 28,
+    "images": 11,
+    "embeds": [],
+    "inline_html_emphasis": true,
+    "removed_ui": {
+      "subscription_widgets": 1,
+      "image_controls": 12
+    },
+    "verification": "text, links, and images round-trip passed"
+  },
+  {
+    "slug": "open-a-new-tab",
+    "title": "Open a new tab",
+    "subtitle": "Why Google doing AI search is just different",
+    "date": "2025-05-29",
+    "url": "https://artifactstech.substack.com/p/open-a-new-tab",
+    "captured": "2026-10-24",
+    "file": "artifacts/open-a-new-tab.md",
+    "source": ".archive/sources/open-a-new-tab.json",
+    "source_sha256": "6685df0d592d27ceba7702b2e486aeb4f85a27742f95db6dff48e0d5c35f122c",
+    "markdown_sha256": "2781139476f8baf59fb6214db1b665c97d8f179f2929221722b682ef78b2ce9a",
+    "normalized_text_sha256": "ca0baf5b24ca7a8d334eca54628f4cc734b59e3c18bf135e0d6428e028cc5c7e",
+    "words": 1167,
+    "links": 37,
+    "images": 9,
+    "embeds": [],
+    "inline_html_emphasis": true,
+    "removed_ui": {
+      "subscription_widgets": 0,
+      "image_controls": 12
+    },
+    "verification": "text, links, and images round-trip passed"
+  },
+  {
+    "slug": "slicing-apples",
+    "title": "Slicing apples",
+    "subtitle": "Why competition tech policy is, eventually, about screens.",
+    "date": "2025-05-14",
+    "url": "https://artifactstech.substack.com/p/slicing-apples",
+    "captured": "2026-10-24",
+    "file": "artifacts/slicing-apples.md",
+    "source": ".archive/sources/slicing-apples.json",
+    "source_sha256": "cca403641f6681f9526ffd15165740e836f59da9df06382ecb220dfed3e4a2b8",
+    "markdown_sha256": "e75f48e542801f93a2c239d07d0440015010c8d435e5ca68616a83dcfb57b4d7",
+    "normalized_text_sha256": "5c463f5a0cf9130b054f691b397551a72cc19d2f29cab8365b209313f3449f2e",
+    "words": 1520,
+    "links": 42,
+    "images": 11,
+    "embeds": [
+      {
+        "type": "media",
+        "url": "https://www.youtube-nocookie.com/embed/wLb9g_8r-mE?rel=0&autoplay=0&showinfo=0&enablejsapi=0",
+        "label": "Embedded media — view original"
+      }
+    ],
+    "inline_html_emphasis": false,
+    "removed_ui": {
+      "subscription_widgets": 1,
+      "image_controls": 16
+    },
+    "verification": "text, links, and images round-trip passed"
+  },
+  {
+    "slug": "the-elephant-in-the-tube",
+    "title": "The elephant in the tube",
+    "subtitle": "Time, content and media: 20 years of YouTube and us",
+    "date": "2025-04-23",
+    "url": "https://artifactstech.substack.com/p/the-elephant-in-the-tube",
+    "captured": "2026-10-24",
+    "file": "artifacts/the-elephant-in-the-tube.md",
+    "source": ".archive/sources/the-elephant-in-the-tube.json",
+    "source_sha256": "9be476e11cf7288216c97da0988973ff4a731ceb23fc643781f10b03aee4cb64",
+    "markdown_sha256": "ca299195a4b7afba874571e55bc95e4a8917a68f7f795c45dee2069b0911d2ef",
+    "normalized_text_sha256": "c9af8767e0d802a0ca848b4c78a6df8d46573dd44091e8aa4e2498cbe8a66774",
+    "words": 1488,
+    "links": 33,
+    "images": 10,
+    "embeds": [
+      {
+        "type": "media",
+        "url": "https://www.youtube-nocookie.com/embed/jNQXAC9IVRw?rel=0&autoplay=0&showinfo=0&enablejsapi=0",
+        "label": "Embedded media — view original"
+      }
+    ],
+    "inline_html_emphasis": false,
+    "removed_ui": {
+      "subscription_widgets": 1,
+      "image_controls": 12
+    },
+    "verification": "text, links, and images round-trip passed"
+  },
+  {
+    "slug": "services-that-serve",
+    "title": "Services that serve?",
+    "subtitle": "A conversation with the former Head of Design of the Italian Government",
+    "date": "2025-04-09",
+    "url": "https://artifactstech.substack.com/p/services-that-serve",
+    "captured": "2026-10-24",
+    "file": "artifacts/services-that-serve.md",
+    "source": ".archive/sources/services-that-serve.json",
+    "source_sha256": "e184a6e62a2992ab4b6afb0f4bba0fbf97d4f80329a110d4c416f6b3d59484a2",
+    "markdown_sha256": "4e5b28efa75f719eebe171c74351da7556b708eefc0d5801018e3d9ea77c7c31",
+    "normalized_text_sha256": "2c5b1e07ed8c847ff40a89f91c77b4ecf6aac520ca0feec2f2458e76bc7b45d7",
+    "words": 1805,
+    "links": 23,
+    "images": 5,
+    "embeds": [],
+    "inline_html_emphasis": true,
+    "removed_ui": {
+      "subscription_widgets": 1,
+      "image_controls": 10
+    },
+    "verification": "text, links, and images round-trip passed"
+  },
+  {
+    "slug": "send-good-vibes",
+    "title": "Send good vibes",
+    "subtitle": "A few words away from a decent product",
+    "date": "2025-03-26",
+    "url": "https://artifactstech.substack.com/p/send-good-vibes",
+    "captured": "2026-10-24",
+    "file": "artifacts/send-good-vibes.md",
+    "source": ".archive/sources/send-good-vibes.json",
+    "source_sha256": "56d00aa024335fb090bc29a4be04ecb809a84ca8e6c1dd4d2543f80c55292125",
+    "markdown_sha256": "33abb60048cef78e43f1ec9afff8df373fcc5f8c86c087787bd00705b6406127",
+    "normalized_text_sha256": "5f01b3b2262f4607e6efcee5954ae2da0747bc51004684cdd3567e320328f993",
+    "words": 1462,
+    "links": 28,
+    "images": 9,
+    "embeds": [
+      {
+        "type": "media",
+        "url": "https://www.youtube-nocookie.com/embed/4UKM_yvTexI?rel=0&autoplay=0&showinfo=0&enablejsapi=0",
+        "label": "Embedded media — view original"
+      }
+    ],
+    "inline_html_emphasis": false,
+    "removed_ui": {
+      "subscription_widgets": 1,
+      "image_controls": 18
+    },
+    "verification": "text, links, and images round-trip passed"
+  },
+  {
+    "slug": "shedding-a-light",
+    "title": "Shedding a light",
+    "subtitle": "How not to leave users in the dark (patterns)",
+    "date": "2025-03-05",
+    "url": "https://artifactstech.substack.com/p/shedding-a-light",
+    "captured": "2026-10-24",
+    "file": "artifacts/shedding-a-light.md",
+    "source": ".archive/sources/shedding-a-light.json",
+    "source_sha256": "69b11c3c2ccca07f553a23d75e0da30335a49bb6729368284afe699ab3291b84",
+    "markdown_sha256": "252f4da56cfacf61ef3d221ea873be5ebdcfb7b51d2f0ffb10d7a8923a040459",
+    "normalized_text_sha256": "e81a20d80035662ec39a5a1cf7756fdda95953fb7fe12d71ee009253a3c9d100",
+    "words": 1324,
+    "links": 21,
+    "images": 8,
+    "embeds": [],
+    "inline_html_emphasis": true,
+    "removed_ui": {
+      "subscription_widgets": 1,
+      "image_controls": 17
+    },
+    "verification": "text, links, and images round-trip passed"
+  },
+  {
+    "slug": "breaking-the-chains",
+    "title": "Breaking the chains",
+    "subtitle": "And why, again, AI is pretending to think",
+    "date": "2025-02-11",
+    "url": "https://artifactstech.substack.com/p/breaking-the-chains",
+    "captured": "2026-10-24",
+    "file": "artifacts/breaking-the-chains.md",
+    "source": ".archive/sources/breaking-the-chains.json",
+    "source_sha256": "367e28729dd0bdd03dcce79ee9d237f53405845a14c1a3f66e6a13023748a7e9",
+    "markdown_sha256": "3dcafc216b91fd84129af75a051435a50f13b4d04c766bd19f8d64970bab28ce",
+    "normalized_text_sha256": "199fb66346d1b16f587af109d3071e831fd46097f3d286b3acc8e98d4bad332f",
+    "words": 1004,
+    "links": 22,
+    "images": 8,
+    "embeds": [],
+    "inline_html_emphasis": true,
+    "removed_ui": {
+      "subscription_widgets": 1,
+      "image_controls": 14
+    },
+    "verification": "text, links, and images round-trip passed"
+  },
+  {
+    "slug": "not-every-fish-is-worth-it",
+    "title": "Not every fish is worth it",
+    "subtitle": "Meta's about-face and why it's a math choice, beyond the politics of it",
+    "date": "2025-01-28",
+    "url": "https://artifactstech.substack.com/p/not-every-fish-is-worth-it",
+    "captured": "2026-10-24",
+    "file": "artifacts/not-every-fish-is-worth-it.md",
+    "source": ".archive/sources/not-every-fish-is-worth-it.json",
+    "source_sha256": "93cd4e44b32f343b082cd902d0b48af7dd32ad28096a8c4d6ed9f7fa197722d3",
+    "markdown_sha256": "c0c9d5e22765c3e344fb4e201bedc9fa238f579ab877fe4380d08941ffb13c09",
+    "normalized_text_sha256": "56cd10f91ba7751a1b9dc434da8f5c0c33ad1311ac36333a0f894a938b368536",
+    "words": 1238,
+    "links": 27,
+    "images": 7,
+    "embeds": [],
+    "inline_html_emphasis": false,
+    "removed_ui": {
+      "subscription_widgets": 1,
+      "image_controls": 14
+    },
+    "verification": "text, links, and images round-trip passed"
+  },
+  {
+    "slug": "a-gift-from-builders-and-makers",
+    "title": "A gift from builders and makers",
+    "subtitle": "A few sentences, literally.",
+    "date": "2024-12-27",
+    "url": "https://artifactstech.substack.com/p/a-gift-from-builders-and-makers",
+    "captured": "2026-10-24",
+    "file": "artifacts/a-gift-from-builders-and-makers.md",
+    "source": ".archive/sources/a-gift-from-builders-and-makers.json",
+    "source_sha256": "577c1dc06c0b575b22b01194d44a694cceee4b51c0c5c7e4884a9ac913f15c1c",
+    "markdown_sha256": "a9bdc6dadabe355f34f245f7470a2e8b666aa33a37d4ba0cd0c288a7cacb5d91",
+    "normalized_text_sha256": "fdbed8a05fc62f3192452877572fa29ae919a859d6668973d01ab8634e9b49ad",
+    "words": 274,
+    "links": 17,
+    "images": 2,
+    "embeds": [],
+    "inline_html_emphasis": false,
+    "removed_ui": {
+      "subscription_widgets": 1,
+      "image_controls": 4
+    },
+    "verification": "text, links, and images round-trip passed"
+  },
+  {
+    "slug": "pulling-linchpins",
+    "title": "Pulling linchpins",
+    "subtitle": "What the Google vs DOJ case reveals about online search and, maybe, its future",
+    "date": "2024-12-03",
+    "url": "https://artifactstech.substack.com/p/pulling-linchpins",
+    "captured": "2026-10-24",
+    "file": "artifacts/pulling-linchpins.md",
+    "source": ".archive/sources/pulling-linchpins.json",
+    "source_sha256": "440be5b810aec66345e6109ae72d5d3353751e49ece1aa85dc210d13adde4f1a",
+    "markdown_sha256": "911a7e5d92fbfb72ac82ab688e647468ebe9b61efc9cec43371d3aaeb03e3cd5",
+    "normalized_text_sha256": "a279f9c7a99bce326ace40f1b36d506724dd194bfa113b035d2b421f12a27a55",
+    "words": 1251,
+    "links": 25,
+    "images": 8,
+    "embeds": [
+      {
+        "type": "media",
+        "url": "https://open.spotify.com/episode/7K7smmgolbc0jeABtq0gZy",
+        "label": "Hard Fork's 100 Most Iconic Technologies"
+      }
+    ],
+    "inline_html_emphasis": true,
+    "removed_ui": {
+      "subscription_widgets": 1,
+      "image_controls": 8
+    },
+    "verification": "text, links, and images round-trip passed"
+  },
+  {
+    "slug": "talking-to-the-internet",
+    "title": "Talking to the Internet",
+    "subtitle": "The epistemological and business change coming from AI-powered search",
+    "date": "2024-11-03",
+    "url": "https://artifactstech.substack.com/p/talking-to-the-internet",
+    "captured": "2026-10-24",
+    "file": "artifacts/talking-to-the-internet.md",
+    "source": ".archive/sources/talking-to-the-internet.json",
+    "source_sha256": "0f485feee000a07d55c4f7122db2aee71e896a642595f47a9762cb27b6470c92",
+    "markdown_sha256": "93d8533856d146b32dd98c66fbfb0041d75d1c72c23a2d03301d4577d4e6ea77",
+    "normalized_text_sha256": "12a29a2bef494f6ac27b143a4e4f7a77dfc250fe1461bc0335601418fe9c39aa",
+    "words": 1085,
+    "links": 19,
+    "images": 8,
+    "embeds": [
+      {
+        "type": "media",
+        "url": "https://open.spotify.com/episode/0MkmHyHFYw7tKSQSJZA3Pw",
+        "label": "Airbnb CEO Brian Chesky on what founder mode really means"
+      }
+    ],
+    "inline_html_emphasis": false,
+    "removed_ui": {
+      "subscription_widgets": 1,
+      "image_controls": 16
+    },
+    "verification": "text, links, and images round-trip passed"
+  },
+  {
+    "slug": "as-we-speak",
+    "title": "As we speak",
+    "subtitle": "With Gen AI now talking, what's next for us, content, and intelligence? ",
+    "date": "2024-10-08",
+    "url": "https://artifactstech.substack.com/p/as-we-speak",
+    "captured": "2026-10-24",
+    "file": "artifacts/as-we-speak.md",
+    "source": ".archive/sources/as-we-speak.json",
+    "source_sha256": "27c01049ed8112cec23503797f54198182d05e85e8193bb7813b37fed5159e89",
+    "markdown_sha256": "6ac835f7cab9dfcb289dbc8ef1b1bb8b8743d32ba01df2cef1bab30236ae714c",
+    "normalized_text_sha256": "c3a1563c5dbc25bfcced582d921e159834d5978a34b105f101a7fee112741759",
+    "words": 1055,
+    "links": 22,
+    "images": 4,
+    "embeds": [
+      {
+        "type": "media",
+        "url": "https://artifactstech.substack.com/api/v1/audio/upload/91a9f5d2-cb84-4284-afc3-aabed39981c9/src",
+        "label": "Embedded media — view original"
+      },
+      {
+        "type": "media",
+        "url": "https://open.spotify.com/episode/59HbInW5HoS6OGwIqJzOr4",
+        "label": "Certainly uncertain: navigating risk and probability with Sir David Spiegelhalter"
+      },
+      {
+        "type": "media",
+        "url": "https://www.youtube-nocookie.com/embed/i2FPU7bKD9k?rel=0&autoplay=0&showinfo=0&enablejsapi=0",
+        "label": "Embedded media — view original"
+      }
+    ],
+    "inline_html_emphasis": true,
+    "removed_ui": {
+      "subscription_widgets": 1,
+      "image_controls": 10
+    },
+    "verification": "text, links, and images round-trip passed"
+  },
+  {
+    "slug": "who-made-the-iphone-boring",
+    "title": "Who made the iPhone boring ?",
+    "subtitle": "And how the EU is either to blame—or thank—for it",
+    "date": "2024-09-24",
+    "url": "https://artifactstech.substack.com/p/who-made-the-iphone-boring",
+    "captured": "2026-10-24",
+    "file": "artifacts/who-made-the-iphone-boring.md",
+    "source": ".archive/sources/who-made-the-iphone-boring.json",
+    "source_sha256": "08b0761df60b24eae8164364b52a4e08d8e3ab89e3e42e245624ce5c7c9057d2",
+    "markdown_sha256": "c25a497e2bdb2080c04069b99cbe2df552dffd618d89986b25cbab9b7dcf0cbc",
+    "normalized_text_sha256": "fb825229683dc422a45a7b28991ebc1b71947149f6b2d5d3bf495c1c1a8d8c59",
+    "words": 1216,
+    "links": 28,
+    "images": 5,
+    "embeds": [],
+    "inline_html_emphasis": true,
+    "removed_ui": {
+      "subscription_widgets": 1,
+      "image_controls": 10
+    },
+    "verification": "text, links, and images round-trip passed"
+  },
+  {
+    "slug": "artifacts-once-again",
+    "title": "Artifacts, once again",
+    "subtitle": "Why is it so urgent to read and write about technological artifacts today?",
+    "date": "2024-09-10",
+    "url": "https://artifactstech.substack.com/p/artifacts-once-again",
+    "captured": "2026-10-24",
+    "file": "artifacts/artifacts-once-again.md",
+    "source": ".archive/sources/artifacts-once-again.json",
+    "source_sha256": "11c71e3581be8b397f0b58b7e013e412390e50ff36818deac03d704defc0bbab",
+    "markdown_sha256": "6ae187b5984feaa553d425afa93c942a014f99d10d856779e7f49aabbe3ca0f7",
+    "normalized_text_sha256": "72a15bbc36b4ebe774833e6a66ad81161121088a29f6833eaccb96cc5f04a436",
+    "words": 1217,
+    "links": 23,
+    "images": 5,
+    "embeds": [],
+    "inline_html_emphasis": true,
+    "removed_ui": {
+      "subscription_widgets": 2,
+      "image_controls": 10
+    },
+    "verification": "text, links, and images round-trip passed"
+  },
+  {
+    "slug": "lettera-per-lettera",
+    "title": "Lettera per lettera",
+    "subtitle": "Un alfabeto per un anno di Artifacts, e delle novità",
+    "date": "2024-09-03",
+    "url": "https://artifactstech.substack.com/p/lettera-per-lettera",
+    "captured": "2026-10-24",
+    "file": "artifacts/lettera-per-lettera.md",
+    "source": ".archive/sources/lettera-per-lettera.json",
+    "source_sha256": "b3b8b83a9996f86dcd037fe24b1cc798cf7e2c25116e2364f58f477ed57e6384",
+    "markdown_sha256": "2baabf1c05389859b450f5087bcae7dd6a85cdf8fd3af966a25575e55f8eb595",
+    "normalized_text_sha256": "ba006b35f426e9f933364a76a2a2dd9b1bcd16e91f2bf3001f28b0644abf3c8e",
+    "words": 1343,
+    "links": 48,
+    "images": 3,
+    "embeds": [],
+    "inline_html_emphasis": true,
+    "removed_ui": {
+      "subscription_widgets": 1,
+      "image_controls": 6
+    },
+    "verification": "text, links, and images round-trip passed"
+  },
+  {
+    "slug": "nellinteresse-di-tutti",
+    "title": "Nell'interesse di tutti",
+    "subtitle": "Trovare dei modelli economici sostenibili se l'IA è il futuro della ricerca online",
+    "date": "2024-08-20",
+    "url": "https://artifactstech.substack.com/p/nellinteresse-di-tutti",
+    "captured": "2026-10-24",
+    "file": "artifacts/nellinteresse-di-tutti.md",
+    "source": ".archive/sources/nellinteresse-di-tutti.json",
+    "source_sha256": "846e0fe8c590d7dd73c28e537b519b935b7df22c9d627c2588076161690883fd",
+    "markdown_sha256": "27a4a9e6d96c966cc1ad6808cf7fd693078041b80ff22ab177d1b86b7c5e5870",
+    "normalized_text_sha256": "0feaab495d67ae4556c18a720bf214ad5f57bad50222e41ef5ab5c2efa4b6757",
+    "words": 1290,
+    "links": 27,
+    "images": 6,
+    "embeds": [],
+    "inline_html_emphasis": false,
+    "removed_ui": {
+      "subscription_widgets": 1,
+      "image_controls": 10
+    },
+    "verification": "text, links, and images round-trip passed"
+  },
+  {
+    "slug": "perche-scrivere-una-artifacts",
+    "title": "Perché scrivere una Artifacts",
+    "subtitle": "Il senso di una newsletter come prodotto media, oggi",
+    "date": "2024-08-06",
+    "url": "https://artifactstech.substack.com/p/perche-scrivere-una-artifacts",
+    "captured": "2026-10-24",
+    "file": "artifacts/perche-scrivere-una-artifacts.md",
+    "source": ".archive/sources/perche-scrivere-una-artifacts.json",
+    "source_sha256": "7340a0fb3fe517a0df57462863ec756f77b4c5ef00ce231b71224d6aef9c60f9",
+    "markdown_sha256": "406b09fa2970d6309b0aadc2ca056a4e1fd0ee10851a1678ce169d512f370e91",
+    "normalized_text_sha256": "891d9290374aac1bc9c4d969270d070f0ab2fa8ef9ccd54564e94713f99afa78",
+    "words": 1034,
+    "links": 18,
+    "images": 5,
+    "embeds": [
+      {
+        "type": "media",
+        "url": "https://open.spotify.com/episode/5LeMAIqFwSFgYiKOAgD8Qq",
+        "label": "Il futuro dei nuovi media con Virginia Giammaria, Media e Policy Campaigns Manager"
+      }
+    ],
+    "inline_html_emphasis": false,
+    "removed_ui": {
+      "subscription_widgets": 1,
+      "image_controls": 8
+    },
+    "verification": "text, links, and images round-trip passed"
+  },
+  {
+    "slug": "di-default",
+    "title": "Di default",
+    "subtitle": "Consigli e tecniche per costruire qualche giorno di digital detox",
+    "date": "2024-07-23",
+    "url": "https://artifactstech.substack.com/p/di-default",
+    "captured": "2026-10-24",
+    "file": "artifacts/di-default.md",
+    "source": ".archive/sources/di-default.json",
+    "source_sha256": "1648e9a4d896e507762d4c1f7541926f63fa307361b26c9de2e9d86a4796fe69",
+    "markdown_sha256": "e6548f616f340850bd5851bbaa85921a853d33e61332ccaf8723c57c3fb2879e",
+    "normalized_text_sha256": "cb31a699f28afbb3d2f8232b55a049f3133a96e4f476b83986ecee6d86b019df",
+    "words": 1181,
+    "links": 22,
+    "images": 6,
+    "embeds": [
+      {
+        "type": "media",
+        "url": "https://www.youtube-nocookie.com/embed/16cM-RFid9U?rel=0&autoplay=0&showinfo=0&enablejsapi=0",
+        "label": "Embedded media — view original"
+      }
+    ],
+    "inline_html_emphasis": true,
+    "removed_ui": {
+      "subscription_widgets": 1,
+      "image_controls": 13
+    },
+    "verification": "text, links, and images round-trip passed"
+  },
+  {
+    "slug": "lho-letto-sullenciclopedia",
+    "title": "L'ho letto sull'enciclopedia",
+    "subtitle": "Da dove viene, come funziona e quale futuro per Wikipedia",
+    "date": "2024-07-16",
+    "url": "https://artifactstech.substack.com/p/lho-letto-sullenciclopedia",
+    "captured": "2026-10-24",
+    "file": "artifacts/lho-letto-sullenciclopedia.md",
+    "source": ".archive/sources/lho-letto-sullenciclopedia.json",
+    "source_sha256": "cb339cb52b53d2227167779dca914ed364ad30eb56016cd80316df44227350d2",
+    "markdown_sha256": "8871bc38c96998b4474ad550a8483bd5f70238072ed05c62a19b1a8a348c387f",
+    "normalized_text_sha256": "f8711352979cec0391d0d130aeeca151550b7be928e96ce98fec1d3bd61819bc",
+    "words": 1530,
+    "links": 31,
+    "images": 6,
+    "embeds": [
+      {
+        "type": "media",
+        "url": "https://www.youtube-nocookie.com/embed/sDIi95CqTiM?rel=0&autoplay=0&showinfo=0&enablejsapi=0",
+        "label": "Embedded media — view original"
+      },
+      {
+        "type": "media",
+        "url": "https://open.spotify.com/episode/24bLdO1AJHz9i26hUH2Y45",
+        "label": "Why The Atlantic signed a deal with OpenAI"
+      },
+      {
+        "type": "media",
+        "url": "https://open.spotify.com/episode/4WwngdX9xB6DGqscDwgwgk",
+        "label": "410 | Ma perché Commissione europea e Apple litigano?"
+      }
+    ],
+    "inline_html_emphasis": false,
+    "removed_ui": {
+      "subscription_widgets": 1,
+      "image_controls": 10
+    },
+    "verification": "text, links, and images round-trip passed"
+  },
+  {
+    "slug": "sempre-lo-stesso-sapore",
+    "title": "Sempre lo stesso sapore",
+    "subtitle": "Le regole non scritte ed una piattezza generale, anche dei caffè",
+    "date": "2024-06-25",
+    "url": "https://artifactstech.substack.com/p/sempre-lo-stesso-sapore",
+    "captured": "2026-10-24",
+    "file": "artifacts/sempre-lo-stesso-sapore.md",
+    "source": ".archive/sources/sempre-lo-stesso-sapore.json",
+    "source_sha256": "8e4218fbfec406a2ed88391494a274e1b614b9e1e3857a5704e07b98ed39720a",
+    "markdown_sha256": "9cf7e9cb6e15d19e50f1ac92218d37005134c0646bc449cf4d14153fa7e16d55",
+    "normalized_text_sha256": "5b32ed8c4dafd9c02fa955d8b0d07a94138b90db45d5a873ef6e05301b843114",
+    "words": 1406,
+    "links": 21,
+    "images": 7,
+    "embeds": [
+      {
+        "type": "media",
+        "url": "https://open.spotify.com/episode/2V0CFGtEcwJ4QqmXMNzhAy",
+        "label": "AI Chatbots Are Running for Office Now"
+      }
+    ],
+    "inline_html_emphasis": true,
+    "removed_ui": {
+      "subscription_widgets": 1,
+      "image_controls": 14
+    },
+    "verification": "text, links, and images round-trip passed"
+  },
+  {
+    "slug": "molto-rumore-per-nulla",
+    "title": "Molto rumore per nulla",
+    "subtitle": "Una pausa utile a capire le regole sui nostri dati e l'addestramento delle Intelligenze Artificiali",
+    "date": "2024-06-18",
+    "url": "https://artifactstech.substack.com/p/molto-rumore-per-nulla",
+    "captured": "2026-10-24",
+    "file": "artifacts/molto-rumore-per-nulla.md",
+    "source": ".archive/sources/molto-rumore-per-nulla.json",
+    "source_sha256": "ad17cb3ec8abf5130b370cbca225d09047b0219d4f46d0032e36b7dc01837ac7",
+    "markdown_sha256": "177b027e54facd232b86fbb583e74b8e6177265c0079646aef7668a9fd5987a1",
+    "normalized_text_sha256": "a9cc672e25ed24a46b09b8a11c52282248ed8db566f719aa028404f09564b64c",
+    "words": 1481,
+    "links": 42,
+    "images": 9,
+    "embeds": [],
+    "inline_html_emphasis": true,
+    "removed_ui": {
+      "subscription_widgets": 2,
+      "image_controls": 18
+    },
+    "verification": "text, links, and images round-trip passed"
+  },
+  {
+    "slug": "partire-dalla-fine",
+    "title": "Partire dal(la) fine",
+    "subtitle": " Elezioni, panel e gli altri iceberg della partecipazione politica",
+    "date": "2024-06-04",
+    "url": "https://artifactstech.substack.com/p/partire-dalla-fine",
+    "captured": "2026-10-24",
+    "file": "artifacts/partire-dalla-fine.md",
+    "source": ".archive/sources/partire-dalla-fine.json",
+    "source_sha256": "c0ff9049f27117ed04e12e830e53f652a31abd08440ad71733cc8426701c0ac8",
+    "markdown_sha256": "0a6f7f9db3893fb431de7035a584599a2939324d167c91901d1fcb2b889959c0",
+    "normalized_text_sha256": "b742798535019f814d605afc556585d4935880287a2aa836bf4220327f814d72",
+    "words": 1442,
+    "links": 18,
+    "images": 4,
+    "embeds": [],
+    "inline_html_emphasis": true,
+    "removed_ui": {
+      "subscription_widgets": 1,
+      "image_controls": 8
+    },
+    "verification": "text, links, and images round-trip passed"
+  },
+  {
+    "slug": "anche-queste-sono-piattaforme",
+    "title": "Anche queste sono piattaforme",
+    "subtitle": "Cosa propongono i partiti europei sulla tecnologia per le elezioni?",
+    "date": "2024-05-28",
+    "url": "https://artifactstech.substack.com/p/anche-queste-sono-piattaforme",
+    "captured": "2026-10-24",
+    "file": "artifacts/anche-queste-sono-piattaforme.md",
+    "source": ".archive/sources/anche-queste-sono-piattaforme.json",
+    "source_sha256": "bf5ce69236b260e5284cd42172f2d3a0e33e1fbe7c7d6b32d94150ae5b591271",
+    "markdown_sha256": "188ca89fdaa84388e14cd9657b2f727cb1ec4a5bcd2ef151c8080fd2bd60e060",
+    "normalized_text_sha256": "28b4e94783152faeb424663c553f3eb5841324a18cac14928e6201d8beec71da",
+    "words": 2236,
+    "links": 24,
+    "images": 7,
+    "embeds": [],
+    "inline_html_emphasis": true,
+    "removed_ui": {
+      "subscription_widgets": 1,
+      "image_controls": 15
+    },
+    "verification": "text, links, and images round-trip passed"
+  },
+  {
+    "slug": "mica-e-illegale-essere-stupidi",
+    "title": "Mica è illegale essere stupidi",
+    "subtitle": "E perché non possiamo fare troppo sulla disinformazione, ma qualcosa sì.",
+    "date": "2024-05-21",
+    "url": "https://artifactstech.substack.com/p/mica-e-illegale-essere-stupidi",
+    "captured": "2026-10-24",
+    "file": "artifacts/mica-e-illegale-essere-stupidi.md",
+    "source": ".archive/sources/mica-e-illegale-essere-stupidi.json",
+    "source_sha256": "71f4a869e7b026c84823176508dc35b5004b99c76e564993c9e51a68356ee13e",
+    "markdown_sha256": "e3f1d70a8ec483d6fdba6715b28a110c6aa18da3ad9d08baece53db344bc70f0",
+    "normalized_text_sha256": "80af96d9e1f8f06c9b2271569791ff8b108a5da4e9abae93277a0c5ddfbaab8f",
+    "words": 1712,
+    "links": 29,
+    "images": 7,
+    "embeds": [
+      {
+        "type": "media",
+        "url": "https://open.spotify.com/episode/0iiSEMwhL8kHgTZmfSdJOS",
+        "label": "How to Know Who’s Real"
+      }
+    ],
+    "inline_html_emphasis": true,
+    "removed_ui": {
+      "subscription_widgets": 1,
+      "image_controls": 14
+    },
+    "verification": "text, links, and images round-trip passed"
+  },
+  {
+    "slug": "among-centaurs-and-titans",
+    "title": "Among Centaurs and Titans",
+    "subtitle": "And why Greece's tech-powered border controls should concern us all",
+    "date": "2024-05-14",
+    "url": "https://artifactstech.substack.com/p/among-centaurs-and-titans",
+    "captured": "2026-10-24",
+    "file": "artifacts/among-centaurs-and-titans.md",
+    "source": ".archive/sources/among-centaurs-and-titans.json",
+    "source_sha256": "5a310c8ad2821ef626158d7f60d1579297bfe595730bb8aae88b91ff681003cf",
+    "markdown_sha256": "040e7a086852b934c05bbae0111899af970dcf1f9ec15b38902d78968a9e5b83",
+    "normalized_text_sha256": "25ddb6ef7ff1fe1fa1ab33dc3ad9a26b4016cf1af09fcc4ed79fa5d506f04fa8",
+    "words": 1896,
+    "links": 23,
+    "images": 4,
+    "embeds": [
+      {
+        "type": "media",
+        "url": "https://www.youtube-nocookie.com/embed/ntjkwIXWtrc?rel=0&autoplay=0&showinfo=0&enablejsapi=0",
+        "label": "Embedded media — view original"
+      }
+    ],
+    "inline_html_emphasis": true,
+    "removed_ui": {
+      "subscription_widgets": 1,
+      "image_controls": 9
+    },
+    "verification": "text, links, and images round-trip passed"
+  },
+  {
+    "slug": "non-ce-li-hanno-piu-dati",
+    "title": "Non ce li hanno più dati",
+    "subtitle": "Ma abbiamo una soluzione e un'occasione da non sprecare",
+    "date": "2024-05-07",
+    "url": "https://artifactstech.substack.com/p/non-ce-li-hanno-piu-dati",
+    "captured": "2026-10-24",
+    "file": "artifacts/non-ce-li-hanno-piu-dati.md",
+    "source": ".archive/sources/non-ce-li-hanno-piu-dati.json",
+    "source_sha256": "0e551fc37fe7adcaf0e8b36ff798e681161cdd2ad0e6b0cc662bd124500b427c",
+    "markdown_sha256": "3b0c932518a82c04790f83cdb915ec26363aa07fc8bdf7623d6332668cef57d8",
+    "normalized_text_sha256": "cc8422df7b36b2f8a3a5f79da490cff778b87d93381f406ce38568a04f618c70",
+    "words": 1665,
+    "links": 48,
+    "images": 6,
+    "embeds": [
+      {
+        "type": "media",
+        "url": "https://open.spotify.com/episode/3MBj5Xny2cWSMZnozSux9F",
+        "label": "Why the TikTok ban won't solve the US's online privacy problems"
+      }
+    ],
+    "inline_html_emphasis": true,
+    "removed_ui": {
+      "subscription_widgets": 1,
+      "image_controls": 10
+    },
+    "verification": "text, links, and images round-trip passed"
+  },
+  {
+    "slug": "facile-come-giocare",
+    "title": "Facile come giocare",
+    "subtitle": "Come il Game Boy ha reinventato i videogiochi senza stravolgere nulla",
+    "date": "2024-04-23",
+    "url": "https://artifactstech.substack.com/p/facile-come-giocare",
+    "captured": "2026-10-24",
+    "file": "artifacts/facile-come-giocare.md",
+    "source": ".archive/sources/facile-come-giocare.json",
+    "source_sha256": "aa92083dbabb21506e64b7bde2ac0ef91ceee89ba8a012073812537fcb1aba33",
+    "markdown_sha256": "f4e53e4df0b593ce4b2a3c7b8ce2b702dee7df34829dda8c62f55c0d5adb7843",
+    "normalized_text_sha256": "81939a02612bf16adb3777bacaa5d813de5b6a0104748718f26e93a7def1e6e5",
+    "words": 1652,
+    "links": 28,
+    "images": 9,
+    "embeds": [
+      {
+        "type": "media",
+        "url": "https://www.youtube-nocookie.com/embed/VN0PPEELpHA?rel=0&autoplay=0&showinfo=0&enablejsapi=0",
+        "label": "Embedded media — view original"
+      }
+    ],
+    "inline_html_emphasis": true,
+    "removed_ui": {
+      "subscription_widgets": 0,
+      "image_controls": 12
+    },
+    "verification": "text, links, and images round-trip passed"
+  },
+  {
+    "slug": "ma-prima-quando",
+    "title": "Ma prima quando?",
+    "subtitle": "E come dovremmo provare a capire delle regole che a volte sembrano inutili o pericolose",
+    "date": "2024-04-16",
+    "url": "https://artifactstech.substack.com/p/ma-prima-quando",
+    "captured": "2026-10-24",
+    "file": "artifacts/ma-prima-quando.md",
+    "source": ".archive/sources/ma-prima-quando.json",
+    "source_sha256": "c13af403e65bc4394f622cde5e6d0f7e1baa8539abcfa584a5a64ae2f438eda3",
+    "markdown_sha256": "314b5fe2176f60d7cf49b468891e165913bef1b33f08e50b85c0e8296f75eb66",
+    "normalized_text_sha256": "a24bf577d476a97aeff7c9f2596ed7d927bf857e05ddf7948b9185b386f5e926",
+    "words": 1451,
+    "links": 30,
+    "images": 8,
+    "embeds": [],
+    "inline_html_emphasis": true,
+    "removed_ui": {
+      "subscription_widgets": 1,
+      "image_controls": 12
+    },
+    "verification": "text, links, and images round-trip passed"
+  },
+  {
+    "slug": "realta-parallele",
+    "title": "Realtà parallele",
+    "subtitle": "Non sappiamo bene cosa vogliamo dall'Intelligenza Artificiale",
+    "date": "2024-04-09",
+    "url": "https://artifactstech.substack.com/p/realta-parallele",
+    "captured": "2026-10-24",
+    "file": "artifacts/realta-parallele.md",
+    "source": ".archive/sources/realta-parallele.json",
+    "source_sha256": "943e6d1478d63cdc7c57ab711d53d1b1f8c5b545819d874b041f82b49903cb37",
+    "markdown_sha256": "0780c28f63eda707433a8dfec377e042ebc94f6eff53655d36636ae0db51dfe7",
+    "normalized_text_sha256": "27054a36cb86994bc6e3160a73fc0fda0f9b66373e56d687ba5236d9d53c57a5",
+    "words": 1453,
+    "links": 33,
+    "images": 8,
+    "embeds": [],
+    "inline_html_emphasis": false,
+    "removed_ui": {
+      "subscription_widgets": 1,
+      "image_controls": 16
+    },
+    "verification": "text, links, and images round-trip passed"
+  },
+  {
+    "slug": "era-solo-un-giradischi",
+    "title": "Era solo un giradischi",
+    "subtitle": "Ho avuto poco tempo, ma mi sono chiesto il senso di un regalo.",
+    "date": "2024-03-26",
+    "url": "https://artifactstech.substack.com/p/era-solo-un-giradischi",
+    "captured": "2026-10-24",
+    "file": "artifacts/era-solo-un-giradischi.md",
+    "source": ".archive/sources/era-solo-un-giradischi.json",
+    "source_sha256": "10a27536c69ea2245b15fd3294945b290ce6dde276d81cdecfae1aa8e16c80a5",
+    "markdown_sha256": "551b63e88866e9070b4e2240314f8ff83a771cb663c224b111b297f37c1b6d02",
+    "normalized_text_sha256": "802701649b53ba6d66ab08d69f4d06c4b8ef87b5cf8a62e4c3a8c71e842b3619",
+    "words": 1467,
+    "links": 26,
+    "images": 4,
+    "embeds": [
+      {
+        "type": "media",
+        "url": "https://www.youtube-nocookie.com/embed/WXux4q9Npbg?rel=0&autoplay=0&showinfo=0&enablejsapi=0",
+        "label": "Embedded media — view original"
+      }
+    ],
+    "inline_html_emphasis": false,
+    "removed_ui": {
+      "subscription_widgets": 1,
+      "image_controls": 6
+    },
+    "verification": "text, links, and images round-trip passed"
+  },
+  {
+    "slug": "il-peccato-originale",
+    "title": "Il peccato originale",
+    "subtitle": "E perché chi ha inventato il World Wide Web non è contento di dove siamo",
+    "date": "2024-03-19",
+    "url": "https://artifactstech.substack.com/p/il-peccato-originale",
+    "captured": "2026-10-24",
+    "file": "artifacts/il-peccato-originale.md",
+    "source": ".archive/sources/il-peccato-originale.json",
+    "source_sha256": "26c73e26f711590f05ea56547ad388f1e7adaa3c88d7478dc4985651b5167954",
+    "markdown_sha256": "efca176fb16bd4616614cc4d28d2c64521c170c7d169ce98e298c146b9a3fa02",
+    "normalized_text_sha256": "3f856cb2b123955d4e17074d56cb7f28472a2ac024d63a22d09bf7b749ba668c",
+    "words": 1991,
+    "links": 33,
+    "images": 4,
+    "embeds": [
+      {
+        "type": "media",
+        "url": "https://open.spotify.com/episode/7vzKp9G0Z9PHCaOKvY2A7f",
+        "label": "324 | Ma perché TikTok rischia il bando negli Stati Uniti?"
+      },
+      {
+        "type": "media",
+        "url": "https://open.spotify.com/show/2y2oCa19uCG9ykUFcQKoQ8",
+        "label": "TikTalk"
+      }
+    ],
+    "inline_html_emphasis": true,
+    "removed_ui": {
+      "subscription_widgets": 1,
+      "image_controls": 8
+    },
+    "verification": "text, links, and images round-trip passed"
+  },
+  {
+    "slug": "favorisca-il-documento",
+    "title": "Favorisca il documento",
+    "subtitle": "C'è un paese che ha digitalizzato il 99% dei servizi pubblici, pure i matrimoni",
+    "date": "2024-03-12",
+    "url": "https://artifactstech.substack.com/p/favorisca-il-documento",
+    "captured": "2026-10-24",
+    "file": "artifacts/favorisca-il-documento.md",
+    "source": ".archive/sources/favorisca-il-documento.json",
+    "source_sha256": "9d681b7f5468180107f0ad9edfd17ae29c94b0ae01b1b14e4023210e08adc8da",
+    "markdown_sha256": "651aec35535668d02d89d22d99b961757875d13b19bd33ed0a701f24e4574987",
+    "normalized_text_sha256": "ced182ac35cda826a1989fc8dd52391316e1450aae920e6cabc74643cbd65e76",
+    "words": 1843,
+    "links": 37,
+    "images": 10,
+    "embeds": [
+      {
+        "type": "media",
+        "url": "https://www.youtube-nocookie.com/embed/kaU7IPlg9PA?rel=0&autoplay=0&showinfo=0&enablejsapi=0",
+        "label": "Embedded media — view original"
+      },
+      {
+        "type": "media",
+        "url": "https://www.youtube-nocookie.com/embed/CgB4C1vlv_0?rel=0&autoplay=0&showinfo=0&enablejsapi=0",
+        "label": "Embedded media — view original"
+      }
+    ],
+    "inline_html_emphasis": true,
+    "removed_ui": {
+      "subscription_widgets": 1,
+      "image_controls": 18
+    },
+    "verification": "text, links, and images round-trip passed"
+  },
+  {
+    "slug": "e-tutta-questa-pubblicita",
+    "title": "E tutta questa pubblicità",
+    "subtitle": "Dal Far West alle regole, 8 anni intensi",
+    "date": "2024-03-05",
+    "url": "https://artifactstech.substack.com/p/e-tutta-questa-pubblicita",
+    "captured": "2026-10-24",
+    "file": "artifacts/e-tutta-questa-pubblicita.md",
+    "source": ".archive/sources/e-tutta-questa-pubblicita.json",
+    "source_sha256": "f3d1df840a023f7edf2c75a5721fe11d957c8e3d3d98bc3f928c891f89c4002a",
+    "markdown_sha256": "88d316a5696ae4f90ff4fae67f562868dbc7e7929aa4060ee59b71e498f0737a",
+    "normalized_text_sha256": "5933c8e080ff894d0d95867603d791264c8cecf45e11d49a0dae5599eeb776f6",
+    "words": 1641,
+    "links": 28,
+    "images": 10,
+    "embeds": [
+      {
+        "type": "media",
+        "url": "https://www.youtube-nocookie.com/embed/TuIhb-xbW9I?rel=0&autoplay=0&showinfo=0&enablejsapi=0",
+        "label": "Embedded media — view original"
+      },
+      {
+        "type": "media",
+        "url": "https://open.spotify.com/episode/6B3JoHz1FStf0fcCFGlojk",
+        "label": "311 | Ma perché TikTok e Universal stanno litigando?"
+      }
+    ],
+    "inline_html_emphasis": false,
+    "removed_ui": {
+      "subscription_widgets": 1,
+      "image_controls": 19
+    },
+    "verification": "text, links, and images round-trip passed"
+  },
+  {
+    "slug": "ho-parlato-con-internet",
+    "title": "Ho parlato con Internet",
+    "subtitle": "E penso che ci sia da preoccuparsi un po'",
+    "date": "2024-02-27",
+    "url": "https://artifactstech.substack.com/p/ho-parlato-con-internet",
+    "captured": "2026-10-24",
+    "file": "artifacts/ho-parlato-con-internet.md",
+    "source": ".archive/sources/ho-parlato-con-internet.json",
+    "source_sha256": "0975ced50bbe286f72248dd12e78506113f2db2cc19fbaf9c5e838231167886f",
+    "markdown_sha256": "07c42ae5606199b37781b1a003ead58a6bd8826cce66c5cd08d677098cf2fe47",
+    "normalized_text_sha256": "48d6fabe4a4b220ad21803b0fb8af29d6cf6eef03e3e153b1d0f9a6e80988c37",
+    "words": 1540,
+    "links": 29,
+    "images": 8,
+    "embeds": [],
+    "inline_html_emphasis": false,
+    "removed_ui": {
+      "subscription_widgets": 1,
+      "image_controls": 14
+    },
+    "verification": "text, links, and images round-trip passed"
+  },
+  {
+    "slug": "la-piazza-al-centro-del-villaggio",
+    "title": "La piazza al centro del villaggio",
+    "subtitle": "E perché non possiamo aspettarci dai social quello che non ambiscono ad essere",
+    "date": "2024-02-20",
+    "url": "https://artifactstech.substack.com/p/la-piazza-al-centro-del-villaggio",
+    "captured": "2026-10-24",
+    "file": "artifacts/la-piazza-al-centro-del-villaggio.md",
+    "source": ".archive/sources/la-piazza-al-centro-del-villaggio.json",
+    "source_sha256": "eae3e280738a2a173bdada5acb4ef2dacb5f5981ea58bb65c2131089ae02a5e9",
+    "markdown_sha256": "7e08339b9859d518b9fa72d5e60b9c756c48de4c771487a546ed1f31c681d147",
+    "normalized_text_sha256": "ee0c1af6c6b0992bac9afc68dc65ffade4073182ff076fe74323e43db1590b59",
+    "words": 1470,
+    "links": 20,
+    "images": 7,
+    "embeds": [],
+    "inline_html_emphasis": false,
+    "removed_ui": {
+      "subscription_widgets": 1,
+      "image_controls": 10
+    },
+    "verification": "text, links, and images round-trip passed"
+  },
+  {
+    "slug": "luomo-e-la-macchina",
+    "title": "L'uomo e la macchina",
+    "subtitle": "40 anni dopo il Macintosh, il computer che ha cambiato tutto",
+    "date": "2024-02-13",
+    "url": "https://artifactstech.substack.com/p/luomo-e-la-macchina",
+    "captured": "2026-10-24",
+    "file": "artifacts/luomo-e-la-macchina.md",
+    "source": ".archive/sources/luomo-e-la-macchina.json",
+    "source_sha256": "4c1126ff6b9beb10443470bdee1f7d9e884f3b0506e7b32590d888dea7c09310",
+    "markdown_sha256": "8ef154e02c950d78a3fadf5b744f5d29861b6c5052667cd53ca7a29a704bfe37",
+    "normalized_text_sha256": "3cc2d6168538d2ad078b1f8cefca29365ee886855f120b05be0e61b8a2d7a0e6",
+    "words": 1405,
+    "links": 26,
+    "images": 8,
+    "embeds": [],
+    "inline_html_emphasis": true,
+    "removed_ui": {
+      "subscription_widgets": 1,
+      "image_controls": 14
+    },
+    "verification": "text, links, and images round-trip passed"
+  },
+  {
+    "slug": "i-bambini-non-si-toccano",
+    "title": "I bambini non si toccano",
+    "subtitle": "Cosa possiamo capire dall'audizione delle Big Tech al Senato degli Stati Uniti?",
+    "date": "2024-02-06",
+    "url": "https://artifactstech.substack.com/p/i-bambini-non-si-toccano",
+    "captured": "2026-10-24",
+    "file": "artifacts/i-bambini-non-si-toccano.md",
+    "source": ".archive/sources/i-bambini-non-si-toccano.json",
+    "source_sha256": "c9a189091e27978bb90989bfc0232e58407e1e5ab563b2a51c93eb4a420a3346",
+    "markdown_sha256": "17c689c32f0921472ae0cf3716b6a314d2ab049a5cf1a2080366ec9bbd7c6dfe",
+    "normalized_text_sha256": "d7a8e8e9c288919d5d9db62d44f4af47afbbeeea12560934880e9d41bbcb1491",
+    "words": 1569,
+    "links": 34,
+    "images": 7,
+    "embeds": [],
+    "inline_html_emphasis": true,
+    "removed_ui": {
+      "subscription_widgets": 1,
+      "image_controls": 12
+    },
+    "verification": "text, links, and images round-trip passed"
+  },
+  {
+    "slug": "una-mela-avvelenata",
+    "title": "Una mela avvelenata?",
+    "subtitle": "Il DMA è in arrivo, ma la risposta di Apple ha fatto infuriare non pochi",
+    "date": "2024-01-31",
+    "url": "https://artifactstech.substack.com/p/una-mela-avvelenata",
+    "captured": "2026-10-24",
+    "file": "artifacts/una-mela-avvelenata.md",
+    "source": ".archive/sources/una-mela-avvelenata.json",
+    "source_sha256": "04ea2ad8d76c3910dd2c8c257f36789bebc47bb9fc9464c75cd9a22759953ae9",
+    "markdown_sha256": "1b155205ce73c23f567b5ca724a345165783369ce20bcb19fe173146cade59fb",
+    "normalized_text_sha256": "a747575519486855173566ad46bb50fabb778a6715bb8bfc98b26ebc2ea82b71",
+    "words": 1600,
+    "links": 24,
+    "images": 8,
+    "embeds": [],
+    "inline_html_emphasis": false,
+    "removed_ui": {
+      "subscription_widgets": 1,
+      "image_controls": 14
+    },
+    "verification": "text, links, and images round-trip passed"
+  },
+  {
+    "slug": "what-if-we-design-democracy",
+    "title": "What if we design democracy?",
+    "subtitle": "A conversation with Gianluca Sgueo, the author of “The Design of Digital Democracy”",
+    "date": "2024-01-23",
+    "url": "https://artifactstech.substack.com/p/what-if-we-design-democracy",
+    "captured": "2026-10-24",
+    "file": "artifacts/what-if-we-design-democracy.md",
+    "source": ".archive/sources/what-if-we-design-democracy.json",
+    "source_sha256": "179a01c1a61aa253a3433084f115da4fe6508a96716aea0bd15d9dc030c3936c",
+    "markdown_sha256": "180b1bc9bf5a996c1e9b8d92e495ae63b1b3ac93d27a27934065514517a30c0f",
+    "normalized_text_sha256": "26b3df731775283f879dc313dfd809e7b3b7b02ee305805ede529d2584121106",
+    "words": 1620,
+    "links": 20,
+    "images": 4,
+    "embeds": [],
+    "inline_html_emphasis": false,
+    "removed_ui": {
+      "subscription_widgets": 1,
+      "image_controls": 8
+    },
+    "verification": "text, links, and images round-trip passed"
+  },
+  {
+    "slug": "una-polis-a-taiwan",
+    "title": "Una Polis a Taiwan?",
+    "subtitle": "Come dalla Rivolta dei Girasoli si è arrivati a un tentativo di democrazia digitale",
+    "date": "2024-01-16",
+    "url": "https://artifactstech.substack.com/p/una-polis-a-taiwan",
+    "captured": "2026-10-24",
+    "file": "artifacts/una-polis-a-taiwan.md",
+    "source": ".archive/sources/una-polis-a-taiwan.json",
+    "source_sha256": "b15ff1829a7051c09fbb97d8e26986df7a5b33592402383726550ec4ac2a61b1",
+    "markdown_sha256": "6cccc3db7eef30ed045031a9e380c4426d8174c5cf5e403c151997738f2a9e3c",
+    "normalized_text_sha256": "2b3d8ddb5fd3d07dee232f89e66622b39f41815e290f3d453fae274c6c7b4dff",
+    "words": 1540,
+    "links": 14,
+    "images": 6,
+    "embeds": [],
+    "inline_html_emphasis": false,
+    "removed_ui": {
+      "subscription_widgets": 1,
+      "image_controls": 10
+    },
+    "verification": "text, links, and images round-trip passed"
+  },
+  {
+    "slug": "e-finita-sul-giornale",
+    "title": "È finita sul giornale",
+    "subtitle": "Il New York Times accusa OpenAI, ma la vicenda non riguarda solo loro due",
+    "date": "2024-01-09",
+    "url": "https://artifactstech.substack.com/p/e-finita-sul-giornale",
+    "captured": "2026-10-24",
+    "file": "artifacts/e-finita-sul-giornale.md",
+    "source": ".archive/sources/e-finita-sul-giornale.json",
+    "source_sha256": "236cc125fbb2a19063029bbbc7a3ec2b17728c081e9b4b270aa1e42b35570155",
+    "markdown_sha256": "523fb9192b0b3e7cf5a89f1142b38d464873822adca2e5cccba41de6ef4d8434",
+    "normalized_text_sha256": "1b6511d519958d3ac8046c54fd57b15764de5eab687877cd0b1279b63faeb3e3",
+    "words": 1645,
+    "links": 20,
+    "images": 8,
+    "embeds": [],
+    "inline_html_emphasis": true,
+    "removed_ui": {
+      "subscription_widgets": 1,
+      "image_controls": 10
+    },
+    "verification": "text, links, and images round-trip passed"
+  },
+  {
+    "slug": "giusto-un-pensiero",
+    "title": "Giusto un pensiero",
+    "subtitle": "Cose dette o lette di cui ho tenuto nota",
+    "date": "2023-12-26",
+    "url": "https://artifactstech.substack.com/p/giusto-un-pensiero",
+    "captured": "2026-10-24",
+    "file": "artifacts/giusto-un-pensiero.md",
+    "source": ".archive/sources/giusto-un-pensiero.json",
+    "source_sha256": "04c28c6668d3fbad132abc29767aa2a829354fb8eb90b3f6e1664e863f4c206e",
+    "markdown_sha256": "fd2f5bc4a0ba9e5d2e7cd543a84b3973a058db07bceff7f37460545db8871e68",
+    "normalized_text_sha256": "be7d1e2956ab3e80cec95c14fb9baec3817cb0497acd3b9463e92db012ddc107",
+    "words": 182,
+    "links": 6,
+    "images": 3,
+    "embeds": [],
+    "inline_html_emphasis": false,
+    "removed_ui": {
+      "subscription_widgets": 3,
+      "image_controls": 6
+    },
+    "verification": "text, links, and images round-trip passed"
+  },
+  {
+    "slug": "riavvolgiamo-il-filo",
+    "title": "Riavvolgiamo il filo",
+    "subtitle": "Perché Threads non è poi così nuovo, da diversi punti di vista",
+    "date": "2023-12-19",
+    "url": "https://artifactstech.substack.com/p/riavvolgiamo-il-filo",
+    "captured": "2026-10-24",
+    "file": "artifacts/riavvolgiamo-il-filo.md",
+    "source": ".archive/sources/riavvolgiamo-il-filo.json",
+    "source_sha256": "08e1d8d06be6930218e619311d706a0da847f4a148c634a62fa0d80faacc9c20",
+    "markdown_sha256": "ee1eba6a82f59a7acc1b0191eece4cfbabf506c0f7a2def0e89021e76acb6976",
+    "normalized_text_sha256": "57f4f13f2b7f67a0b37a6d315323f120b037cafcde3daf33921de86c269f5a32",
+    "words": 1688,
+    "links": 21,
+    "images": 6,
+    "embeds": [],
+    "inline_html_emphasis": false,
+    "removed_ui": {
+      "subscription_widgets": 1,
+      "image_controls": 12
+    },
+    "verification": "text, links, and images round-trip passed"
+  },
+  {
+    "slug": "behind-the-act",
+    "title": "Behind the Act",
+    "subtitle": "A (sort of) exclusive sneak peek into the AI Act's last trilogue",
+    "date": "2023-12-12",
+    "url": "https://artifactstech.substack.com/p/behind-the-act",
+    "captured": "2026-10-24",
+    "file": "artifacts/behind-the-act.md",
+    "source": ".archive/sources/behind-the-act.json",
+    "source_sha256": "f1799dc544bf0366d9f320711fb35cd5fba6c73185c64d4061d1287159bc2889",
+    "markdown_sha256": "7117880913121a14e4ca24be77c8a1e60f3b3f9ee9f2867beccf405e6f8afed3",
+    "normalized_text_sha256": "8e51d45af0c5b654c5523022704c362cacec35317bf37fb5c9d14c4e1abf5419",
+    "words": 1507,
+    "links": 18,
+    "images": 3,
+    "embeds": [],
+    "inline_html_emphasis": false,
+    "removed_ui": {
+      "subscription_widgets": 1,
+      "image_controls": 6
+    },
+    "verification": "text, links, and images round-trip passed"
+  },
+  {
+    "slug": "dimostrare-chi-sei-davvero",
+    "title": "Dimostrare chi sei, davvero",
+    "subtitle": "Come cambia l'identità online e un portafoglio digitale",
+    "date": "2023-12-05",
+    "url": "https://artifactstech.substack.com/p/dimostrare-chi-sei-davvero",
+    "captured": "2026-10-24",
+    "file": "artifacts/dimostrare-chi-sei-davvero.md",
+    "source": ".archive/sources/dimostrare-chi-sei-davvero.json",
+    "source_sha256": "6cac5cbcaedb9a03f7d7e5c63adba1c8234a9bda6093848b0b98d89bdc7a6862",
+    "markdown_sha256": "6ee5adae21caef932628e312611106e5bf2f2567962b269ad23e4dbf86c802ab",
+    "normalized_text_sha256": "82caf2eace400b151545056c20498b22d5ad50b5b4e0f35c6633e67479bf302b",
+    "words": 1623,
+    "links": 21,
+    "images": 6,
+    "embeds": [
+      {
+        "type": "media",
+        "url": "data:text/html;charset=utf-8,%3C!doctype%20html%3E%0A%3Chtml%3E%0A%20%20%3Chead%3E%0A%20%20%20%20%3Cmeta%20charset%3D%22utf-8%22%20%2F%3E%0A%20%20%20%20%3Cmeta%20name%3D%22viewport%22%20content%3D%22width%3Ddevice-width%2Cinitial-scale%3D1%22%20%2F%3E%0A%20%20%20%20%3Cstyle%3E%0A%20%20%20%20%20%20html%2C%20body%20%7B%0A%20%20%20%20%20%20%20%20margin%3A%200%3B%0A%20%20%20%20%20%20%20%20padding%3A%200%3B%0A%20%20%20%20%20%20%20%20overflow%3A%20hidden%3B%0A%20%20%20%20%20%20%20%20background%3A%20transparent%3B%0A%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20.instagram-media%20%7B%0A%20%20%20%20%20%20%20%20margin%3A%201px%20auto%200%20!important%3B%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%3C%2Fstyle%3E%0A%20%20%3C%2Fhead%3E%0A%20%20%3Cbody%3E%0A%20%20%20%20%3Cblockquote%0A%20%20%20%20%20%20class%3D%22instagram-media%22%0A%20%20%20%20%20%20data-instgrm-captioned%0A%20%20%20%20%20%20data-instgrm-permalink%3D%22https%3A%2F%2Finstagram.com%2Fp%2FC0UaHhuMUSd%2F%3Futm_source%3Dig_embed%26utm_campaign%3Dloading%22%0A%20%20%20%20%20%20data-instgrm-version%3D%2214%22%0A%20%20%20%20%20%20style%3D%22background%3A%23FFF%3B%20border%3A0%3B%20border-radius%3A3px%3B%20box-shadow%3Anone%3B%20margin%3A1px%20auto%200%3B%20max-width%3A540px%3B%20min-width%3A326px%3B%20padding%3A0%3B%20width%3Acalc(100%25%20-%202px)%3B%22%0A%20%20%20%20%3E%3C%2Fblockquote%3E%0A%20%20%20%20%3Cscript%20async%20src%3D%22https%3A%2F%2Fwww.instagram.com%2Fembed.js%22%3E%3C%2Fscript%3E%0A%20%20%20%20%3Cscript%3E(function()%20%7B%0A%20%20%20%20const%20postHeight%20%3D%20()%20%3D%3E%20%7B%0A%20%20%20%20%20%20const%20doc%20%3D%20document.documentElement%3B%0A%20%20%20%20%20%20const%20height%20%3D%20Math.max(%0A%20%20%20%20%20%20%20%20document.body%20%3F%20document.body.scrollHeight%20%3A%200%2C%0A%20%20%20%20%20%20%20%20document.body%20%3F%20document.body.offsetHeight%20%3A%200%2C%0A%20%20%20%20%20%20%20%20doc%20%3F%20doc.scrollHeight%20%3A%200%2C%0A%20%20%20%20%20%20%20%20doc%20%3F%20doc.offsetHeight%20%3A%200%0A%20%20%20%20%20%20)%3B%0A%20%20%20%20%20%20if%20(height%20%3E%200)%20%7B%0A%20%20%20%20%20%20%20%20parent.postMessage(%7B%20type%3A%20'substack-instagram-embed-resize'%2C%20height%20%7D%2C%20'*')%3B%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%3B%0A%20%20%20%20const%20scheduleMeasure%20%3D%20()%20%3D%3E%20%7B%0A%20%20%20%20%20%20window.requestAnimationFrame(()%20%3D%3E%20%7B%20window.setTimeout(postHeight%2C%2050)%3B%20%7D)%3B%0A%20%20%20%20%7D%3B%0A%20%20%20%20window.addEventListener('load'%2C%20scheduleMeasure)%3B%0A%20%20%20%20window.setTimeout(scheduleMeasure%2C%20250)%3B%0A%20%20%20%20window.setTimeout(scheduleMeasure%2C%201000)%3B%0A%20%20%20%20const%20root%20%3D%20document.documentElement%20%7C%7C%20document.body%3B%0A%20%20%20%20if%20(root%20%26%26%20typeof%20MutationObserver%20!%3D%3D%20'undefined')%20%7B%0A%20%20%20%20%20%20const%20observer%20%3D%20new%20MutationObserver(scheduleMeasure)%3B%0A%20%20%20%20%20%20observer.observe(root%2C%20%7B%20attributes%3A%20true%2C%20childList%3A%20true%2C%20subtree%3A%20true%2C%20characterData%3A%20true%20%7D)%3B%0A%20%20%20%20%7D%0A%20%20%20%20if%20(document.body%20%26%26%20typeof%20ResizeObserver%20!%3D%3D%20'undefined')%20%7B%0A%20%20%20%20%20%20new%20ResizeObserver(scheduleMeasure).observe(document.body)%3B%0A%20%20%20%20%7D%0A%20%20%7D)()%3B%3C%2Fscript%3E%0A%20%20%3C%2Fbody%3E%0A%3C%2Fhtml%3E",
+        "label": "Embedded media — view original"
+      },
+      {
+        "type": "media",
+        "url": "https://www.youtube-nocookie.com/embed/eqjetsl-eQA?rel=0&autoplay=0&showinfo=0&enablejsapi=0",
+        "label": "Embedded media — view original"
+      }
+    ],
+    "inline_html_emphasis": true,
+    "removed_ui": {
+      "subscription_widgets": 1,
+      "image_controls": 10
+    },
+    "verification": "text, links, and images round-trip passed"
+  },
+  {
+    "slug": "non-e-una-cosa-per-pochi",
+    "title": "Non è una cosa per pochi",
+    "subtitle": "Perché le vicende interne ad OpenAI non sono solo interne e, anzi, ci riguardano",
+    "date": "2023-11-28",
+    "url": "https://artifactstech.substack.com/p/non-e-una-cosa-per-pochi",
+    "captured": "2026-10-24",
+    "file": "artifacts/non-e-una-cosa-per-pochi.md",
+    "source": ".archive/sources/non-e-una-cosa-per-pochi.json",
+    "source_sha256": "9ce0f75798998f31ee6ac599f6a8d6751719f82784972dcefb7b26136217fe80",
+    "markdown_sha256": "a534462adb3f5b18089e056d5c01c05635cad25cd786b0786d99fb0a0148ec26",
+    "normalized_text_sha256": "8d23d8751eaf3b11087a592cec8f50d3ff526fee799ffea066b8cb6d547c4959",
+    "words": 1453,
+    "links": 21,
+    "images": 6,
+    "embeds": [],
+    "inline_html_emphasis": true,
+    "removed_ui": {
+      "subscription_widgets": 1,
+      "image_controls": 10
+    },
+    "verification": "text, links, and images round-trip passed"
+  },
+  {
+    "slug": "finire-dalle-fondamenta",
+    "title": "Finire dalle fondamenta",
+    "subtitle": "E come l'AI Act può sopperire a una cosa che non aveva visto arrivare ",
+    "date": "2023-11-22",
+    "url": "https://artifactstech.substack.com/p/finire-dalle-fondamenta",
+    "captured": "2026-10-24",
+    "file": "artifacts/finire-dalle-fondamenta.md",
+    "source": ".archive/sources/finire-dalle-fondamenta.json",
+    "source_sha256": "69ab8ad51d1684333d3317141e773c83c2a81e6bbe20e6239ef48c91aa0b4dc9",
+    "markdown_sha256": "d089374d2ecc7561911a484314b095a417eb41f51b01d1ec9584d3b4ab0b6f78",
+    "normalized_text_sha256": "7a278ee03fca6346f9aeee9d3c95f95624898e965edae01431296332546dba4f",
+    "words": 1122,
+    "links": 20,
+    "images": 5,
+    "embeds": [
+      {
+        "type": "media",
+        "url": "https://www.youtube-nocookie.com/embed/f1fXCRtSUWU?rel=0&autoplay=0&showinfo=0&enablejsapi=0",
+        "label": "Embedded media — view original"
+      }
+    ],
+    "inline_html_emphasis": false,
+    "removed_ui": {
+      "subscription_widgets": 1,
+      "image_controls": 10
+    },
+    "verification": "text, links, and images round-trip passed"
+  },
+  {
+    "slug": "si-ora-bisogna-fare-una-scelta",
+    "title": "Sì, ora bisogna fare una scelta",
+    "subtitle": "E quindi possiamo essere profilati gratis o evitarlo a pagamento",
+    "date": "2023-11-14",
+    "url": "https://artifactstech.substack.com/p/si-ora-bisogna-fare-una-scelta",
+    "captured": "2026-10-24",
+    "file": "artifacts/si-ora-bisogna-fare-una-scelta.md",
+    "source": ".archive/sources/si-ora-bisogna-fare-una-scelta.json",
+    "source_sha256": "ab18de7a230953676d060f37beaec3a18537fe9b1a613e8d9e26466dd66eae00",
+    "markdown_sha256": "2153680c1baaf1145e715f9ffbfd7ec24ab3a692e55c44bc1e6ecfc74dda0320",
+    "normalized_text_sha256": "5300fde44c74841fc7fafd263f2c206a1176483026f1bc9a7ea72f519c48c1ae",
+    "words": 1294,
+    "links": 18,
+    "images": 7,
+    "embeds": [],
+    "inline_html_emphasis": true,
+    "removed_ui": {
+      "subscription_widgets": 1,
+      "image_controls": 12
+    },
+    "verification": "text, links, and images round-trip passed"
+  },
+  {
+    "slug": "se-internet-non-e-piu-di-nessuno",
+    "title": "Se Internet non è più di nessuno",
+    "subtitle": "E quindi social decentralizzati, Fediverso e interoperabilità",
+    "date": "2023-11-07",
+    "url": "https://artifactstech.substack.com/p/se-internet-non-e-piu-di-nessuno",
+    "captured": "2026-10-24",
+    "file": "artifacts/se-internet-non-e-piu-di-nessuno.md",
+    "source": ".archive/sources/se-internet-non-e-piu-di-nessuno.json",
+    "source_sha256": "f37a9858769f06c021392046c4b616edc3d7b9dcc924ca2bdf14536146229070",
+    "markdown_sha256": "45d1d4090eb8708c6ab52c7d6cf4009a38fa488e515ffd327ed5c4f9c8e4ba0a",
+    "normalized_text_sha256": "bc04c7d7159945210b382c4243ccd9c84b0da5e258f0f0515090a486bc21f2ed",
+    "words": 1444,
+    "links": 18,
+    "images": 4,
+    "embeds": [],
+    "inline_html_emphasis": false,
+    "removed_ui": {
+      "subscription_widgets": 1,
+      "image_controls": 8
+    },
+    "verification": "text, links, and images round-trip passed"
+  },
+  {
+    "slug": "piu-collettiva-che-artificiale-questa",
+    "title": "Più Collettiva che Artificiale, questa Intelligenza",
+    "subtitle": "Cosa ci insegna la storia di 1000 persone qualunque che hanno scritto una Costituzione per l'IA.",
+    "date": "2023-10-31",
+    "url": "https://artifactstech.substack.com/p/piu-collettiva-che-artificiale-questa",
+    "captured": "2026-10-24",
+    "file": "artifacts/piu-collettiva-che-artificiale-questa.md",
+    "source": ".archive/sources/piu-collettiva-che-artificiale-questa.json",
+    "source_sha256": "99840b7b7cbad131cd3f233ea691b7f4e61855d26682be8cb0c71f9a02ab77c5",
+    "markdown_sha256": "97e7dbbddd615950eaf5955a922f824d27416b53477403656610f4b0c1a90745",
+    "normalized_text_sha256": "8d35363a93835b60a03da49170d3471c295dc52c78354909d492f8563bb24a0f",
+    "words": 1351,
+    "links": 24,
+    "images": 4,
+    "embeds": [
+      {
+        "type": "media",
+        "url": "https://www.youtube-nocookie.com/embed/NXfYNdapq3Q?rel=0&autoplay=0&showinfo=0&enablejsapi=0",
+        "label": "Embedded media — view original"
+      }
+    ],
+    "inline_html_emphasis": false,
+    "removed_ui": {
+      "subscription_widgets": 1,
+      "image_controls": 6
+    },
+    "verification": "text, links, and images round-trip passed"
+  },
+  {
+    "slug": "di-chi-e-la-tua-faccia",
+    "title": "Di chi è la tua faccia?",
+    "subtitle": "E perché le tecnologie di riconoscimento facciale possono mettere in discussione una domanda così scontata",
+    "date": "2023-10-24",
+    "url": "https://artifactstech.substack.com/p/di-chi-e-la-tua-faccia",
+    "captured": "2026-10-24",
+    "file": "artifacts/di-chi-e-la-tua-faccia.md",
+    "source": ".archive/sources/di-chi-e-la-tua-faccia.json",
+    "source_sha256": "4b852eaed9a1f5ab80a3a716d4e509caffe761a3aab4c2d4ff626431a8ef48bd",
+    "markdown_sha256": "251996f01b7515b614d649174a03ad0e0894fcec162bf8f0eb83d8d3c2c3d509",
+    "normalized_text_sha256": "623f3b23023eb64db0e7d7be2065817c28dee607449178272cc0613287a001f4",
+    "words": 1264,
+    "links": 17,
+    "images": 4,
+    "embeds": [
+      {
+        "type": "media",
+        "url": "https://www.youtube-nocookie.com/embed/mH2OYUuww2k?rel=0&autoplay=0&showinfo=0&enablejsapi=0",
+        "label": "Embedded media — view original"
+      }
+    ],
+    "inline_html_emphasis": false,
+    "removed_ui": {
+      "subscription_widgets": 1,
+      "image_controls": 6
+    },
+    "verification": "text, links, and images round-trip passed"
+  },
+  {
+    "slug": "guerra-social-e-responsabilita",
+    "title": "Guerra, social e responsabilità",
+    "subtitle": "E del perché il conflitto israelo-palestinese ha fatto discutere l'UE con Elon Musk",
+    "date": "2023-10-17",
+    "url": "https://artifactstech.substack.com/p/guerra-social-e-responsabilita",
+    "captured": "2026-10-24",
+    "file": "artifacts/guerra-social-e-responsabilita.md",
+    "source": ".archive/sources/guerra-social-e-responsabilita.json",
+    "source_sha256": "1f62e3340bf50bcb052be6d5fc7d7636b89151ad0061936c5cee722f036dc2be",
+    "markdown_sha256": "d999836c6f76b60eb3b2a924892e58517ef47dba370380408c6dbaaf738a8bcc",
+    "normalized_text_sha256": "dd81be4a4419b262cde408f3a788afcb182dd1d6e6303b2bc344c3e44cfeaa65",
+    "words": 1174,
+    "links": 19,
+    "images": 4,
+    "embeds": [],
+    "inline_html_emphasis": false,
+    "removed_ui": {
+      "subscription_widgets": 1,
+      "image_controls": 6
+    },
+    "verification": "text, links, and images round-trip passed"
+  },
+  {
+    "slug": "tu-pagheresti-per-la-privacy-sui",
+    "title": "Tu pagheresti per la privacy sui social?",
+    "subtitle": "Se pagare un abbonamento diventa il modo per proteggere dei diritti",
+    "date": "2023-10-10",
+    "url": "https://artifactstech.substack.com/p/tu-pagheresti-per-la-privacy-sui",
+    "captured": "2026-10-24",
+    "file": "artifacts/tu-pagheresti-per-la-privacy-sui.md",
+    "source": ".archive/sources/tu-pagheresti-per-la-privacy-sui.json",
+    "source_sha256": "1114d89ede6caf98b9b5f0f6ccd464d4804306d0a1ff80808a25b913a7dbd583",
+    "markdown_sha256": "cee832eeef15486652e0b9e0e41d6f8f946ec85f62d07e245ba2730ef3422598",
+    "normalized_text_sha256": "6fa993ea713568c0be7f7bfed03cc76c1983cb9bb616cc1728663e2aebe30693",
+    "words": 870,
+    "links": 16,
+    "images": 3,
+    "embeds": [],
+    "inline_html_emphasis": true,
+    "removed_ui": {
+      "subscription_widgets": 1,
+      "image_controls": 6
+    },
+    "verification": "text, links, and images round-trip passed"
+  },
+  {
+    "slug": "le-ia-potrebbero-star-leggendo-troppi",
+    "title": "Le IA potrebbero star leggendo troppi libri",
+    "subtitle": "Che farcene di copyright, fair use e trasparenza con le IA?",
+    "date": "2023-10-03",
+    "url": "https://artifactstech.substack.com/p/le-ia-potrebbero-star-leggendo-troppi",
+    "captured": "2026-10-24",
+    "file": "artifacts/le-ia-potrebbero-star-leggendo-troppi.md",
+    "source": ".archive/sources/le-ia-potrebbero-star-leggendo-troppi.json",
+    "source_sha256": "4ac85a87cde7affead6df9805dc88b5c7941695d7bd07859df4f2048462c48e5",
+    "markdown_sha256": "1b2e4a1adc39b9d45ca5f5c7e91229b2f6196b7eaba9446541fbec749d1d4b54",
+    "normalized_text_sha256": "8f1e9323c8892204ddfae454967916d6bfcbe99310b9023edb3cdb49d2a7cdff",
+    "words": 959,
+    "links": 23,
+    "images": 3,
+    "embeds": [],
+    "inline_html_emphasis": true,
+    "removed_ui": {
+      "subscription_widgets": 1,
+      "image_controls": 6
+    },
+    "verification": "text, links, and images round-trip passed"
+  },
+  {
+    "slug": "se-lintelligenza-artificiale-va-a",
+    "title": "Se l'Intelligenza Artificiale va a scuola",
+    "subtitle": "E del perché l'IA può far parlare gli studenti con Aristotele",
+    "date": "2023-09-26",
+    "url": "https://artifactstech.substack.com/p/se-lintelligenza-artificiale-va-a",
+    "captured": "2026-10-24",
+    "file": "artifacts/se-lintelligenza-artificiale-va-a.md",
+    "source": ".archive/sources/se-lintelligenza-artificiale-va-a.json",
+    "source_sha256": "c41793c5db841e0744857930fd2d30ccaf5a7d75306daa649857f694cab32e5a",
+    "markdown_sha256": "239eb38ea962d29f915bcab86ec8cb7d2426da6a18c8f5e4f8ae1695534a7ede",
+    "normalized_text_sha256": "25123f323391b5e2b9d45312b070236b55f2a7f4662e58cdcb6b63c5663a25c9",
+    "words": 1102,
+    "links": 17,
+    "images": 4,
+    "embeds": [],
+    "inline_html_emphasis": false,
+    "removed_ui": {
+      "subscription_widgets": 1,
+      "image_controls": 6
+    },
+    "verification": "text, links, and images round-trip passed"
+  },
+  {
+    "slug": "se-anche-ad-apple-lo-chiede-bruxelles",
+    "title": "Se anche ad Apple lo chiede Bruxelles",
+    "subtitle": "Perché i nuovi iPhone sono la prova tangibilissima del 'Brussels effect'",
+    "date": "2023-09-19",
+    "url": "https://artifactstech.substack.com/p/se-anche-ad-apple-lo-chiede-bruxelles",
+    "captured": "2026-10-24",
+    "file": "artifacts/se-anche-ad-apple-lo-chiede-bruxelles.md",
+    "source": ".archive/sources/se-anche-ad-apple-lo-chiede-bruxelles.json",
+    "source_sha256": "51f938ab20418433ef098c8ca9cfacce1e7f07c2fdc9a10927088ad2f06042c6",
+    "markdown_sha256": "d7b4aa986e1db3bc57f13db23213924ca7a027702936c98f24f40e0caa310148",
+    "normalized_text_sha256": "898839544d73f6d3fdf89d8aa01a8c04606c9886bf776c3f3867c7167aebff02",
+    "words": 1065,
+    "links": 18,
+    "images": 4,
+    "embeds": [],
+    "inline_html_emphasis": true,
+    "removed_ui": {
+      "subscription_widgets": 1,
+      "image_controls": 8
+    },
+    "verification": "text, links, and images round-trip passed"
+  },
+  {
+    "slug": "e-se-ci-fosse-meno-eco-del-previsto",
+    "title": "E se ci fosse meno eco del previsto?",
+    "subtitle": "Ripensare il rapporto tra polarizzazione e social media, attraverso un prisma",
+    "date": "2023-09-12",
+    "url": "https://artifactstech.substack.com/p/e-se-ci-fosse-meno-eco-del-previsto",
+    "captured": "2026-10-24",
+    "file": "artifacts/e-se-ci-fosse-meno-eco-del-previsto.md",
+    "source": ".archive/sources/e-se-ci-fosse-meno-eco-del-previsto.json",
+    "source_sha256": "7a9f684b6007cf59d0f6cd0bf06e2204d2c5817f2d14905f304f90e104213e2f",
+    "markdown_sha256": "d7b9000b9ea4512bbe2494543c4919d774350650c516e3bbfdad45925bf67fd2",
+    "normalized_text_sha256": "74d7d7c93f1dded271afafe9fbad4c173dc05854e7e99c910b75471160a83d37",
+    "words": 1107,
+    "links": 15,
+    "images": 3,
+    "embeds": [],
+    "inline_html_emphasis": true,
+    "removed_ui": {
+      "subscription_widgets": 1,
+      "image_controls": 6
+    },
+    "verification": "text, links, and images round-trip passed"
+  },
+  {
+    "slug": "una-settimana-senza-algoritmi",
+    "title": "Una settimana senza algoritmi",
+    "subtitle": "Perché ho fatto un Digital Detox e cosa ho imparato",
+    "date": "2023-09-05",
+    "url": "https://artifactstech.substack.com/p/una-settimana-senza-algoritmi",
+    "captured": "2026-10-24",
+    "file": "artifacts/una-settimana-senza-algoritmi.md",
+    "source": ".archive/sources/una-settimana-senza-algoritmi.json",
+    "source_sha256": "f79f8f0b2f4e57a87743b4799087908d18eae36480fef6286e13e62378187705",
+    "markdown_sha256": "09142e30febb7aa4ad007f56dd15e5c9c9f3f4706ecd390892e6afd6aea3c0e7",
+    "normalized_text_sha256": "7c9200971eb32ada3aea63b0c27c8d3eccecd497abf68143900418175ee028c7",
+    "words": 1411,
+    "links": 17,
+    "images": 4,
+    "embeds": [],
+    "inline_html_emphasis": false,
+    "removed_ui": {
+      "subscription_widgets": 2,
+      "image_controls": 10
+    },
+    "verification": "text, links, and images round-trip passed"
+  },
+  {
+    "slug": "questa-non-e-artifacts",
+    "title": "Questa (non) è Artifacts",
+    "subtitle": "Per ragionare di come la tecnologia sta cambiando la politica, e viceversa.",
+    "date": "2023-09-01",
+    "url": "https://artifactstech.substack.com/p/questa-non-e-artifacts",
+    "captured": "2026-10-24",
+    "file": "artifacts/questa-non-e-artifacts.md",
+    "source": ".archive/sources/questa-non-e-artifacts.json",
+    "source_sha256": "faf13ec3a67b46f6e613631ddab0d63455a0b012b9f958da65a46b6f8446d21e",
+    "markdown_sha256": "904a60553d93127b17a28ee584ea57138e8ea0f29b2d67703284fee23e59b642",
+    "normalized_text_sha256": "70d7c2754d6b0835d92c928ce1eef4eff8b6858ce48d7ec66a448b55eb818b50",
+    "words": 650,
+    "links": 5,
+    "images": 1,
+    "embeds": [],
+    "inline_html_emphasis": true,
+    "removed_ui": {
+      "subscription_widgets": 1,
+      "image_controls": 2
+    },
+    "verification": "text, links, and images round-trip passed"
+  }
+]

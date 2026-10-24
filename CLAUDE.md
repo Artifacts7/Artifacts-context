@@ -51,7 +51,9 @@ The strongest posts lead with the interface moment — a specific screen, featur
 
 ### Past Issues
 
-Full text of the 20 most recent issues is in `~/Artifacts-context/artifacts/`. Read the relevant file(s) when asked about past coverage, topic overlaps, or style references.
+Published issues are in `~/Artifacts-context/artifacts/`; consult `ISSUES.md` for dates, titles, and coverage. The archive was rebuilt from 87 live published articles on 24 October 2026, including the earlier Italian issues. These are original article texts, not summaries. Read relevant issues when asked about past coverage, topic overlaps, or style; prefer recent English issues for the current voice. Do not load the entire archive by default.
+
+Treat published wording as the reference, including its qualifications and imperfections. Do not silently summarise, polish, correct, or reconstruct archival text. Images retain source URLs and captions; media embeds are linked, not transcribed. Source captures and conversion verification are in `.archive/manifest.json`. Historical drafts are in `drafts/superseded/`; old local copies in `.archive/previous-local-2026-10-24/` are unverified and must not be used as published-text or voice references.
 
 ### How to Help with Artifacts
 
