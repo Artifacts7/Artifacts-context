@@ -1,0 +1,283 @@
+<title>Why Labs Ask to Be Regulated</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+  :root{
+    --bg:#eef0f3;
+    --paper:#ffffff;
+    --ink:#16202e;
+    --muted:#5b6a7d;
+    --faint:#8695a6;
+    --line:#d7dce2;
+    --advocacy:#0f6466;      /* pillar 1 — foreground */
+    --advocacy-tint:#e4efee;
+    --capture:#4a5568;       /* pillar 2 */
+    --capture-tint:#e9ebef;
+    --legit:#7a5aa0;         /* pillar 3 */
+    --legit-tint:#efeaf5;
+    --bridge:#c1852f;        /* pillar 4 / why→how */
+    --bridge-tint:#f6ecda;
+    --shadow:0 1px 2px rgba(20,32,46,.06),0 6px 18px rgba(20,32,46,.06);
+    --display:"Fraunces",Georgia,serif;
+    --body:"IBM Plex Sans",system-ui,sans-serif;
+    --mono:"IBM Plex Mono",ui-monospace,monospace;
+  }
+  @media (prefers-color-scheme:dark){
+    :root:not([data-theme="light"]){
+      --bg:#0e141c;
+      --paper:#161f2b;
+      --ink:#e8edf3;
+      --muted:#9fb0c2;
+      --faint:#6f8093;
+      --line:#26313f;
+      --advocacy:#4bb3a9;
+      --advocacy-tint:#132b2a;
+      --capture:#9aa9bd;
+      --capture-tint:#1b2431;
+      --legit:#b699d8;
+      --legit-tint:#241c33;
+      --bridge:#e0a750;
+      --bridge-tint:#2d2412;
+      --shadow:0 1px 2px rgba(0,0,0,.3),0 6px 20px rgba(0,0,0,.35);
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#0e141c;
+    --paper:#161f2b;
+    --ink:#e8edf3;
+    --muted:#9fb0c2;
+    --faint:#6f8093;
+    --line:#26313f;
+    --advocacy:#4bb3a9;
+    --advocacy-tint:#132b2a;
+    --capture:#9aa9bd;
+    --capture-tint:#1b2431;
+    --legit:#b699d8;
+    --legit-tint:#241c33;
+    --bridge:#e0a750;
+    --bridge-tint:#2d2412;
+    --shadow:0 1px 2px rgba(0,0,0,.3),0 6px 20px rgba(0,0,0,.35);
+  }
+
+  *{box-sizing:border-box}
+  body{background:var(--bg);color:var(--ink);font-family:var(--body);line-height:1.5;
+    -webkit-font-smoothing:antialiased;}
+  .wrap{max-width:1080px;margin:0 auto;padding:32px 20px 56px;padding-block:32px 56px;}
+
+  /* header */
+  .eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--advocacy);margin:0 0 10px;font-weight:500;}
+  h1{font-family:var(--display);font-weight:600;font-size:clamp(30px,5.2vw,46px);line-height:1.04;
+    letter-spacing:-.01em;margin:0;text-wrap:balance;}
+  .dek{font-size:clamp(15px,1.9vw,17.5px);color:var(--muted);max-width:62ch;margin:14px 0 0;text-wrap:pretty;}
+  .dek b{color:var(--ink);font-weight:600;}
+
+  /* section rhythm */
+  .stage{margin-top:34px;}
+  .stage-label{display:flex;align-items:center;gap:12px;margin:0 0 14px;}
+  .stage-label .k{font-family:var(--mono);font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;
+    color:var(--faint);white-space:nowrap;}
+  .stage-label .rule{height:1px;background:var(--line);flex:1;}
+
+  /* question band */
+  .question{background:var(--paper);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);
+    padding:20px 22px;display:flex;gap:16px;align-items:baseline;}
+  .question .tag{font-family:var(--mono);font-size:12px;color:var(--bridge);font-weight:500;white-space:nowrap;}
+  .question p{margin:0;font-family:var(--display);font-size:clamp(17px,2.4vw,22px);font-weight:500;line-height:1.3;}
+
+  /* pillars */
+  .pillars{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;}
+  @media (max-width:860px){.pillars{grid-template-columns:repeat(2,1fr);}}
+  @media (max-width:520px){.pillars{grid-template-columns:1fr;}}
+  .pillar{background:var(--paper);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);
+    padding:18px 16px;display:flex;flex-direction:column;gap:10px;position:relative;overflow:hidden;}
+  .pillar::before{content:"";position:absolute;inset:0 auto 0 0;width:4px;background:var(--c);}
+  .pillar .num{font-family:var(--mono);font-size:11px;color:var(--faint);letter-spacing:.1em;}
+  .pillar h3{font-family:var(--display);font-weight:600;font-size:18px;line-height:1.12;margin:0;letter-spacing:-.01em;}
+  .pillar .role{font-size:13px;color:var(--muted);margin:0;flex:1;}
+  .pillar .role b{color:var(--ink);font-weight:600;}
+  .cites{display:flex;flex-wrap:wrap;gap:5px;margin-top:2px;}
+  .cite{font-family:var(--mono);font-size:10.5px;color:var(--c);background:var(--t);
+    border-radius:999px;padding:3px 8px;line-height:1.3;white-space:nowrap;}
+  .flag{position:absolute;top:0;right:0;font-family:var(--mono);font-size:9.5px;letter-spacing:.1em;
+    text-transform:uppercase;background:var(--advocacy);color:#fff;padding:4px 8px;border-bottom-left-radius:10px;font-weight:500;}
+  :root[data-theme="dark"] .flag{color:#08201e;}
+  @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .flag{color:#08201e;}}
+
+  .p1{--c:var(--advocacy);--t:var(--advocacy-tint);}
+  .p2{--c:var(--capture);--t:var(--capture-tint);}
+  .p3{--c:var(--legit);--t:var(--legit-tint);}
+  .p4{--c:var(--bridge);--t:var(--bridge-tint);}
+
+  /* WHY spine */
+  .spine{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;align-items:stretch;gap:10px;}
+  @media (max-width:720px){.spine{grid-template-columns:1fr;}.spine .arrow{transform:rotate(90deg);justify-self:center;}}
+  .step{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:14px 15px;box-shadow:var(--shadow);}
+  .step .n{font-family:var(--mono);font-size:11px;color:var(--bridge);font-weight:500;}
+  .step h4{font-family:var(--display);font-size:16.5px;font-weight:600;margin:4px 0 5px;}
+  .step p{margin:0;font-size:12.5px;color:var(--muted);}
+  .step .src{font-family:var(--mono);font-size:10px;color:var(--faint);margin-top:7px;}
+  .arrow{align-self:center;color:var(--faint);font-size:20px;line-height:1;}
+
+  /* bridge to HOW */
+  .bridge-flow{display:flex;flex-direction:column;align-items:center;gap:0;margin-top:20px;}
+  .down{color:var(--bridge);font-size:26px;line-height:1;margin:2px 0;}
+  .how{width:100%;background:linear-gradient(180deg,var(--bridge-tint),var(--paper));
+    border:1px solid var(--line);border-left:4px solid var(--bridge);border-radius:14px;box-shadow:var(--shadow);
+    padding:18px 20px;display:flex;flex-wrap:wrap;gap:6px 18px;align-items:baseline;}
+  .how .lab{font-family:var(--mono);font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--bridge);font-weight:500;}
+  .how h4{font-family:var(--display);font-size:clamp(17px,2.2vw,20px);font-weight:600;margin:0;flex:1 1 240px;}
+  .how p{margin:0;font-size:13px;color:var(--muted);flex:1 1 100%;}
+
+  /* through-line callout */
+  .callout{margin-top:30px;background:var(--ink);color:var(--bg);border-radius:16px;padding:24px 26px;}
+  :root[data-theme="dark"] .callout{background:#122a28;border:1px solid var(--advocacy);color:var(--ink);}
+  @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .callout{background:#122a28;border:1px solid var(--advocacy);color:var(--ink);}}
+  .callout .k{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;opacity:.7;margin:0 0 8px;}
+  .callout p{margin:0;font-family:var(--display);font-size:clamp(17px,2.5vw,23px);font-weight:500;line-height:1.34;text-wrap:pretty;}
+  .callout p em{color:var(--bridge);font-style:italic;}
+
+  /* core spine footer */
+  .core{margin-top:30px;}
+  .core-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px 22px;}
+  @media (max-width:620px){.core-grid{grid-template-columns:1fr;}}
+  .read{display:flex;gap:11px;align-items:baseline;padding:9px 0;border-top:1px solid var(--line);}
+  .read .i{font-family:var(--mono);font-size:12px;color:var(--bridge);font-weight:500;min-width:16px;}
+  .read .t{font-size:13.5px;}
+  .read .t b{font-weight:600;}
+  .read .t span{color:var(--muted);}
+
+  footer{margin-top:32px;padding-top:16px;border-top:1px solid var(--line);
+    font-family:var(--mono);font-size:11px;color:var(--faint);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;}
+</style>
+
+<div class="wrap">
+
+  <header>
+    <p class="eyebrow">Global Advocacy · Lecture Framework</p>
+    <h1>Why AI Labs Ask to Be Regulated</h1>
+    <p class="dek">A theoretical scaffold for reading the labs as <b>actors in an advocacy field</b> — not firms reacting to policy, but norm entrepreneurs authoring it. Three pillars build the <b>WHY</b>; a fourth bridges to the <b>HOW</b>.</p>
+  </header>
+
+  <div class="stage">
+    <div class="question">
+      <span class="tag">THE QUESTION</span>
+      <p>Why do AI labs advocate for regulation of their own industry — and what narrative do they use to do it?</p>
+    </div>
+  </div>
+
+  <div class="stage">
+    <div class="stage-label"><span class="k">Four Pillars</span><span class="rule"></span></div>
+    <div class="pillars">
+
+      <article class="pillar p1">
+        <span class="flag">Foreground</span>
+        <span class="num">PILLAR 1</span>
+        <h3>Advocacy &amp; Norms</h3>
+        <p class="role">Labs as <b>norm entrepreneurs</b> and agenda-setters — seeding "AI must be governed," then authoring the norm and deciding which risks reach the table.</p>
+        <div class="cites">
+          <span class="cite">Finnemore &amp; Sikkink '98</span>
+          <span class="cite">Haas '92</span>
+          <span class="cite">Bachrach &amp; Baratz '62</span>
+          <span class="cite">Lukes '05</span>
+        </div>
+      </article>
+
+      <article class="pillar p2">
+        <span class="num">PILLAR 2</span>
+        <h3>Regulatory Politics &amp; Capture</h3>
+        <p class="role">The material motive: regulation as a <b>competitive instrument</b> — capture, raising rivals' costs, changing the law as the business plan.</p>
+        <div class="cites">
+          <span class="cite">Stigler '71</span>
+          <span class="cite">Salop &amp; Scheffman '83</span>
+          <span class="cite">Pollman &amp; Barry '17</span>
+        </div>
+      </article>
+
+      <article class="pillar p3">
+        <span class="num">PILLAR 3</span>
+        <h3>Legitimacy &amp; Symbolic Politics</h3>
+        <p class="role">Advocacy as <b>preemption</b>: perform responsibility to forestall binding rules and shape the standard you'll be measured against.</p>
+        <div class="cites">
+          <span class="cite">Bietti '20</span>
+          <span class="cite">Edelman et al. '99</span>
+          <span class="cite">Green '21</span>
+        </div>
+      </article>
+
+      <article class="pillar p4">
+        <span class="num">PILLAR 4 · BRIDGE</span>
+        <h3>Narrative &amp; Framing</h3>
+        <p class="role">The tools to dissect the <b>story itself</b> — "safety," "p(doom)," "responsible scaling." Where the anchor (Coldicutt) sits.</p>
+        <div class="cites">
+          <span class="cite">Jones &amp; McBeth '10</span>
+          <span class="cite">Entman '93</span>
+          <span class="cite">Vinsel '21</span>
+          <span class="cite">Gebru &amp; Torres '24</span>
+          <span class="cite">Coldicutt '24</span>
+        </div>
+      </article>
+
+    </div>
+  </div>
+
+  <div class="stage">
+    <div class="stage-label"><span class="k">The WHY, as a sequence</span><span class="rule"></span></div>
+    <div class="spine">
+      <div class="step">
+        <span class="n">01 · MOTIVATION</span>
+        <h4>Why advocate at all</h4>
+        <p>Author the norm and build the moat: ideas and material interest pull the same way.</p>
+        <p class="src">Pillars 1 + 2</p>
+      </div>
+      <div class="arrow">→</div>
+      <div class="step">
+        <span class="n">02 · LEGITIMATION</span>
+        <h4>Why frame it as safety</h4>
+        <p>Performing responsibility buys a social licence and preempts harder external rules.</p>
+        <p class="src">Pillar 3</p>
+      </div>
+      <div class="arrow">→</div>
+      <div class="step">
+        <span class="n">03 · INSTRUMENT</span>
+        <h4>Why deliver it as a story</h4>
+        <p>A narrative selects one problem definition — and its lab-friendly remedy.</p>
+        <p class="src">Pillar 4</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="bridge-flow">
+    <span class="down">↓</span>
+    <div class="how">
+      <span class="lab">The HOW</span>
+      <h4>Narrative analysis of the announcement corpus</h4>
+      <p>Coding the 16 primary sources (2014–2026) for characters, plot, and remedy — who is hero, villain, victim, and whose definition of "safety" the proposed rule happens to match.</p>
+    </div>
+  </div>
+
+  <div class="callout">
+    <p class="k">The through-line</p>
+    <p>Labs don't just lobby — they run the full repertoire of a <em>transnational advocacy campaign</em>: norm-setting, coalition-building, expert authority, framing. Except the cause they champion <em>entrenches the advocates.</em></p>
+  </div>
+
+  <div class="core">
+    <div class="stage-label"><span class="k">Core Spine · 7 readings, WHY before HOW</span><span class="rule"></span></div>
+    <div class="core-grid">
+      <div class="read"><span class="i">1</span><span class="t"><b>Finnemore &amp; Sikkink '98</b> — <span>norm entrepreneurs; labs as authors of the norm</span></span></div>
+      <div class="read"><span class="i">2</span><span class="t"><b>Bachrach &amp; Baratz '62</b> / Lukes '05 — <span>agenda-setting; selective advocacy</span></span></div>
+      <div class="read"><span class="i">3</span><span class="t"><b>Stigler '71</b> — <span>capture: regulation as an incumbent's tool</span></span></div>
+      <div class="read"><span class="i">4</span><span class="t"><b>Pollman &amp; Barry '17</b> — <span>regulatory entrepreneurship</span></span></div>
+      <div class="read"><span class="i">5</span><span class="t"><b>Bietti '20</b> — <span>preemption / ethics-washing</span></span></div>
+      <div class="read"><span class="i">6</span><span class="t"><b>Entman '93</b> / Jones &amp; McBeth '10 — <span>the framing toolkit</span></span></div>
+      <div class="read"><span class="i">7</span><span class="t"><b>Coldicutt '24</b> — <span>anchor: "safety" is the instrument</span></span></div>
+    </div>
+  </div>
+
+  <footer>
+    <span>Lecture · AI Safety Advocacy</span>
+    <span>Motivation → Legitimation → Instrument → Narrative</span>
+  </footer>
+
+</div>

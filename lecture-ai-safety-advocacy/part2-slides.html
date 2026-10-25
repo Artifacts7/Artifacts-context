@@ -1,0 +1,323 @@
+<title>Why They Ask</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Archivo:ital,wght@0,500;0,600;0,700;1,500&display=swap">
+<style>
+  :root{
+    --cream:#FAF6EA;
+    --ink:#171310;
+    --muted:#6b6255;
+    --purple:#9161F2;
+    --purple-deep:#7A46E8;
+    --green:#0DA65C;
+    --blue:#4BB4F1;
+    --orange:#F88137;
+    --tint:#efe7fb;            /* faint purple box on cream */
+    --white:#FEFEFE;
+    --mono:"Space Mono",ui-monospace,monospace;
+    --grotesk:"Archivo",system-ui,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{background:#221c2e;}
+  body{font-family:var(--mono);color:var(--ink);-webkit-font-smoothing:antialiased;}
+
+  .deck{scroll-snap-type:y mandatory;height:100vh;overflow-y:auto;scroll-behavior:smooth;}
+  .slide{scroll-snap-align:start;position:relative;width:100%;height:100vh;
+    display:flex;flex-direction:column;justify-content:center;
+    padding:clamp(28px,5vw,84px);overflow:hidden;}
+  .slide.cream{background:var(--cream);color:var(--ink);}
+  .slide.plum{background:var(--purple);color:var(--white);}
+
+  .mark{position:absolute;right:clamp(20px,3vw,52px);bottom:clamp(18px,3vh,40px);
+    font-family:var(--grotesk);font-weight:700;font-size:clamp(13px,1.2vw,17px);
+    letter-spacing:.02em;opacity:.72;}
+  .plum .mark{color:var(--white);}
+  .mark b{color:var(--purple);}
+  .plum .mark b{color:var(--cream);}
+
+  .lines{display:flex;flex-direction:column;gap:clamp(6px,.9vh,11px);margin-bottom:clamp(20px,4vh,44px);}
+  .lines span{height:clamp(4px,.55vh,7px);width:clamp(180px,26vw,360px);border-radius:2px;}
+  .lines .g{background:var(--green)} .lines .b{background:var(--blue)}
+  .lines .p{background:var(--purple)} .lines .o{background:var(--orange)}
+
+  /* ---------- COVER ---------- */
+  .cover-kicker{font-family:var(--mono);font-size:clamp(12px,1.15vw,16px);letter-spacing:.16em;
+    text-transform:uppercase;color:var(--purple);margin-bottom:clamp(14px,2.4vh,26px);}
+  .cover-title{font-family:var(--grotesk);font-weight:700;letter-spacing:-.02em;line-height:1.02;
+    font-size:clamp(38px,6.6vw,104px);max-width:16ch;text-wrap:balance;}
+  .cover-foot{position:absolute;left:clamp(28px,5vw,84px);bottom:clamp(24px,4vh,50px);
+    font-family:var(--mono);font-size:clamp(13px,1.3vw,19px);}
+  .cover-foot b{font-weight:700;}
+  .cover-foot .sep{color:var(--purple);padding:0 .5em;}
+
+  /* ---------- PERIOD DIVIDER ---------- */
+  .div-title{font-family:var(--grotesk);font-weight:700;font-size:clamp(52px,9vw,150px);
+    line-height:.98;letter-spacing:-.02em;}
+  .div-sub{font-family:var(--mono);font-size:clamp(15px,1.9vw,28px);line-height:1.4;
+    max-width:30ch;margin-top:clamp(18px,3vh,34px);opacity:.92;}
+  .div-lines{display:flex;flex-direction:column;gap:clamp(6px,.9vh,10px);margin-bottom:clamp(20px,4vh,40px);}
+  .div-lines span{height:clamp(4px,.55vh,7px);width:clamp(150px,22vw,300px);border-radius:2px;opacity:.9;}
+  .div-lines .g{background:var(--green)} .div-lines .b{background:var(--blue)}
+  .div-lines .o{background:var(--orange)} .div-lines .w{background:var(--cream)}
+
+  /* ---------- CARD ---------- */
+  .card-top{display:flex;justify-content:space-between;align-items:baseline;gap:20px;
+    font-family:var(--mono);font-size:clamp(11px,1.15vw,16px);letter-spacing:.08em;
+    text-transform:uppercase;color:var(--purple);}
+  .card-title{font-family:var(--grotesk);font-weight:700;letter-spacing:-.015em;line-height:1.03;
+    font-size:clamp(26px,3.9vw,58px);margin:clamp(10px,1.6vh,18px) 0 clamp(20px,3vh,36px);
+    max-width:26ch;text-wrap:balance;}
+  .card-grid{display:grid;grid-template-columns:1fr 1.08fr;gap:clamp(24px,3.2vw,58px);
+    align-items:stretch;flex:1;min-height:0;}
+
+  /* left: context + in brief */
+  .info{display:flex;flex-direction:column;gap:clamp(16px,2.6vh,30px);}
+  .lbl{font-family:var(--mono);font-size:clamp(10px,.95vw,13px);letter-spacing:.15em;
+    text-transform:uppercase;color:var(--purple);margin-bottom:clamp(6px,1vh,10px);}
+  .context{font-family:var(--mono);font-size:clamp(12.5px,1.25vw,18px);line-height:1.5;color:var(--ink);}
+  .brief{list-style:none;display:flex;flex-direction:column;gap:clamp(8px,1.3vh,14px);}
+  .brief li{font-family:var(--mono);font-size:clamp(12.5px,1.3vw,18px);line-height:1.46;
+    padding-left:1.2em;position:relative;color:var(--ink);}
+  .brief li::before{content:"—";position:absolute;left:0;color:var(--purple);}
+
+  /* right: quotes in their own box */
+  .quotebox{background:var(--tint);border-radius:16px;padding:clamp(20px,2.2vw,38px);
+    display:flex;flex-direction:column;gap:clamp(16px,2.4vh,28px);height:100%;}
+  .quote{font-family:var(--grotesk);font-weight:600;color:var(--purple-deep);
+    font-size:clamp(16px,1.85vw,30px);line-height:1.26;letter-spacing:-.01em;}
+  .quote .mk{color:var(--purple);opacity:.55;}
+  .src{font-family:var(--mono);font-size:clamp(10px,1vw,13.5px);color:var(--muted);
+    line-height:1.4;margin-top:auto;padding-top:clamp(10px,1.6vh,18px);}
+
+  .dots{position:fixed;right:14px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:9px;z-index:10;}
+  .dots button{width:9px;height:9px;border-radius:50%;border:none;padding:0;cursor:pointer;
+    background:rgba(145,97,242,.35);transition:transform .15s,background .15s;}
+  .dots button.on{background:var(--purple);transform:scale(1.35);}
+  .hint{position:fixed;left:50%;bottom:12px;transform:translateX(-50%);font-family:var(--mono);
+    font-size:11px;color:rgba(255,255,255,.5);z-index:10;letter-spacing:.05em;}
+  @media (max-width:760px){
+    .card-grid{grid-template-columns:1fr;gap:18px;}
+    .cover-title{font-size:clamp(34px,10vw,64px);}
+  }
+</style><style>
+  .quotebox.dense .quote{font-size:clamp(13px,1.35vw,22px);line-height:1.22;}
+  .quotebox.dense{gap:clamp(12px,1.8vh,20px);}
+  .qby{font-family:var(--mono);font-weight:400;font-size:clamp(9px,.9vw,12px);
+    color:var(--muted);letter-spacing:.02em;margin-top:6px;text-transform:none;}
+  .quote-wrap{display:flex;flex-direction:column;}
+  .div-title.sm{font-size:clamp(40px,7vw,104px);max-width:16ch;text-wrap:balance;}
+</style>
+
+<style>
+  /* paper -> bullets */
+  .papers{display:flex;flex-direction:column;gap:clamp(14px,2.3vh,26px);}
+  .paper .pname{font-family:var(--grotesk);font-weight:700;color:var(--purple-deep);
+    font-size:clamp(15px,1.6vw,24px);line-height:1.15;margin-bottom:clamp(5px,.9vh,9px);}
+  .paper ul{list-style:none;display:flex;flex-direction:column;gap:clamp(5px,.9vh,9px);}
+  .paper li{font-family:var(--mono);font-size:clamp(12px,1.2vw,17px);line-height:1.42;
+    padding-left:1.15em;position:relative;color:var(--ink);}
+  .paper li::before{content:"\2014";position:absolute;left:0;color:var(--purple);}
+  /* takeaway box */
+  .takebox{background:var(--tint);border-radius:16px;padding:clamp(20px,2.2vw,36px);
+    display:flex;flex-direction:column;justify-content:center;gap:clamp(10px,1.6vh,16px);height:100%;}
+  .takebox .land2{font-family:var(--grotesk);font-weight:700;font-style:italic;color:var(--purple-deep);
+    font-size:clamp(18px,2vw,33px);line-height:1.2;}
+  /* generic + AI NPF */
+  .npf{display:flex;flex-direction:column;gap:clamp(9px,1.4vh,15px);flex:1;min-height:0;justify-content:center;}
+  .npf-row{display:grid;grid-template-columns:clamp(120px,15vw,230px) 1fr;gap:clamp(16px,2.4vw,40px);
+    align-items:baseline;padding-bottom:clamp(8px,1.3vh,13px);border-bottom:1px solid rgba(145,97,242,.18);}
+  .npf-row .role{font-family:var(--mono);font-size:clamp(11px,1.15vw,17px);letter-spacing:.1em;
+    text-transform:uppercase;color:var(--purple);}
+  .npf-row .cast{font-family:var(--grotesk);font-weight:600;font-size:clamp(14px,1.6vw,26px);
+    line-height:1.2;color:var(--ink);}
+  .npf-row .cast em{color:var(--purple-deep);font-style:normal;}
+  .npf-row .cast small{font-family:var(--mono);font-weight:400;font-size:.62em;color:var(--muted);}
+  .shifts{display:grid;grid-template-columns:1fr 1fr;gap:clamp(14px,2vw,26px);margin-top:clamp(14px,2.4vh,24px);}
+  .shift{background:var(--tint);border-radius:14px;padding:clamp(14px,1.7vw,24px);}
+  .shift .st{font-family:var(--mono);font-size:clamp(11px,1.05vw,15px);letter-spacing:.08em;
+    text-transform:uppercase;color:var(--purple);margin-bottom:6px;}
+  .shift .sd{font-family:var(--grotesk);font-weight:600;font-size:clamp(13px,1.3vw,20px);line-height:1.24;color:var(--ink);}
+  /* full-width bullets */
+  .brief.lg li{font-size:clamp(13px,1.45vw,21px);line-height:1.5;}
+  .brief.lg{gap:clamp(10px,1.7vh,18px);}
+  .single{display:flex;flex-direction:column;gap:clamp(14px,2.2vh,26px);max-width:36ch;}
+  /* close */
+  .close-line{font-family:var(--grotesk);font-weight:700;letter-spacing:-.015em;line-height:1.1;
+    font-size:clamp(28px,4.4vw,68px);max-width:20ch;text-wrap:balance;}
+  .close-sub{font-family:var(--mono);font-size:clamp(14px,1.7vw,25px);line-height:1.45;
+    max-width:34ch;margin-top:clamp(18px,3vh,32px);opacity:.92;}
+  .close-line em{color:var(--cream);font-style:italic;}
+</style>
+
+<div class="deck" id="deck">
+
+  <section class="slide cream" data-label="Cover">
+    <div class="lines"><span class="g"></span><span class="b"></span><span class="p"></span><span class="o"></span></div>
+    <p class="cover-kicker">Global Advocacy · Lecture</p>
+    <h1 class="cover-title">Why Would an Industry Regulate Itself?</h1>
+    <div class="cover-foot"><b>Lorenzo Ancona</b><span class="sep">·</span>Part 2 — The Framework</div>
+    <div class="mark">Artifacts<b>.</b></div>
+  </section>
+
+  <section class="slide cream" data-label="The paradox">
+    <div class="card-top"><span>The paradox</span><span></span></div>
+    <h3 class="card-title">An industry that asks to be regulated</h3>
+    <ul class="brief lg single">
+            <li>Industries usually fight regulation — tobacco, oil, finance, social media.</li>
+            <li>Since 2015 the top AI labs do the opposite: they ask to be regulated.</li>
+            <li>They warn that their own product could end humanity.</li>
+            <li>Why would an industry advocate to regulate itself — and what does that reveal about power?</li>
+          </ul>
+    <div class="mark">Artifacts<b>.</b></div>
+  </section>
+
+  <section class="slide cream" data-label="Four lenses">
+    <div class="card-top"><span>The argument</span><span></span></div>
+    <h3 class="card-title">Four lenses — not corporate altruism, but advocacy</h3>
+    <ul class="brief lg single">
+            <li>The labs aren't reacting to policy — they are authoring it.</li>
+            <li>Pillar 1 · Advocacy &amp; Norms — why advocate at all.</li>
+            <li>Pillar 2 · Regulatory Politics &amp; Capture — the strategic interest.</li>
+            <li>Pillar 3 · Legitimacy &amp; Symbolic Politics — why frame it as ethics.</li>
+            <li>Pillar 4 · Narrative &amp; Framing — how it's all delivered.</li>
+            <li>The arc: Motivation → Legitimation → Instrument → Narrative.</li>
+          </ul>
+    <div class="mark">Artifacts<b>.</b></div>
+  </section>
+
+  <section class="slide cream" data-label="Pillar 1 · Advocacy &amp; Norms">
+    <div class="card-top"><span>Pillar 1</span><span>Why advocate at all</span></div>
+    <h3 class="card-title">Pillar 1 · Advocacy &amp; Norms</h3>
+    <div class="card-grid">
+      <div class="papers">
+        <div class="paper"><div class="pname">Finnemore &amp; Sikkink (1998) — norm entrepreneurs</div><ul><li>The labs arrive early and plant a norm: “AI must be governed.”</li><li>To author a norm is to define its content — so they also define what the risk is.</li></ul></div>
+        <div class="paper"><div class="pname">Haas (1992) — epistemic communities</div><ul><li>Under uncertainty, the experts who build the models get to define the danger.</li></ul></div>
+        <div class="paper"><div class="pname">Bachrach &amp; Baratz (1962) — the non-decision</div><ul><li>Foregrounding extinction pushes present harms — labour, copyright, surveillance — off the agenda.</li></ul></div>
+      </div>
+      <aside class="takebox">
+        <p class="lbl">In one line</p>
+        <p class="land2">Defining the risk is setting the agenda.</p>
+      </aside>
+    </div>
+    <div class="mark">Artifacts<b>.</b></div>
+  </section>
+
+  <section class="slide cream" data-label="Pillar 2 · Regulatory Politics &amp; Capture">
+    <div class="card-top"><span>Pillar 2</span><span>Why want a strong say</span></div>
+    <h3 class="card-title">Pillar 2 · Regulatory Politics &amp; Capture</h3>
+    <div class="card-grid">
+      <div class="papers">
+        <div class="paper"><div class="pname">Stigler (1971) — the theory of economic regulation</div><ul><li>Regulation is often “acquired by the industry… operated primarily for its benefit.”</li><li>The terms you help write become the terms your rivals must live under.</li></ul></div>
+        <div class="paper"><div class="pname">Salop &amp; Scheffman (1983) — raising rivals' costs</div><ul><li>Licensing and compliance are trivial for incumbents, potentially fatal for startups and open-source.</li><li>Asking to be regulated can raise the drawbridge behind you.</li></ul></div>
+      </div>
+      <aside class="takebox">
+        <p class="lbl">In one line</p>
+        <p class="land2">Authoring the rule is a competitive move.</p>
+      </aside>
+    </div>
+    <div class="mark">Artifacts<b>.</b></div>
+  </section>
+
+  <section class="slide cream" data-label="Pillar 3 · Legitimacy &amp; Symbolic Politics">
+    <div class="card-top"><span>Pillar 3</span><span>Why frame it as ethics</span></div>
+    <h3 class="card-title">Pillar 3 · Legitimacy &amp; Symbolic Politics</h3>
+    <div class="card-grid">
+      <div class="papers">
+        <div class="paper"><div class="pname">Wagner (2018) — ethics as self-governance</div><ul><li>While legislatures are slow, voluntary ethics and safety commitments fill the gap.</li><li>Performing responsibility earns legitimacy — and pre-empts harder external rules.</li></ul></div>
+        <div class="paper"><div class="pname">Edelman et al. (1999) — legal endogeneity</div><ul><li>A firm that authors its own standard authors one it can live with.</li><li>Those voluntary frameworks can become the de facto legal standard.</li></ul></div>
+      </div>
+      <aside class="takebox">
+        <p class="lbl">In one line</p>
+        <p class="land2">Fill democracy's lag — and shape the law that follows.</p>
+      </aside>
+    </div>
+    <div class="mark">Artifacts<b>.</b></div>
+  </section>
+
+  <section class="slide cream" data-label="Pillar 4 · Narrative &amp; Framing">
+    <div class="card-top"><span>Pillar 4</span><span>How it's delivered</span></div>
+    <h3 class="card-title">Pillar 4 · Narrative &amp; Framing</h3>
+    <div class="card-grid">
+      <div class="papers">
+        <div class="paper"><div class="pname">Jones &amp; McBeth (2010) — the Narrative Policy Framework</div><ul><li>Every motive above reaches the public through one medium: narrative.</li><li>A policy narrative has a cast — victim, villain, hero — and a moral that is the policy it wants.</li></ul></div>
+        <div class="paper"><div class="pname">Coldicutt (2024) — “AI safety is a narrative problem”</div><ul><li>The existential-risk story positions the labs as the indispensable hero.</li></ul></div>
+      </div>
+      <aside class="takebox">
+        <p class="lbl">In one line</p>
+        <p class="land2">The story casts the lab as the indispensable hero.</p>
+      </aside>
+    </div>
+    <div class="mark">Artifacts<b>.</b></div>
+  </section>
+
+  <section class="slide cream" data-label="NPF framework">
+    <div class="card-top"><span>Jones &amp; McBeth (2010) · the tool</span><span>Step 1 — the empty framework</span></div>
+    <h3 class="card-title">The Narrative Policy Framework</h3>
+    <div class="npf">
+      <div class="npf-row"><div class="role">Setting</div><div class="cast">The facts taken as given — the backdrop nobody argues with.</div></div>
+      <div class="npf-row"><div class="role">Victim</div><div class="cast">Who is harmed.</div></div>
+      <div class="npf-row"><div class="role">Villain</div><div class="cast">Who causes the harm.</div></div>
+      <div class="npf-row"><div class="role">Hero</div><div class="cast">Who promises the fix.</div></div>
+      <div class="npf-row"><div class="role">Plot</div><div class="cast">The arc that links them — decline, rescue, an out-of-control race.</div></div>
+      <div class="npf-row"><div class="role">Moral</div><div class="cast">The fix on offer — and in the NPF, <em>the moral is the proposed policy.</em></div></div>
+    </div>
+    <div class="shifts">
+      <div class="shift"><div class="st">Devil-shift</div><div class="sd">Exaggerate the villain's power — make the threat maximal.</div></div>
+      <div class="shift"><div class="st">Angel-shift</div><div class="sd">Exaggerate the hero's virtue — the one actor who can fix it.</div></div>
+    </div>
+    <div class="mark">Artifacts<b>.</b></div>
+  </section>
+
+  <section class="slide cream" data-label="NPF × AI">
+    <div class="card-top"><span>The AI-safety story</span><span>Step 2 — fill it in</span></div>
+    <h3 class="card-title">Same cast, every time</h3>
+    <div class="npf">
+      <div class="npf-row"><div class="role">Setting</div><div class="cast">AI is on an unstoppable path to superintelligence.</div></div>
+      <div class="npf-row"><div class="role">Victim</div><div class="cast"><em>Humanity at scale</em> <small>— extinction, not the people harmed today.</small></div></div>
+      <div class="npf-row"><div class="role">Villain</div><div class="cast"><em>The technology itself</em> <small>— rogue AI. Rarely the labs' own incentives.</small></div></div>
+      <div class="npf-row"><div class="role">Hero</div><div class="cast"><em>The responsible lab</em> <small>— hand-in-hand with a wise regulator.</small></div></div>
+      <div class="npf-row"><div class="role">Moral</div><div class="cast"><em>The safety regime the teller is best placed to satisfy.</em></div></div>
+    </div>
+    <div class="shifts">
+      <div class="shift"><div class="st">Devil-shift · applied</div><div class="sd">Make the technology maximally terrifying — it deflects blame from the firm.</div></div>
+      <div class="shift"><div class="st">Angel-shift · applied</div><div class="sd">The lab as the one actor able to save us — the indispensable guardian.</div></div>
+    </div>
+    <div class="mark">Artifacts<b>.</b></div>
+  </section>
+
+  <section class="slide plum" data-label="Close">
+    <div class="div-lines"><span class="g"></span><span class="b"></span><span class="o"></span><span class="w"></span></div>
+    <p class="close-line">The labs run the full repertoire of a <em>transnational advocacy campaign</em> — except the cause entrenches the advocates.</p>
+    <p class="close-sub">Norm entrepreneur, strategic incumbent, ethical self-governor — one character: the indispensable hero.</p>
+    <div class="mark">Artifacts<b>.</b></div>
+  </section>
+
+</div>
+
+<div class="dots" id="dots"></div>
+<div class="hint">↑ ↓ / arrow keys to move</div>
+
+<script>
+  const deck=document.getElementById('deck');
+  const slides=[...deck.querySelectorAll('.slide')];
+  const dots=document.getElementById('dots');
+  slides.forEach((s,i)=>{
+    const b=document.createElement('button');
+    b.title=s.dataset.label||('Slide '+(i+1));
+    b.onclick=()=>slides[i].scrollIntoView();
+    dots.appendChild(b);
+  });
+  const dotEls=[...dots.children];
+  const io=new IntersectionObserver((es)=>{
+    es.forEach(e=>{if(e.isIntersecting){const i=slides.indexOf(e.target);
+      dotEls.forEach((d,j)=>d.classList.toggle('on',j===i));}});
+  },{threshold:.6});
+  slides.forEach(s=>io.observe(s));
+  function cur(){let i=0,min=1e9;slides.forEach((s,j)=>{const d=Math.abs(s.getBoundingClientRect().top);if(d<min){min=d;i=j;}});return i;}
+  addEventListener('keydown',e=>{
+    if(['ArrowDown','ArrowRight',' ','PageDown'].includes(e.key)){e.preventDefault();slides[Math.min(cur()+1,slides.length-1)].scrollIntoView();}
+    if(['ArrowUp','ArrowLeft','PageUp'].includes(e.key)){e.preventDefault();slides[Math.max(cur()-1,0)].scrollIntoView();}
+  });
+</script>
+
+

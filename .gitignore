@@ -17,6 +17,8 @@
 !artifacts/**
 !commands/
 !commands/**
+!lecture-ai-safety-advocacy/
+!lecture-ai-safety-advocacy/**
 
 # Never track macOS cruft
 .DS_Store
