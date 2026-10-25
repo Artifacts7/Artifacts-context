@@ -36,3 +36,15 @@ python3 scripts/rebuild_archive.py .archive/sources
 The stored inventory in `.archive/archive-list.json` is used automatically when rebuilding from `.archive/sources`. The converter regenerates the issue copies, index, and manifest and stops if conversion changes text, links, or images. For a new live capture, pass its date using `--capture-date YYYY-MM-DD` and preserve any existing local work. Keep published text separate from summaries or editing notes.
 
 Changes are local until committed and pushed to the repository.
+
+## Skills
+
+`.claude/skills/` holds reusable skills kept with this repo. `artifacts-slides` builds presentation decks in the Artifacts visual identity (see its `SKILL.md`). It works project-scoped automatically when working inside this repo.
+
+To make it available globally (in every project) on a machine, symlink it into your user skills folder:
+
+```bash
+ln -s "$(pwd)/.claude/skills/artifacts-slides" ~/.claude/skills/artifacts-slides
+```
+
+Run that from the repo root after cloning. The symlink keeps a single source of truth, so edits stay in the tracked repo copy.
