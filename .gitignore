@@ -19,6 +19,9 @@
 !commands/**
 !lecture-ai-safety-advocacy/
 !lecture-ai-safety-advocacy/**
+!.claude/
+!.claude/skills/
+!.claude/skills/**
 
 # Never track macOS cruft
 .DS_Store
