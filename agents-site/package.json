@@ -10,6 +10,7 @@
     "build:full": "npm run data && astro build"
   },
   "dependencies": {
+    "@vercel/functions": "^3.11.0",
     "astro": "^5.0.0"
   }
 }
