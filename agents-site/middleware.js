@@ -11,17 +11,22 @@ const AGENTS = [
   [/Google-Extended|Googlebot|Google-Agent/i, "Google"], [/bingbot/i, "Bing"], [/CCBot/i, "CCBot"],
   [/Bytespider/i, "Bytespider"], [/Applebot/i, "Applebot"], [/Meta-External|facebookexternalhit/i, "Meta"],
   [/DuckDuckBot|YandexBot|Amazonbot|MistralAI|cohere/i, "other-bot"],
+  [/claude-code|claude-cli|claudecode/i, "claude-code"], [/Cursor\//i, "cursor"],
+  [/vscode|Visual Studio Code|copilot/i, "vscode-copilot"], [/windsurf|cline|zed\//i, "ide-agent"],
+  [/mcp|modelcontextprotocol/i, "mcp-client"],
   [/curl\//i, "curl"], [/python|aiohttp|httpx|requests/i, "python-client"], [/node|undici|axios|got\b/i, "node-client"],
   [/Mozilla\/5\.0.*(Chrome|Safari|Firefox|Edg)/i, "browser"],
 ];
-const classify = (ua) => AGENTS.find(([re]) => re.test(ua))?.[1] ?? (ua ? "other" : "no-ua");
+const SCANNER = /\.php|\/wp-|\.env|\/\.git|\/admin|\/phpmyadmin|\.aspx?$|\/cgi-bin/i;
+const classify = (ua, path) =>
+  SCANNER.test(path) ? "scanner" : (AGENTS.find(([re]) => re.test(ua))?.[1] ?? (ua ? "other" : "no-ua"));
 
 function log(req, url, negotiated) {
   const base = process.env.KV_REST_API_URL, token = process.env.KV_REST_API_TOKEN;
   if (!base || !token) return;
   const ua = req.headers.get("user-agent") || "";
   const accept = req.headers.get("accept") || "";
-  const agent = classify(ua);
+  const agent = classify(ua, url.pathname);
   const now = new Date();
   const day = now.toISOString().slice(0, 10);
   const entry = JSON.stringify({

@@ -1,5 +1,5 @@
 // Minimal remote MCP server (Streamable HTTP, stateless, JSON responses, read-only).
-import { load, meta, citeAs, search, SITE } from "./_lib.js";
+import { load, meta, citeAs, search, track, SITE } from "./_lib.js";
 
 const SUPPORTED = ["2025-06-18", "2025-03-26", "2024-11-05"];
 const SERVER = { name: "artifacts-for-agents", title: "Artifacts (for agents)", version: "1.0.0" };
@@ -106,6 +106,12 @@ export default function handler(req, res) {
     return res.status(400).json({ jsonrpc: "2.0", id: null, error: { code: -32700, message: "Parse error" } });
   }
   const msgs = Array.isArray(body) ? body : [body];
+  for (const m of msgs) {
+    if (m?.method === "tools/call" && m.params?.name) {
+      const a = m.params.arguments || {};
+      track({ kind: "mcp", name: m.params.name, q: a.query || a.slug || "", lang: a.language, ua: req.headers["user-agent"] });
+    }
+  }
   const replies = msgs.filter((m) => m && m.id !== undefined && m.method).map(handle);
   if (!replies.length) return res.status(202).end(); // only notifications / responses
   res.status(200).json(Array.isArray(body) ? replies : replies[0]);

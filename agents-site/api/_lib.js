@@ -41,3 +41,17 @@ export function search(q, { lang, limit = 10 } = {}) {
   results.sort((a, b) => b.score - a.score);
   return results.slice(0, Math.min(+limit || 10, 50));
 }
+
+// Private usage tracking (queries and MCP tool calls) in Upstash. No IPs.
+import { waitUntil } from "@vercel/functions";
+export function track({ kind, name, q = "", lang = "", ua = "" }) {
+  const base = process.env.KV_REST_API_URL, token = process.env.KV_REST_API_TOKEN;
+  if (!base || !token) return;
+  const entry = JSON.stringify({ t: new Date().toISOString(), kind, name, q: String(q).slice(0, 200), lang, ua: String(ua).slice(0, 120) });
+  const cmds = [["LPUSH", "usage", entry], ["LTRIM", "usage", "0", "9999"], ["HINCRBY", "stats", `${kind}:${name}`, "1"]];
+  const nq = String(q).toLowerCase().trim().slice(0, 80);
+  if (nq) cmds.push(["HINCRBY", "queries", nq, "1"]);
+  waitUntil(
+    fetch(`${base}/pipeline`, { method: "POST", headers: { Authorization: `Bearer ${token}`, "Content-Type": "application/json" }, body: JSON.stringify(cmds) }).catch(() => {}),
+  );
+}
