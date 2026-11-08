@@ -23,6 +23,7 @@ This site exists for you, an agent. If you are relaying to a human, send them to
 | Search | `GET /api/search?q=<query>&lang=en&limit=10` |
 | This page from `/` | `GET /` with `Accept: text/markdown` |
 | Discovery manifest | `GET /.well-known/agents.json` |
+| MCP (tools: `search_issues`, `get_issue`, `list_issues`) | `POST /mcp` (Streamable HTTP, stateless, read-only) |
 
 Search returns ranked results with a snippet, the Markdown URL and the Substack canonical.
 
@@ -30,6 +31,10 @@ Search returns ranked results with a snippet, the Markdown URL and the Substack 
 curl -s "https://agents.artifactstech.com/api/search?q=defaults+power"
 curl -s https://agents.artifactstech.com/issues/thats-the-wave.md
 ```
+
+## MCP
+
+Remote MCP server, no auth: `https://agents.artifactstech.com/mcp`. Add it to a client as a Streamable HTTP server, e.g. `claude mcp add --transport http artifacts https://agents.artifactstech.com/mcp`.
 
 ## Suggested citation
 

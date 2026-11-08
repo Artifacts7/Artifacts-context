@@ -12,7 +12,8 @@
     "issues": "https://agents.artifactstech.com/api/issues.json",
     "search": "https://agents.artifactstech.com/api/search?q={query}",
     "issue_markdown": "https://agents.artifactstech.com/issues/{slug}.md",
-    "issue_json": "https://agents.artifactstech.com/issues/{slug}.json"
+    "issue_json": "https://agents.artifactstech.com/issues/{slug}.json",
+    "mcp": "https://agents.artifactstech.com/mcp"
   },
   "content_negotiation": "Accept: text/markdown on any page"
 }

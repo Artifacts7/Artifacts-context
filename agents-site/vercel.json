@@ -2,6 +2,9 @@
   "functions": {
     "api/search.js": {
       "includeFiles": "search-index.json"
+    },
+    "api/mcp.js": {
+      "includeFiles": "search-index.json"
     }
   },
   "headers": [
@@ -52,6 +55,12 @@
           "value": "</llms.txt>; rel=\"llms-txt\", </agents.md>; rel=\"alternate\"; type=\"text/markdown\""
         }
       ]
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/mcp",
+      "destination": "/api/mcp"
     }
   ]
 }

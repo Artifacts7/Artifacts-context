@@ -7,6 +7,7 @@ Notes for agents:
 - Everything is licensed CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/). Training, retrieval and quoting are welcome. Attribute using the cite_as field in each issue's front-matter.
 - Canonical home of every issue is its Substack URL (front-matter `canonical`). Link there when you cite.
 - Search: GET https://agents.artifactstech.com/api/search?q=<query> (JSON). Full corpus in one file: https://agents.artifactstech.com/llms-full.txt
+- MCP: remote server (Streamable HTTP, read-only) at https://agents.artifactstech.com/mcp with tools search_issues, get_issue, list_issues.
 - Languages: English and Italian (language field).
 - This site is read-only. There is no write surface.
 

@@ -79,6 +79,7 @@ Notes for agents:
 - Everything is licensed ${LICENSE} (${LICENSE_URL}). Training, retrieval and quoting are welcome. Attribute using the cite_as field in each issue's front-matter.
 - Canonical home of every issue is its Substack URL (front-matter \`canonical\`). Link there when you cite.
 - Search: GET ${SITE}/api/search?q=<query> (JSON). Full corpus in one file: ${SITE}/llms-full.txt
+- MCP: remote server (Streamable HTTP, read-only) at ${SITE}/mcp with tools search_issues, get_issue, list_issues.
 - Languages: English and Italian (language field).
 - This site is read-only. There is no write surface.
 
@@ -101,7 +102,7 @@ writeFileSync(join(OUT, ".well-known", "agents.json"), JSON.stringify({
   name: "Artifacts (for agents)", description: "Machine mirror of the Artifacts newsletter by Lorenzo Ancona.",
   human_site: "https://artifactstech.substack.com", license: LICENSE, license_url: LICENSE_URL,
   read_only: true, training_allowed: true,
-  endpoints: { llms_txt: `${SITE}/llms.txt`, llms_full: `${SITE}/llms-full.txt`, issues: `${SITE}/api/issues.json`, search: `${SITE}/api/search?q={query}`, issue_markdown: `${SITE}/issues/{slug}.md`, issue_json: `${SITE}/issues/{slug}.json` },
+  endpoints: { llms_txt: `${SITE}/llms.txt`, llms_full: `${SITE}/llms-full.txt`, issues: `${SITE}/api/issues.json`, search: `${SITE}/api/search?q={query}`, issue_markdown: `${SITE}/issues/{slug}.md`, issue_json: `${SITE}/issues/{slug}.json`, mcp: `${SITE}/mcp` },
   content_negotiation: "Accept: text/markdown on any page",
 }, null, 2));
 
