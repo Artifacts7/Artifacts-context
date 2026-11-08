@@ -1,29 +1,25 @@
 ---
 import { readFileSync } from "node:fs";
+import Base from "../../layouts/Base.astro";
 const issues = JSON.parse(readFileSync(`${process.cwd()}/public/api/issues.json`, "utf8"));
 ---
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Archive · Artifacts, for agents</title>
-  <link rel="canonical" href="https://agents.artifactstech.com/issues/" />
-  <link rel="alternate" type="text/plain" href="/llms.txt" />
+<Base
+  title="Archive · Artifacts, for agents"
+  description="All Artifacts issues as raw Markdown, as agents see them."
+  canonical="https://agents.artifactstech.com/issues/"
+>
   <style>
-    :root { --bg:#f6f4ef; --fg:#1b1b1b; --mut:#6b6b66; --line:#d9d6cc; --acc:#c2410c; }
-    @media (prefers-color-scheme: dark) { :root { --bg:#111110; --fg:#ecebe6; --mut:#8d8c85; --line:#2c2b28; --acc:#fb923c; } }
-    body { margin:0; background:var(--bg); color:var(--fg); font:15px/1.6 ui-monospace,"SF Mono",Menlo,Consolas,monospace; }
-    main { max-width:760px; margin:0 auto; padding:6vh 20px 64px; }
-    a { color:var(--acc); } h1 { font-size:28px; margin:.2em 0; }
-    p.mut { color:var(--mut); }
-    li { display:flex; gap:14px; padding:5px 0; border-bottom:1px solid var(--line); }
-    ul { list-style:none; padding:0; } time { color:var(--mut); white-space:nowrap; }
+    h1 { font-weight:800; font-size:clamp(38px, 8vw, 60px); line-height:1; letter-spacing:-.03em; margin:12px 0 .3em; }
+    ul.list { list-style:none; padding:0; margin:0 0 48px; }
+    ul.list li { display:flex; gap:18px; padding:9px 0; border-bottom:1px solid var(--line); }
+    ul.list time { font:400 12.5px var(--mono); color:var(--mut); white-space:nowrap; padding-top:5px; }
+    ul.list a { font-weight:600; text-decoration:none; }
+    ul.list a:hover { text-decoration:underline; }
+    .mut { color:var(--mut); }
   </style>
-</head>
-<body><main>
-  <a href="/">← back</a>
-  <h1>Archive</h1>
-  <p class="mut">{issues.length} issues, raw Markdown, as agents see them. For the readable version, go to <a href="https://artifactstech.substack.com/archive">Substack</a>.</p>
-  <ul>{issues.map((i) => <li><time>{i.date}</time><a href={`/issues/${i.slug}.md`}>{i.title}</a></li>)}</ul>
-</main></body>
-</html>
+  <div class="eyebrow">archive</div>
+  <h1>All {issues.length} issues</h1>
+  <p class="mut">Raw Markdown, as agents see them. For the readable version, go to <a href="https://artifactstech.substack.com/archive">Substack</a>.</p>
+  <div class="lines" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+  <ul class="list">{issues.map((i) => <li><time>{i.date}</time><a href={`/issues/${i.slug}.md`}>{i.title}</a></li>)}</ul>
+</Base>

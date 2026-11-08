@@ -1,0 +1,63 @@
+---
+const { title, description, canonical } = Astro.props;
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <link rel="canonical" href={canonical} />
+  <link rel="icon" href="/logo.png" />
+  <link rel="apple-touch-icon" href="/logo.png" />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:image" content="https://agents.artifactstech.com/logo.png" />
+  <meta name="twitter:card" content="summary" />
+  <link rel="alternate" type="text/markdown" href="/agents.md" />
+  <link rel="alternate" type="text/plain" href="/llms.txt" title="llms.txt" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <slot name="head" />
+  <style is:global>
+    :root {
+      --cream:#FAF6EA; --ink:#171310; --purple:#9161F2; --purple-deep:#7A46E8; --tint:#efe7fb;
+      --green:#0DA65C; --blue:#4BB4F1; --violet:#8C52FF; --orange:#F88137;
+      --mut:#6b655a; --line:#ded8c6;
+      --sans:"Archivo", system-ui, -apple-system, sans-serif;
+      --mono:"Space Mono", ui-monospace, "SF Mono", Menlo, monospace;
+    }
+    * { box-sizing:border-box; }
+    body { margin:0; background:var(--cream); color:var(--ink); font:18px/1.6 var(--sans); -webkit-font-smoothing:antialiased; }
+    .wrap { max-width:780px; margin:0 auto; padding:36px 22px 0; }
+    a { color:var(--purple-deep); }
+    code, pre { font-family:var(--mono); }
+    p { margin:0 0 16px; }
+    b { font-weight:700; }
+    .eyebrow { font:700 12.5px var(--mono); letter-spacing:.1em; text-transform:uppercase; color:var(--mut); }
+    header.brand { display:flex; align-items:center; gap:14px; margin-bottom:clamp(40px, 8vh, 96px); }
+    header.brand img { width:48px; height:48px; border-radius:10px; display:block; }
+    header.brand .name { font-weight:800; font-size:20px; line-height:1.1; text-decoration:none; color:var(--ink); letter-spacing:-.01em; }
+    header.brand .name small { display:block; font:400 11.5px var(--mono); letter-spacing:.1em; text-transform:uppercase; color:var(--mut); margin-top:4px; }
+    .lines { display:grid; gap:5px; margin:40px 0; }
+    .lines i { display:block; height:5px; }
+    .lines i:nth-child(1){background:var(--violet)} .lines i:nth-child(2){background:var(--green)}
+    .lines i:nth-child(3){background:var(--blue)}   .lines i:nth-child(4){background:var(--orange)}
+    footer.site { max-width:780px; margin:0 auto; padding:28px 22px 48px; font:400 12.5px var(--mono); color:var(--mut); }
+    :focus-visible { outline:3px solid var(--violet); outline-offset:3px; }
+  </style>
+</head>
+<body>
+<div class="wrap">
+  <header class="brand">
+    <a href="/" aria-label="Artifacts for agents"><img src="/logo.png" alt="Artifacts logo: Ar above four coloured lines" width="48" height="48" /></a>
+    <a class="name" href="/">Artifacts<small>for agents</small></a>
+  </header>
+  <slot />
+</div>
+<slot name="band" />
+<footer class="site">Every issue links back to its Substack original. CC BY 4.0. By Lorenzo Ancona.</footer>
+</body>
+</html>
