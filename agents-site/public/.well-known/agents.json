@@ -1,0 +1,18 @@
+{
+  "name": "Artifacts (for agents)",
+  "description": "Machine mirror of the Artifacts newsletter by Lorenzo Ancona.",
+  "human_site": "https://artifactstech.substack.com",
+  "license": "CC BY 4.0",
+  "license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "read_only": true,
+  "training_allowed": true,
+  "endpoints": {
+    "llms_txt": "https://agents.artifactstech.com/llms.txt",
+    "llms_full": "https://agents.artifactstech.com/llms-full.txt",
+    "issues": "https://agents.artifactstech.com/api/issues.json",
+    "search": "https://agents.artifactstech.com/api/search?q={query}",
+    "issue_markdown": "https://agents.artifactstech.com/issues/{slug}.md",
+    "issue_json": "https://agents.artifactstech.com/issues/{slug}.json"
+  },
+  "content_negotiation": "Accept: text/markdown on any page"
+}

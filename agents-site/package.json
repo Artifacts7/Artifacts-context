@@ -1,0 +1,15 @@
+{
+  "name": "artifacts-agents",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "data": "node scripts/build-data.mjs",
+    "dev": "npm run data && astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "build:full": "npm run data && astro build"
+  },
+  "dependencies": {
+    "astro": "^5.0.0"
+  }
+}

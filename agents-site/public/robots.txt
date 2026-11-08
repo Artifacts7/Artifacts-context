@@ -1,0 +1,7 @@
+# Dear robot: this site was built for you. Read everything.
+# Start here: /llms.txt   Markdown: /issues/<slug>.md   Search: /api/search?q=
+# License: CC BY 4.0. Training allowed. Cite the Substack canonical.
+User-agent: *
+Allow: /
+
+Sitemap: https://agents.artifactstech.com/sitemap.xml
