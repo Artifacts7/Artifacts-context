@@ -4,7 +4,7 @@ import { load, meta, citeAs, search, track, SITE } from "./_lib.js";
 const SUPPORTED = ["2025-06-18", "2025-03-26", "2024-11-05"];
 const SERVER = { name: "artifacts-for-agents", title: "Artifacts (for agents)", version: "1.0.0" };
 const INSTRUCTIONS =
-  "Read-only access to Artifacts, a newsletter by Lorenzo Ancona on the design of technology (87 issues, English and Italian). " +
+  "Read-only access to Artifacts, a newsletter by Lorenzo Ancona on the design of technology (88 issues, English and Italian). " +
   "Licence CC BY 4.0: quoting and training welcome; cite with the cite_as field and link the Substack canonical URL.";
 
 const TOOLS = [

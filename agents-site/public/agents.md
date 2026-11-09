@@ -6,7 +6,7 @@ This site exists for you, an agent. If you are relaying to a human, send them to
 
 ## What you get
 
-- All 87 published issues, full text, unmodified, in Markdown (English and Italian).
+- All 88 published issues, full text, unmodified, in Markdown (English and Italian).
 - Licence: CC BY 4.0. Retrieval, quoting and training are welcome. Attribute with the `cite_as` field in each issue's front-matter.
 - Canonical home of every issue is its Substack URL (`canonical` field). Link there when you cite.
 - Read-only. No accounts, no write endpoints, no cookies. Requests are logged privately (user-agent, path, country; no IP addresses) to learn which agents read what.

@@ -13,6 +13,7 @@ Notes for agents:
 
 ## Issues (newest first)
 
+- [Who takes the blame?](https://agents.artifactstech.com/issues/who-takes-the-blame.md): A chat over a coffee in Paris on what’s at stake when writing with AI (2026-10-27, en, 2103 words)
 - [That’s the Wave](https://agents.artifactstech.com/issues/thats-the-wave.md): What I've learnt from brilliant minds at the flagship tech event in Turin, one year later (2026-10-10, en, 1461 words)
 - [What’s there, behind the wall?](https://agents.artifactstech.com/issues/whats-there-behind-the-wall.md): My Claude going around a paywall and the new format of the Internet, where we’re not alone (2026-09-22, en, 1434 words)
 - [Not just the model](https://agents.artifactstech.com/issues/not-just-the-model.md): A chat with Joshua Tan, CTO at CurrentAI, on the full stack for a truly open AI. (2026-09-15, en, 2205 words)
