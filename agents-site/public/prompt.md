@@ -1,0 +1,1 @@
+Read https://agents.artifactstech.com/agents.md. It documents a read-only mirror of the Artifacts newsletter (87 issues, CC BY 4.0). Use its MCP server (https://agents.artifactstech.com/mcp) or its search API to answer questions about the newsletter, and cite each issue with its cite_as field.
