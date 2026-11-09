@@ -4,12 +4,12 @@ Context and published writing for [Artifacts](https://artifactstech.substack.com
 
 ## Published archive
 
-Start with [ISSUES.md](ISSUES.md). The archive contains 87 published entries, from 1 September 2023 to 10 October 2026, captured from the live archive on 24 October 2026. It includes English and Italian originals, interviews, event recaps, and short announcements.
+Start with [ISSUES.md](ISSUES.md). The archive contains 88 published entries, from 1 September 2023 to 27 October 2026, captured from the live archive on 24 October 2026 (87 entries) and 9 November 2026 ("Who takes the blame?"). It includes English and Italian originals, interviews, event recaps, and short announcements.
 
 - `artifacts/`: one Markdown copy per published entry. Original wording, links, emphasis, captions, and newsletter sections are preserved, including typos. These are not summaries or polished versions.
 - `.archive/sources/`: original captured article-body HTML and rendered text, with title, subtitle, publication date, and source URL, saved as JSON. These are article-body captures, not full webpage or offline media backups.
 - `.archive/manifest.json`: source and Markdown hashes, word counts, media references, and conversion verification for each entry.
-- `.archive/archive-list.json`: the complete list of 87 entries discovered in the live archive.
+- `.archive/archive-list.json`: the complete list of 88 entries discovered in the live archive.
 - `drafts/superseded/`: preserved local drafts of articles that have since been published. These are not the published versions.
 - `.archive/previous-local-2026-10-24/`: backups of the old local issues and context files. Many old issue files were summaries or incomplete drafts. Never use these as published-text or voice references.
 

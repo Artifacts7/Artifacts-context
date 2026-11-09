@@ -188,6 +188,7 @@ def build(capture_dir):
         assert data["url"].rstrip("/") == entry["url"].rstrip("/")
         assert data["title"].strip() == entry["title"].strip()
         assert len(data["html"]) > 100
+        captured = data.get("captured", CAPTURE_DATE)
         date = datetime.strptime(data["date"], "%b %d, %Y").date().isoformat()
         root, removed, embeds = clean(data)
         if len(parse(data["html"]).xpath('.//img')) != len(root.xpath('.//img')):
@@ -217,7 +218,7 @@ def build(capture_dir):
             f'**Subtitle:** {(data.get("subtitle") or "").strip()}\n'
             f'**Date:** {date}\n'
             f'**URL:** {data["url"]}\n'
-            f'**Status:** Published — captured from live article on {CAPTURE_DATE}\n'
+            f'**Status:** Published — captured from live article on {captured}\n'
             '**Archive format:** Original article text; Markdown formatting conversion. '
             'Images retain source URLs; media embeds are linked, not transcribed.\n\n---\n\n'
         )
@@ -225,7 +226,7 @@ def build(capture_dir):
         prepared.append((slug, result, raw))
         manifest.append({
             "slug": slug, "title": data["title"].strip(), "subtitle": data.get("subtitle"),
-            "date": date, "url": data["url"], "captured": CAPTURE_DATE,
+            "date": date, "url": data["url"], "captured": captured,
             "file": "artifacts/" + slug + ".md", "source": ".archive/sources/" + slug + ".json",
             "source_sha256": sha(raw), "markdown_sha256": sha(result),
             "normalized_text_sha256": sha(norm(root.text_content())),
@@ -241,7 +242,7 @@ def build(capture_dir):
         (sources / (slug + ".json")).write_text(raw)
     (ROOT / ".archive" / "manifest.json").write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + "\n")
     (ROOT / ".archive" / "archive-list.json").write_text(json.dumps(inventory, ensure_ascii=False, indent=2) + "\n")
-    lines = ["# Published issues", "", f"{len(manifest)} issues captured from the live Artifacts archive on {CAPTURE_DATE}.", "",
+    lines = ["# Published issues", "", f"{len(manifest)} issues captured from the live Artifacts archive (latest capture {max(m["captured"] for m in manifest)}).", "",
              "Original wording is preserved, including typos. Only subscription forms and player/image controls are removed. Images and captions are retained; embedded media are linked without invented descriptions or transcripts. Comments, likes, navigation, and page footers are outside the article body and are not archived.", "",
              "Each copy passed automated text, link, and image checks against its captured article body after the documented UI/media conversion. This verifies the conversion, not the factual claims in the writing or the contents of external media. Source captures and hashes are in `.archive/`; older local copies and superseded drafts are not published-text references.", "",
              "Use recent English issues for current voice; use earlier Italian issues for historical coverage. Do not load the whole archive into context by default: select relevant issues here.", "",

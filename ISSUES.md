@@ -1,6 +1,6 @@
 # Published issues
 
-87 issues captured from the live Artifacts archive on 2026-10-24.
+88 issues captured from the live Artifacts archive (latest capture 2026-11-09).
 
 Original wording is preserved, including typos. Only subscription forms and player/image controls are removed. Images and captions are retained; embedded media are linked without invented descriptions or transcripts. Comments, likes, navigation, and page footers are outside the article body and are not archived.
 
@@ -10,6 +10,7 @@ Use recent English issues for current voice; use earlier Italian issues for hist
 
 | Date | Issue | Words |
 |---|---|---:|
+| 2026-10-27 | [Who takes the blame?](artifacts/who-takes-the-blame.md) | 2,001 |
 | 2026-10-10 | [That’s the Wave](artifacts/thats-the-wave.md) | 1,394 |
 | 2026-09-22 | [What’s there, behind the wall?](artifacts/whats-there-behind-the-wall.md) | 1,354 |
 | 2026-09-15 | [Not just the model](artifacts/not-just-the-model.md) | 2,111 |

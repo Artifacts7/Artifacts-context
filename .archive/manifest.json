@@ -1,5 +1,28 @@
 [
   {
+    "slug": "who-takes-the-blame",
+    "title": "Who takes the blame?",
+    "subtitle": "A chat over a coffee in Paris on what’s at stake when writing with AI",
+    "date": "2026-10-27",
+    "url": "https://artifactstech.substack.com/p/who-takes-the-blame",
+    "captured": "2026-11-09",
+    "file": "artifacts/who-takes-the-blame.md",
+    "source": ".archive/sources/who-takes-the-blame.json",
+    "source_sha256": "61fb9545c3434121e8178417de1b2d910041ad2e9d59ccd60454de77e8229756",
+    "markdown_sha256": "214adaa2491c09b3d529b0dcdbde6b37b2207969e7c6dd44d473a9732f882d7c",
+    "normalized_text_sha256": "d22ea85ff4b1c18a1f2796db172025c04fb580109529775e5b743206aa6edb34",
+    "words": 2001,
+    "links": 37,
+    "images": 3,
+    "embeds": [],
+    "inline_html_emphasis": true,
+    "removed_ui": {
+      "subscription_widgets": 1,
+      "image_controls": 6
+    },
+    "verification": "text, links, and images round-trip passed"
+  },
+  {
     "slug": "thats-the-wave",
     "title": "That’s the Wave",
     "subtitle": "What I've learnt from brilliant minds at the flagship tech event in Turin, one year later",
