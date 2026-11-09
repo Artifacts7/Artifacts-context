@@ -28,37 +28,65 @@ const ld = {
 >
   <script slot="head" type="application/ld+json" set:html={JSON.stringify(ld)} />
   <style>
-    .lede { font-size:19px; max-width:32rem; margin-top:1.1rem; }
-    pre { margin:1.2em 0; padding:14px 16px; white-space:pre-wrap; overflow-wrap:anywhere; background:rgba(23,19,16,.045); line-height:1.65; }
-    dl { margin:1.2em 0 0; display:grid; grid-template-columns:max-content 1fr; column-gap:28px; row-gap:.55em; }
-    dt { font-family:var(--mono); font-size:.8em; font-weight:700; padding-top:.15em; }
-    dd { margin:0; color:var(--mut); }
-    @media (max-width: 640px) {
-      dl { grid-template-columns:1fr; row-gap:0; }
-      dt { margin-top:.8em; overflow-wrap:anywhere; }
-    }
+    .lede { font-size:18px; max-width:34rem; margin:1rem 0 1.6rem; }
+    .stage { perspective:1400px; }
+    .flip { position:relative; transition:transform .5s cubic-bezier(.3,.7,.2,1); transform-style:preserve-3d; }
+    .flip[data-view="humans"] { transform:rotateY(180deg); }
+    .face { backface-visibility:hidden; -webkit-backface-visibility:hidden; }
+    .face.back { position:absolute; inset:0 0 auto 0; transform:rotateY(180deg); }
+    .flip[data-view="agents"] .back, .flip[data-view="humans"] .front { pointer-events:none; }
+    .term { background:var(--ink); color:var(--cream); padding:18px 18px 20px; font-family:var(--mono); font-size:13px; line-height:1.7; overflow-wrap:anywhere; }
+    .term .bar { color:#8a8374; margin-bottom:10px; }
+    .term .c { color:var(--cream); } .term .c::before { content:"$ "; color:var(--green); }
+    .term .o { color:#a9a291; margin:0 0 .9em; white-space:pre-wrap; }
+    .term a { color:var(--blue); }
+    .term dl { margin:.4em 0 0; display:grid; grid-template-columns:max-content 1fr; column-gap:22px; row-gap:.2em; }
+    .term dt { color:var(--cream); } .term dd { margin:0; color:#a9a291; }
+    .term p { margin:1em 0 0; color:#a9a291; }
+    .human { padding:4px 0; }
+    .human p { max-width:34rem; }
+    .toggle { margin-top:1.4rem; font:700 13px var(--mono); background:none; color:var(--ink); border:1px solid var(--ink); padding:9px 14px; cursor:pointer; }
+    .toggle:hover { background:var(--ink); color:var(--cream); }
+    @media (max-width:640px){ .term dl { grid-template-columns:1fr; } .term dd { margin-bottom:.5em; } }
+    @media (prefers-reduced-motion:reduce){ .flip { transition:none; } }
   </style>
 
-  <h1>This site is not for you.</h1>
+  <h1>This site is not for humans.</h1>
   <p class="lede">It is a mirror of Artifacts, a newsletter on the design of technology, built for AI agents. If you are a person, <a href="https://artifactstech.substack.com">read Artifacts on Substack</a>.</p>
 
-  <section id="agents">
-    <h2>For agents</h2>
-    <p>{issues.length} issues in full and unmodified, as Markdown ({en} in English, {issues.length - en} in Italian). Licensed CC BY 4.0: you may retrieve, quote and train on them. Cite with each issue's <code>cite_as</code> field and link the Substack canonical. Read-only, no authentication.</p>
-    <pre>curl -s https://agents.artifactstech.com/llms.txt
-curl -s "https://agents.artifactstech.com/api/search?q=defaults+power"
-curl -s https://agents.artifactstech.com/issues/{latest.slug}.md
-curl -s -H "Accept: text/markdown" https://agents.artifactstech.com/
-claude mcp add --transport http artifacts https://agents.artifactstech.com/mcp</pre>
-    <dl>
-      {endpoints.map(([p, d]) => <><dt>{p}</dt><dd>{d}</dd></>)}
-    </dl>
-    <p style="margin-top:1.2em">Full instructions are in <a href="/agents.md">/agents.md</a>.</p>
-  </section>
+  <div class="stage">
+    <div class="flip" id="flip" data-view="agents">
+      <div class="face front" id="front">
+        <div class="term">
+          <div class="bar">artifacts-agents ~ {issues.length} issues, {en} en / {issues.length - en} it, CC BY 4.0, read-only</div>
+          <div class="c">curl -s https://agents.artifactstech.com/llms.txt</div>
+          <div class="c">curl -s "https://agents.artifactstech.com/api/search?q=defaults+power"</div>
+          <div class="c">curl -s https://agents.artifactstech.com/issues/{latest.slug}.md</div>
+          <div class="c">curl -s -H "Accept: text/markdown" https://agents.artifactstech.com/</div>
+          <div class="c">claude mcp add --transport http artifacts https://agents.artifactstech.com/mcp</div>
+          <p>endpoints</p>
+          <dl>{endpoints.map(([p, d]) => <><dt>{p}</dt><dd>{d}</dd></>)}</dl>
+          <p>Full instructions: <a href="/agents.md">/agents.md</a>. Cite with each issue's cite_as and link the Substack canonical. Requests are logged privately, without IP addresses.</p>
+        </div>
+        <button class="toggle" type="button" data-to="humans">For humans</button>
+      </div>
+      <div class="face back human" id="back" aria-hidden="true">
+        <h2>For humans</h2>
+        <p>Artifacts is a bi-weekly newsletter by Lorenzo Ancona about how interfaces, defaults and platform choices encode decisions made by those with power. This page shows what a website looks like when its reader is a machine: plain text, no cookies, and every issue one request away.</p>
+        <p>You can <a href="/issues/">browse the archive</a> as raw Markdown, or <a href="https://artifactstech.substack.com">read the newsletter on Substack</a>.</p>
+        <button class="toggle" type="button" data-to="agents">For agents</button>
+      </div>
+    </div>
+  </div>
 
-  <section>
-    <h2>For people</h2>
-    <p>Artifacts is a bi-weekly newsletter by Lorenzo Ancona about how interfaces, defaults and platform choices encode decisions made by those with power. This page shows what a website looks like when its reader is a machine: plain text, no cookies, and every issue one request away.</p>
-    <p>The site keeps a private log of which agents read what. It does not store IP addresses. You can <a href="/issues/">browse the archive</a> as raw Markdown, or <a href="https://artifactstech.substack.com">read the newsletter on Substack</a>.</p>
-  </section>
+  <script is:inline>
+    const flip = document.getElementById("flip"), front = document.getElementById("front"), back = document.getElementById("back");
+    const size = () => { flip.style.minHeight = Math.max(front.offsetHeight, back.offsetHeight) + "px"; };
+    size(); addEventListener("resize", size);
+    document.querySelectorAll(".toggle").forEach((b) => b.addEventListener("click", () => {
+      const v = b.dataset.to; flip.dataset.view = v;
+      front.setAttribute("aria-hidden", v === "humans"); back.setAttribute("aria-hidden", v === "agents");
+      scrollTo({ top: 0 });
+    }));
+  </script>
 </Base>
