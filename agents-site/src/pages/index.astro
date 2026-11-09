@@ -30,7 +30,7 @@ const ld = {
 >
   <script slot="head" type="application/ld+json" set:html={JSON.stringify(ld)} />
   <style>
-    .layout { display:grid; grid-template-columns:minmax(0,38rem); gap:32px; align-items:start; }
+    .layout { display:grid; grid-template-columns:minmax(0,1fr); gap:32px; align-items:start; }
     .layout.has-viewer { grid-template-columns:minmax(0,38rem) minmax(0,1fr); }
     .viewer { position:sticky; top:16px; border:1px solid var(--ink); background:#fff9; flex-direction:column; height:min(78vh,760px); min-width:0; display:none; }
     .viewer.open { display:flex; }
@@ -121,12 +121,12 @@ const ld = {
       front.setAttribute("aria-hidden", v === "humans"); back.setAttribute("aria-hidden", v === "agents");
       scrollTo({ top: 0 });
     }));
-    const layout = document.getElementById("layout"), viewer = document.getElementById("viewer"), vbody = document.getElementById("vbody"), vurl = document.getElementById("vurl"), vraw = document.getElementById("vraw");
+    const page = document.querySelector(".page"), layout = document.getElementById("layout"), viewer = document.getElementById("viewer"), vbody = document.getElementById("vbody"), vurl = document.getElementById("vurl"), vraw = document.getElementById("vraw");
     const LIMIT = 60000; let current = "";
     const esc = (t) => t.replace(/[&<>]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;" }[c]));
     async function peek(href, a) {
       document.querySelectorAll("a.peek.on").forEach((x) => x.classList.remove("on")); a?.classList.add("on");
-      viewer.classList.add("open"); layout.classList.add("has-viewer"); vurl.textContent = location.origin + href; vraw.href = href; vbody.className = "vbody"; vbody.textContent = "loading...";
+      viewer.classList.add("open"); layout.classList.add("has-viewer"); page.classList.add("open"); vurl.textContent = location.origin + href; vraw.href = href; vbody.className = "vbody"; vbody.textContent = "loading...";
       try {
         const r = await fetch(href, { headers: { "x-viewer": "1" } });
         const ct = r.headers.get("content-type") || ""; let t = await r.text();
@@ -147,6 +147,6 @@ const ld = {
     document.querySelectorAll("a.peek").forEach((a) => a.addEventListener("click", (e) => { e.preventDefault(); peek(a.getAttribute("href"), a); }));
     document.getElementById("sf").addEventListener("submit", (e) => { e.preventDefault(); const q = document.getElementById("q").value.trim(); if (q) peek("/api/search?q=" + encodeURIComponent(q)); });
     document.getElementById("vcopy").addEventListener("click", (e) => { navigator.clipboard?.writeText(vurl.textContent); e.target.textContent = "copied"; setTimeout(() => (e.target.textContent = "copy"), 1200); });
-    document.getElementById("vclose").addEventListener("click", () => { viewer.classList.remove("open"); layout.classList.remove("has-viewer"); document.querySelectorAll("a.peek.on").forEach((x) => x.classList.remove("on")); });
+    document.getElementById("vclose").addEventListener("click", () => { viewer.classList.remove("open"); layout.classList.remove("has-viewer"); page.classList.remove("open"); document.querySelectorAll("a.peek.on").forEach((x) => x.classList.remove("on")); });
   </script>
 </Base>
