@@ -4,22 +4,17 @@ import Base from "../../layouts/Base.astro";
 const issues = JSON.parse(readFileSync(`${process.cwd()}/public/api/issues.json`, "utf8"));
 ---
 <Base
-  title="Archive · Artifacts, for agents"
+  title="Archive, Artifacts for agents"
   description="All Artifacts issues as raw Markdown, as agents see them."
   canonical="https://agents.artifactstech.com/issues/"
 >
   <style>
-    h1 { font-weight:800; font-size:clamp(38px, 8vw, 60px); line-height:1; letter-spacing:-.03em; margin:12px 0 .3em; }
-    ul.list { list-style:none; padding:0; margin:0 0 48px; }
-    ul.list li { display:flex; gap:18px; padding:9px 0; border-bottom:1px solid var(--line); }
-    ul.list time { font:400 12.5px var(--mono); color:var(--mut); white-space:nowrap; padding-top:5px; }
-    ul.list a { font-weight:600; text-decoration:none; }
-    ul.list a:hover { text-decoration:underline; }
-    .mut { color:var(--mut); }
+    ul.list { list-style:none; padding:0; margin:1.5rem 0 0; }
+    ul.list li { display:grid; grid-template-columns:7.5rem 1fr; gap:12px; padding:5px 0; }
+    ul.list time { font-family:var(--mono); font-size:.8em; color:var(--mut); padding-top:.2em; }
+    .mut { color:var(--mut); margin-top:.8rem; }
   </style>
-  <div class="eyebrow">archive</div>
-  <h1>All {issues.length} issues</h1>
-  <p class="mut">Raw Markdown, as agents see them. For the readable version, go to <a href="https://artifactstech.substack.com/archive">Substack</a>.</p>
-  <div class="lines" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+  <h1>Archive</h1>
+  <p class="mut">{issues.length} issues as raw Markdown, as agents see them. The readable version is on <a href="https://artifactstech.substack.com/archive">Substack</a>.</p>
   <ul class="list">{issues.map((i) => <li><time>{i.date}</time><a href={`/issues/${i.slug}.md`}>{i.title}</a></li>)}</ul>
 </Base>

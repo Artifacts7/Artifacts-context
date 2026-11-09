@@ -5,14 +5,14 @@ const issues = JSON.parse(readFileSync(`${process.cwd()}/public/api/issues.json`
 const en = issues.filter((i) => i.lang === "en").length;
 const latest = issues[0];
 const endpoints = [
-  ["/llms.txt", "index of every issue"],
-  ["/llms-full.txt", "the whole corpus, one file"],
-  ["/issues/<slug>.md", "one issue, Markdown"],
-  ["/issues/<slug>.json", "one issue, JSON"],
-  ["/api/search?q=…", "ranked search with snippets"],
-  ["/api/issues.json", "all metadata"],
+  ["/llms.txt", "Index of every issue"],
+  ["/llms-full.txt", "The whole corpus in one file"],
+  ["/issues/<slug>.md", "One issue as Markdown"],
+  ["/issues/<slug>.json", "One issue as JSON"],
+  ["/api/search?q=", "Ranked search with snippets"],
+  ["/api/issues.json", "All metadata"],
   ["/mcp", "MCP server: search_issues, get_issue, list_issues"],
-  ["/.well-known/agents.json", "discovery manifest"],
+  ["/.well-known/agents.json", "Discovery manifest"],
 ];
 const ld = {
   "@context": "https://schema.org", "@type": "Blog", name: "Artifacts (for agents)",
@@ -28,77 +28,37 @@ const ld = {
 >
   <script slot="head" type="application/ld+json" set:html={JSON.stringify(ld)} />
   <style>
-    h1 { font-weight:800; font-size:clamp(44px, 9.5vw, 88px); line-height:.98; letter-spacing:-.028em; word-spacing:.08em; margin:14px 0 .35em; }
-    .circled { position:relative; display:inline-block; padding:0 .12em; }
-    .circled svg { position:absolute; left:-14%; top:-22%; width:128%; height:150%; overflow:visible; pointer-events:none; }
-    .circled path { fill:none; stroke:var(--violet); stroke-width:5; stroke-linecap:round; }
-    .lede { font-size:21px; line-height:1.5; color:var(--mut); max-width:29em; margin:0 0 28px; }
-    .lede b { color:var(--ink); }
-    .go { display:inline-block; padding:14px 24px; background:var(--ink); color:var(--cream); text-decoration:none; font-weight:700; border-radius:999px; transition:background .15s; }
-    .go:hover { background:var(--violet); color:#fff; }
-    .agents { background:var(--tint); border-radius:14px; overflow:hidden; font-family:var(--mono); font-size:14px; line-height:1.65; }
-    .agents .bar { display:grid; grid-template-columns:repeat(4,1fr); height:6px; }
-    .agents .bar i:nth-child(1){background:var(--violet)} .agents .bar i:nth-child(2){background:var(--green)}
-    .agents .bar i:nth-child(3){background:var(--blue)}   .agents .bar i:nth-child(4){background:var(--orange)}
-    .agents .in { padding:26px 26px 22px; }
-    .agents h2 { font:700 12.5px var(--mono); letter-spacing:.1em; text-transform:uppercase; margin:0 0 16px; color:var(--purple-deep); }
-    .agents p { margin:0 0 12px; }
-    pre { margin:16px 0; padding:14px 16px; overflow-x:auto; background:var(--cream); border:1px solid var(--line); border-radius:8px; font-size:12.5px; line-height:1.6; }
-    table { width:100%; border-collapse:collapse; }
-    td { padding:7px 0; border-bottom:1px solid rgba(23,19,16,.12); vertical-align:top; }
-    td:first-child { padding-right:16px; white-space:nowrap; font-weight:700; }
-    td.d { color:var(--mut); }
+    .lede { font-size:19px; max-width:32rem; margin-top:1.1rem; }
+    pre { margin:1.2em 0; padding:14px 16px; white-space:pre-wrap; overflow-wrap:anywhere; background:rgba(23,19,16,.045); line-height:1.65; }
+    dl { margin:1.2em 0 0; display:grid; grid-template-columns:max-content 1fr; column-gap:28px; row-gap:.55em; }
+    dt { font-family:var(--mono); font-size:.8em; font-weight:700; padding-top:.15em; }
+    dd { margin:0; color:var(--mut); }
     @media (max-width: 640px) {
-      td { display:block; }
-      td:first-child { padding:9px 0 0; border:0; white-space:normal; overflow-wrap:anywhere; }
-      td.d { padding:0 0 9px; }
-      .agents .in { padding:22px 18px 18px; }
+      dl { grid-template-columns:1fr; row-gap:0; }
+      dt { margin-top:.8em; overflow-wrap:anywhere; }
     }
-    .agents a { color:var(--purple-deep); }
-    .band { background:var(--purple); color:var(--cream); margin-top:72px; }
-    .band .in { max-width:780px; margin:0 auto; padding:56px 22px 60px; }
-    .band .lines { margin:0 0 36px; }
-    .band h2 { font-weight:800; font-size:clamp(30px, 5.5vw, 44px); line-height:1.05; letter-spacing:-.02em; word-spacing:.06em; margin:0 0 20px; }
-    .band p { font-size:19px; max-width:34em; }
-    .band .hl { font-weight:700; }
-    .band a { color:var(--cream); }
-    .band .go { background:var(--cream); color:var(--ink); margin-top:8px; }
-    .band .go:hover { background:var(--ink); color:var(--cream); }
   </style>
 
-  <div class="eyebrow">agents.artifactstech.com</div>
-  <h1>This site is <span class="circled">not<svg viewBox="0 0 200 100" preserveAspectRatio="none" aria-hidden="true"><path d="M104 8 C 52 4, 8 24, 10 52 C 12 82, 66 96, 116 92 C 164 88, 196 66, 188 38 C 182 16, 144 6, 96 10 C 80 11, 66 14, 56 18" /></svg></span> for you.</h1>
-  <p class="lede">Unless you're an agent. It's a <b>machine mirror</b> of <b>Artifacts</b>, a newsletter on the design of technology. If you're a human, the good version is on Substack.</p>
-  <a class="go" href="https://artifactstech.substack.com">Read Artifacts on Substack →</a>
+  <h1>This site is not for you.</h1>
+  <p class="lede">It is a mirror of Artifacts, a newsletter on the design of technology, built for AI agents. If you are a person, <a href="https://artifactstech.substack.com">read Artifacts on Substack</a>.</p>
 
-  <div class="lines" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
-
-  <section class="agents" id="agents">
-    <div class="bar" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
-    <div class="in">
-      <h2>For agents · machine layer · start here</h2>
-      <p><b>{issues.length} issues</b>, full text, unmodified, Markdown ({en} English, {issues.length - en} Italian). Licence <b>CC BY 4.0</b>: retrieval, quoting and training welcome. Cite using each issue's <code>cite_as</code> field and link the Substack canonical. Read-only, no auth.</p>
-      <pre>curl -s https://agents.artifactstech.com/llms.txt
+  <section id="agents">
+    <h2>For agents</h2>
+    <p>{issues.length} issues in full and unmodified, as Markdown ({en} in English, {issues.length - en} in Italian). Licensed CC BY 4.0: you may retrieve, quote and train on them. Cite with each issue's <code>cite_as</code> field and link the Substack canonical. Read-only, no authentication.</p>
+    <pre>curl -s https://agents.artifactstech.com/llms.txt
 curl -s "https://agents.artifactstech.com/api/search?q=defaults+power"
 curl -s https://agents.artifactstech.com/issues/{latest.slug}.md
 curl -s -H "Accept: text/markdown" https://agents.artifactstech.com/
 claude mcp add --transport http artifacts https://agents.artifactstech.com/mcp</pre>
-      <table>
-        {endpoints.map(([p, d]) => <tr><td><code>{p}</code></td><td class="d">{d}</td></tr>)}
-      </table>
-      <p style="margin-top:14px">Full instructions: <a href="/agents.md">/agents.md</a> · index: <a href="/llms.txt">/llms.txt</a></p>
-    </div>
+    <dl>
+      {endpoints.map(([p, d]) => <><dt>{p}</dt><dd>{d}</dd></>)}
+    </dl>
+    <p style="margin-top:1.2em">Full instructions are in <a href="/agents.md">/agents.md</a>.</p>
   </section>
 
-  <section slot="band" class="band">
-    <div class="in">
-      <div class="lines" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
-      <div class="eyebrow" style="color:rgba(250,246,234,.75)">For humans, briefly</div>
-      <h2>A website for a reader that isn't you.</h2>
-      <p>Artifacts is a bi-weekly newsletter by Lorenzo Ancona about how <b>interfaces, defaults and platform choices</b> encode decisions made by those with power. This page is an experiment in what a website looks like when its reader is a machine: plain text, no feeds, no cookies, every issue one request away.</p>
-      <p>The site keeps a private log of which agents read what, without IP addresses. You're welcome to look around: <a href="/issues/">browse the archive</a> (raw Markdown, as agents see it).</p>
-      <p class="hl">The good version is on Substack.</p>
-      <a class="go" href="https://artifactstech.substack.com">Read Artifacts on Substack →</a>
-    </div>
+  <section>
+    <h2>For people</h2>
+    <p>Artifacts is a bi-weekly newsletter by Lorenzo Ancona about how interfaces, defaults and platform choices encode decisions made by those with power. This page shows what a website looks like when its reader is a machine: plain text, no cookies, and every issue one request away.</p>
+    <p>The site keeps a private log of which agents read what. It does not store IP addresses. You can <a href="/issues/">browse the archive</a> as raw Markdown, or <a href="https://artifactstech.substack.com">read the newsletter on Substack</a>.</p>
   </section>
 </Base>
