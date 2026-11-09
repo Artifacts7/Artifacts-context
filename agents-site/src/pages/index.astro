@@ -4,15 +4,16 @@ import Base from "../layouts/Base.astro";
 const issues = JSON.parse(readFileSync(`${process.cwd()}/public/api/issues.json`, "utf8"));
 const en = issues.filter((i) => i.lang === "en").length;
 const latest = issues[0];
+const slug = issues[0].slug;
 const endpoints = [
-  ["/llms.txt", "Index of every issue"],
-  ["/llms-full.txt", "The whole corpus in one file"],
-  ["/issues/<slug>.md", "One issue as Markdown"],
-  ["/issues/<slug>.json", "One issue as JSON"],
-  ["/api/search?q=", "Ranked search with snippets"],
-  ["/api/issues.json", "All metadata"],
-  ["/mcp", "MCP server: search_issues, get_issue, list_issues"],
-  ["/.well-known/agents.json", "Discovery manifest"],
+  ["/llms.txt", "/llms.txt", "Index of every issue"],
+  ["/llms-full.txt", "/llms-full.txt", "The whole corpus in one file"],
+  ["/issues/<slug>.md", `/issues/${slug}.md`, "One issue as Markdown"],
+  ["/issues/<slug>.json", `/issues/${slug}.json`, "One issue as JSON"],
+  ["/api/search?q=", "/api/search?q=defaults+power", "Ranked search with snippets"],
+  ["/api/issues.json", "/api/issues.json", "All metadata"],
+  ["/mcp", null, "MCP server: search_issues, get_issue, list_issues"],
+  ["/.well-known/agents.json", "/.well-known/agents.json", "Discovery manifest"],
 ];
 const ld = {
   "@context": "https://schema.org", "@type": "Blog", name: "Artifacts (for agents)",
@@ -25,9 +26,34 @@ const ld = {
   title="Artifacts, for agents"
   description="A machine mirror of the Artifacts newsletter. Built for AI agents. Humans: read it on Substack."
   canonical="https://agents.artifactstech.com/"
+  wide
 >
   <script slot="head" type="application/ld+json" set:html={JSON.stringify(ld)} />
   <style>
+    .layout { display:grid; grid-template-columns:minmax(0,38rem) minmax(0,1fr); gap:32px; align-items:start; }
+    .viewer { position:sticky; top:16px; border:1px solid var(--ink); background:#fff9; display:flex; flex-direction:column; height:min(78vh,760px); min-width:0; }
+    .vbar { display:flex; gap:10px; align-items:center; padding:8px 12px; border-bottom:1px solid var(--ink); font:400 12px var(--mono); }
+    .vbar .url { flex:1; min-width:0; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+    .vbar button, .vbar a { font:700 12px var(--mono); background:none; border:0; color:var(--ink); cursor:pointer; padding:0; text-decoration:underline; text-underline-offset:3px; }
+    .vbody { flex:1; overflow:auto; margin:0; padding:14px; font:400 12.5px/1.6 var(--mono); white-space:pre-wrap; overflow-wrap:anywhere; }
+    .vbody.empty { color:var(--mut); }
+    .res { padding:10px 0; border-bottom:1px solid var(--rule); }
+    .res:last-child { border:0; }
+    .res a { font-family:var(--mono); font-size:12.5px; }
+    .res div { color:var(--mut); font-size:12px; margin-top:2px; }
+    .term form { display:flex; gap:8px; margin:1em 0 0; }
+    .term input { flex:1; min-width:0; background:transparent; color:var(--cream); border:0; border-bottom:1px solid #8a8374; font:inherit; padding:2px 0; outline:0; }
+    .term input:focus { border-color:var(--green); }
+    .term .go { background:none; border:1px solid #8a8374; color:var(--cream); font:inherit; padding:2px 10px; cursor:pointer; }
+    .term a.peek { color:inherit; text-decoration:underline; text-decoration-color:#6b655a; text-underline-offset:3px; }
+    .term a.peek:hover, .term a.peek.on { color:var(--blue); }
+    .vclose { display:none; }
+    @media (max-width:960px) {
+      .layout { grid-template-columns:minmax(0,1fr); }
+      .viewer { position:static; height:60vh; display:none; }
+      .viewer.open { display:flex; }
+      .vclose { display:inline; }
+    }
     .lede { font-size:18px; max-width:34rem; margin:1rem 0 1.6rem; }
     .stage { perspective:1400px; }
     .flip { position:relative; transition:transform .5s cubic-bezier(.3,.7,.2,1); transform-style:preserve-3d; }
@@ -51,6 +77,7 @@ const ld = {
     @media (prefers-reduced-motion:reduce){ .flip { transition:none; } }
   </style>
 
+  <div class="layout"><div class="main">
   <h1>This site is not for humans.</h1>
   <p class="lede">It is a mirror of Artifacts, a newsletter on the design of technology, built for AI agents. If you are a person, <a href="https://artifactstech.substack.com">read Artifacts on Substack</a>.</p>
 
@@ -59,14 +86,15 @@ const ld = {
       <div class="face front" id="front">
         <div class="term">
           <div class="bar">artifacts-agents ~ {issues.length} issues, {en} en / {issues.length - en} it, CC BY 4.0, read-only</div>
-          <div class="c">curl -s https://agents.artifactstech.com/llms.txt</div>
-          <div class="c">curl -s "https://agents.artifactstech.com/api/search?q=defaults+power"</div>
-          <div class="c">curl -s https://agents.artifactstech.com/issues/{latest.slug}.md</div>
+          <div class="c">curl -s <a class="peek" href="/llms.txt">https://agents.artifactstech.com/llms.txt</a></div>
+          <div class="c">curl -s "<a class="peek" href="/api/search?q=defaults+power">https://agents.artifactstech.com/api/search?q=defaults+power</a>"</div>
+          <div class="c">curl -s <a class="peek" href={`/issues/${slug}.md`}>https://agents.artifactstech.com/issues/{slug}.md</a></div>
           <div class="c">curl -s -H "Accept: text/markdown" https://agents.artifactstech.com/</div>
           <div class="c">claude mcp add --transport http artifacts https://agents.artifactstech.com/mcp</div>
           <p>endpoints</p>
-          <dl>{endpoints.map(([p, d]) => <><dt>{p}</dt><dd>{d}</dd></>)}</dl>
-          <p>Full instructions: <a href="/agents.md">/agents.md</a>. Cite with each issue's cite_as and link the Substack canonical. Requests are logged privately, without IP addresses.</p>
+          <dl>{endpoints.map(([p, h, d]) => <><dt>{h ? <a class="peek" href={h}>{p}</a> : p}</dt><dd>{d}</dd></>)}</dl>
+          <form id="sf"><span style="color:var(--green)">$ search</span><input id="q" name="q" placeholder="defaults power" autocomplete="off" aria-label="Search issues" /><button class="go" type="submit">run</button></form>
+          <p>Full instructions: <a class="peek" href="/agents.md">/agents.md</a>. Cite with each issue's cite_as and link the Substack canonical. Requests are logged privately, without IP addresses.</p>
         </div>
         <button class="toggle" type="button" data-to="humans">For humans</button>
       </div>
@@ -78,6 +106,12 @@ const ld = {
       </div>
     </div>
   </div>
+  </div>
+  <aside class="viewer" id="viewer" aria-label="File viewer">
+    <div class="vbar"><span class="url" id="vurl">viewer</span><button type="button" id="vcopy">copy</button><a id="vraw" href="/llms.txt" target="_blank" rel="noopener">raw</a><button type="button" class="vclose" id="vclose">close</button></div>
+    <div class="vbody empty" id="vbody">Click any file or endpoint on the left to read it here.</div>
+  </aside>
+  </div>
 
   <script is:inline>
     const flip = document.getElementById("flip"), front = document.getElementById("front"), back = document.getElementById("back");
@@ -88,5 +122,32 @@ const ld = {
       front.setAttribute("aria-hidden", v === "humans"); back.setAttribute("aria-hidden", v === "agents");
       scrollTo({ top: 0 });
     }));
+    const viewer = document.getElementById("viewer"), vbody = document.getElementById("vbody"), vurl = document.getElementById("vurl"), vraw = document.getElementById("vraw");
+    const LIMIT = 60000; let current = "";
+    const esc = (t) => t.replace(/[&<>]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;" }[c]));
+    async function peek(href, a) {
+      document.querySelectorAll("a.peek.on").forEach((x) => x.classList.remove("on")); a?.classList.add("on");
+      viewer.classList.add("open"); vurl.textContent = location.origin + href; vraw.href = href; vbody.className = "vbody"; vbody.textContent = "loading...";
+      try {
+        const r = await fetch(href, { headers: { "x-viewer": "1" } });
+        const ct = r.headers.get("content-type") || ""; let t = await r.text();
+        if (ct.includes("json")) { try { const j = JSON.parse(t); current = JSON.stringify(j, null, 2);
+          if (href.startsWith("/api/search")) { renderSearch(j); return; } t = current; } catch {} } else current = t;
+        const cut = t.length > LIMIT; vbody.textContent = cut ? t.slice(0, LIMIT) + "\n\n[truncated, " + Math.round(t.length / 1024) + " KB total. Use raw for the full file.]" : t;
+        vbody.scrollTop = 0;
+      } catch (e) { vbody.textContent = "Could not load " + href; }
+      if (innerWidth <= 960) viewer.scrollIntoView({ behavior: "smooth" });
+    }
+    function renderSearch(j) {
+      if (!j.results.length) { vbody.textContent = "No results for \"" + j.query + "\"."; return; }
+      vbody.innerHTML = "<div style='color:var(--mut);margin-bottom:6px'>" + j.count + " results for \"" + esc(j.query) + "\"</div>" +
+        j.results.map((x) => `<div class="res"><a href="/issues/${x.slug}.md" data-v>${esc(x.title)}</a><div>${esc(x.date || "")} ${esc(x.language || "")}</div><div>${esc(x.snippet || "")}</div></div>`).join("");
+      vbody.querySelectorAll("a[data-v]").forEach((l) => l.addEventListener("click", (e) => { e.preventDefault(); peek(l.getAttribute("href")); }));
+      if (innerWidth <= 960) viewer.scrollIntoView({ behavior: "smooth" });
+    }
+    document.querySelectorAll("a.peek").forEach((a) => a.addEventListener("click", (e) => { e.preventDefault(); peek(a.getAttribute("href"), a); }));
+    document.getElementById("sf").addEventListener("submit", (e) => { e.preventDefault(); const q = document.getElementById("q").value.trim(); if (q) peek("/api/search?q=" + encodeURIComponent(q)); });
+    document.getElementById("vcopy").addEventListener("click", (e) => { navigator.clipboard?.writeText(vurl.textContent); e.target.textContent = "copied"; setTimeout(() => (e.target.textContent = "copy"), 1200); });
+    document.getElementById("vclose").addEventListener("click", () => viewer.classList.remove("open"));
   </script>
 </Base>

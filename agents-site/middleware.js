@@ -50,7 +50,7 @@ function log(req, url, negotiated) {
 }
 
 export default async function middleware(req) {
-  if (req.headers.get("x-internal")) return; // our own self-fetch below: don't log, don't negotiate
+  if (req.headers.get("x-internal") || req.headers.get("x-viewer")) return; // our own self-fetch, or the on-page viewer: don't log, don't negotiate
   const url = new URL(req.url);
   const wantsMd = (req.headers.get("accept") || "").includes("text/markdown");
   const negotiate = wantsMd && ["/", "/issues", "/issues/"].includes(url.pathname);

@@ -1,5 +1,5 @@
 ---
-const { title, description, canonical } = Astro.props;
+const { title, description, canonical, wide } = Astro.props;
 ---
 <!doctype html>
 <html lang="en">
@@ -46,13 +46,14 @@ const { title, description, canonical } = Astro.props;
     .rule i { display:block; height:3px; }
     .rule i:nth-child(1){background:var(--violet)} .rule i:nth-child(2){background:var(--green)}
     .rule i:nth-child(3){background:var(--blue)}   .rule i:nth-child(4){background:var(--orange)}
+    .page.wide { max-width:74rem; }
     section { margin-top:3rem; }
     footer.site { margin-top:4rem; color:var(--mut); font-size:14px; }
     :focus-visible { outline:2px solid var(--ink); outline-offset:3px; }
   </style>
 </head>
 <body>
-<div class="page">
+<div class:list={["page", { wide }]}>
   <header class="top">
     <a href="/" aria-label="Artifacts for agents"><img src="/logo.png" alt="Artifacts" width="36" height="36" /></a>
     <a href="/">Artifacts <span>for agents</span></a>
