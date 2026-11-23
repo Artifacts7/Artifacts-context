@@ -182,7 +182,7 @@ The fundamental question before any response. Our answer: probably yes, because 
 
 The double democratic risk. Doing nothing: access depends on having the best agent, and capable agents concentrate among the affluent (Know Your Agent §1.4). Panicking: Freedman warns of “extreme demand suppression”, which hurts first carers, disabled residents and people with limited English, for whom an agent can be assistive technology.
 
-## 46. Two roads: suppress demand, or ...
+## 46. Two roads: suppress demand, or increase capacity
 
 Percentages: share of the 84 cases where governments already used that response. Redesign cases are all small changes (e.g. verifying case numbers); AI in processing includes sentiment analysis of comments and spotting fake medical certificates; reduce the benefit: US welfare reforms of the 1990s. Governments respond in 56% of cases, but “usually tightly scoped or non-binding”. The budget trap: the UK’s DWP “explicitly anchors benefit budgets to historical take-up rates”, so entitlement cuts “may be required regardless”. The paper’s verdict is not collapse but “muddling through” with friction.
 
@@ -193,3 +193,15 @@ Friction is also weakening on its own terms: CAPTCHAs no longer reliably tell hu
 ## 48. Two roads: suppress demand, or increase capacity
 
 Percentages: share of the 84 cases where governments already used that response. Redesign cases are all small changes (e.g. verifying case numbers); AI in processing includes sentiment analysis of comments and spotting fake medical certificates; reduce the benefit: US welfare reforms of the 1990s. Governments respond in 56% of cases, but “usually tightly scoped or non-binding”. The budget trap: the UK’s DWP “explicitly anchors benefit budgets to historical take-up rates”, so entitlement cuts “may be required regardless”. The paper’s verdict is not collapse but “muddling through” with friction.
+
+## 49. We should go for this as it's a historical opportunity to reshape the functioning of public services.
+
+Part 4: to develop. Know Your Agent (badge and letter, three checks, brakes, assurance tiers) and the paper’s three recommendations, then hand over to Simone.
+
+## 50. Not just to adapt services to citizens' agents, but to rethink public services through AI agents
+
+Part 4: to develop. Know Your Agent (badge and letter, three checks, brakes, assurance tiers) and the paper’s three recommendations, then hand over to Simone.
+
+## 51. So, what does it take to make a state that is ready for AI agents?
+
+Part 4: to develop. Know Your Agent (badge and letter, three checks, brakes, assurance tiers) and the paper’s three recommendations, then hand over to Simone.

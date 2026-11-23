@@ -3,7 +3,7 @@
 ## I'll let my agents deal with bureaucracy: what if public services are no longer (just) for humans
 
 **Consolidated outline, 23 November 2026.**
-Built from the final deck (Claude Slides, 48 slides after cuts) and, for intent and sources, the earlier *Session 10: Slides outline*, *Lorenzo's segment* and *People are sending agents* docs. Where they disagree, the deck wins. Points said aloud but not on a slide are marked `[not in slide]`.
+Built from the final deck as presented in class on 20 November 2026 (51 slides) and, for intent and sources, the earlier *Session 10: Slides outline*, *Lorenzo's segment* and *People are sending agents* docs. Where they disagree, the deck wins. Points said aloud but not on a slide are marked `[not in slide]`.
 
 ## Course context
 
@@ -282,7 +282,7 @@ Question 1 leads into section 3 (who is acting). Question 2 leads to the two roa
 
 ### Two roads
 
-- **"Two roads: suppress demand, or ..."** A surge in demand splits into two roads. First, suppress demand:
+- **Two roads: suppress demand, or increase capacity** (first build, suppression side only). A surge in demand splits into two roads. First, suppress demand:
   - Add friction, used in 17% of cases. It shapes who gets access.
   - Reduce the benefit. It needs legislation (for example, US welfare reforms of the 1990s). `[not in slide]` for the example.
 - **If yes, putting friction back is a democratic and design problem.** "Friction disproportionately deters poorer, less digitally literate, and otherwise vulnerable users, effectively shaping who accesses public services."
@@ -292,8 +292,9 @@ Question 1 leads into section 3 (who is acting). Question 2 leads to the two roa
   - Friction is also weakening on its own terms: CAPTCHAs no longer reliably tell humans apart. It is sometimes illegal (fees for welfare applications are banned in many places). It does nothing against qualitative flooding or determined adversaries. And yet it is the tempting reflex, because it is fast. `[not in slide]`
 - **Two roads: suppress demand, or increase capacity.** The second road:
   - Hire staff.
-  - Redesign public services towards proactivity.
-  - AI agents in processing: not just agents coming to the state but the state deploying agents.
+  - Redesign the service.
+  - AI agents in processing.
+  - Not just agents coming to the state but the state deploying agents. `[not in slide]`
   - Redesign cases in the paper are all small changes (for example, verifying case numbers). AI in processing includes sentiment analysis of comments and spotting fake medical certificates. `[not in slide]`
   - Governments respond in 56% of cases, but "usually tightly scoped or non-binding". The budget trap: the UK's DWP "explicitly anchors benefit budgets to historical take-up rates", so entitlement cuts "may be required regardless". The paper's verdict is not collapse but "muddling through" with friction. `[not in slide]`
 
@@ -308,6 +309,12 @@ Question 1 leads into section 3 (who is acting). Question 2 leads to the two roa
 ## 4. Hand-over: Simone Parazzoli, The Agentic State
 
 **Purpose:** Pass from the citizen side to the state's own architecture and vision.
+
+Three red statement slides close the segment:
+
+- **"We should go for this as it's a historical opportunity to reshape the functioning of public services."**
+- **"Not just to adapt services to citizens' agents, but to rethink public services through AI agents."**
+- **"So, what does it take to make a state that is ready for AI agents?"** The question Simone answers.
 
 - The last item on the two-roads slide, the state deploying agents, is where Simone picks up. `[not in slide]`
 - The open question from the nutshell carries over: if you accept this game, how do you design public services for AI agents to use? `[not in slide]`
@@ -378,7 +385,7 @@ Other checks:
 
 ## Cut from this version
 
-- **Part 4, Equipping government for the agentic era.** Three statement slides ("We should go for this as it's a historical opportunity to reshape the functioning of public services"; "Not just to adapt services to citizens' agents, but to rethink public services through AI agents"; "So, what does it take to make a state that is ready for AI agents?"), Know Your Agent's answers (badge and letter, three checks, brakes, assurance tiers) and the paper's three recommendations (audit exposure, a digital-identity strategy, legal certainty).
+- **Part 4, Equipping government for the agentic era.** Only its three opening statement slides were kept, as the hand-over (section 4). Cut: Know Your Agent's answers (badge and letter, three checks, brakes, assurance tiers) and the paper's three recommendations (audit exposure, a digital-identity strategy, legal certainty).
 - **Three of the five challenges.** What did the person allow? ("The badge doesn't prove what is written in the letter"); An arms race nobody wins (the FT's Extract tool against Objector AI); The law doesn't see it (AI Act Art. 50 covers disclosure to people, not agent-to-machine exchanges).
 - **Know Your Agent "two problems" and "two warnings" slides.** Parts of both survive in the notes of challenge 02.
 - **"Prepare before the surge, or you'll suppress demand after it."** The redesign slide: structured forms, integrated identity verification, standard data formats, proactive services.
