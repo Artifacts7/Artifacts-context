@@ -1,0 +1,772 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Designing an Agentic State</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,400..700;1,400..600&amp;display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400..700&amp;display=swap">
+<style>
+html,body{margin:0;padding:0;height:100%;background:#171717;overflow:hidden;font-family:'Public Sans',Arial,sans-serif;color:#171717}
+#stage{position:absolute;left:50%;top:50%;width:1920px;height:1080px;transform-origin:0 0}
+#stage>section{position:absolute;inset:0;width:1920px;height:1080px;box-sizing:border-box;overflow:hidden;margin:0}
+#stage>section.off{display:none!important}
+#stage svg.xi{display:block;flex-shrink:0}
+#stage a{color:inherit}
+#stage table{border-collapse:collapse} #stage th{text-align:left}
+#stage>section{--paper: #FAFAF8; --ink: #171717; --red: #E51628; --grey: #57554F; --muted: #6B6964; --rule: #D6D4CE; --panel: #EDECE8; --tint: #FBE3E5; --onred: #FFF7F6; --onred2: #FFE3E5;
+  background: #FAFAF8; color: #171717;
+  font-family: 'Public Sans', Arial, sans-serif;
+  padding: 128px 128px 160px;
+  display: flex; flex-direction: column;}
+#stage>section.mid{justify-content: center;}
+#stage>section.red{background: #E51628; color: #FFF7F6; justify-content: center; padding: 128px; gap: 40px;}
+#stage>section.cover{padding: 128px; justify-content: space-between;}
+#stage h1{font-family: 'Jost', Arial, sans-serif; font-size: 140px; font-weight: 600; line-height: 1.02; margin: 0; color: #171717;}
+#stage h2{font-family: 'Jost', Arial, sans-serif; font-size: 88px; font-weight: 600; line-height: 1.05; margin: 0; color: #171717;}
+#stage h2.s{font-size: 72px;}
+#stage h3{font-family: 'Jost', Arial, sans-serif; font-size: 44px; font-weight: 600; line-height: 1.12; margin: 0 0 14px; color: #171717;}
+#stage h1.w,#stage h2.w{color: #FFF7F6;}
+#stage h3.g{color: #6B6964;}
+#stage p{font-size: 30px; line-height: 1.4; color: #57554F; margin: 0;}
+#stage p.ink{color: #171717;}
+#stage .kicker{font-size: 26px; font-weight: 600; letter-spacing: 3px; color: #E51628; margin: 0 0 24px;}
+#stage .kicker.g{color: #6B6964;}
+#stage .kicker.w{color: #FFE3E5;}
+#stage .lead{font-family: 'Jost', Arial, sans-serif; font-size: 48px; font-weight: 500; line-height: 1.22; color: #171717; margin: 40px 0 0;}
+#stage .lead.s{font-size: 42px;}
+#stage .sub{font-family: 'Jost', Arial, sans-serif; font-size: 48px; font-weight: 500; line-height: 1.2; color: #57554F; margin: 24px 0 0;}
+#stage .sub.w{color: #FFE3E5;}
+#stage .hl{color: #E51628;}
+#stage .dim{color: #57554F;}
+#stage .ghost{color: #FFB9C0;}
+#stage .cols{display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 48px; margin-top: 60px;}
+#stage .cols.c2{grid-template-columns: repeat(2, minmax(0, 1fr));}
+#stage .cols.c4{grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 40px;}
+#stage .col{border-top: 6px solid #171717; padding-top: 28px;}
+#stage .col.on{border-top-color: #E51628;}
+#stage .col.muted{border-top-color: #D6D4CE;}
+#stage .num{font-family: 'Jost', Arial, sans-serif; font-size: 44px; font-weight: 600; line-height: 1; color: #E51628; margin: 0 0 20px;}
+#stage .ico{width: 64px; height: 64px; color: #E51628; margin: 0 0 20px;}
+#stage .ico.g{color: #6B6964;}
+#stage .tiles{display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px; margin-top: 56px;}
+#stage .tile{background: #EDECE8; padding: 40px 40px 44px;}
+#stage .tile.on{background: #FBE3E5;}
+#stage .bars{display: flex; flex-direction: column; gap: 26px; margin-top: 52px;}
+#stage .bars.top{margin-top: 0;}
+#stage .bar{border-left: 4px solid #E51628; padding-left: 24px; font-size: 32px; line-height: 1.35; color: #171717; margin: 0;}
+#stage .cards{display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 48px; margin-top: 56px; align-items: start;}
+#stage .weak{background: #EDECE8; padding: 48px;}
+#stage .strong{border: 4px solid #E51628; padding: 44px;}
+#stage .dark{background: #171717; padding: 48px;}
+#stage .q{font-family: 'Jost', Arial, sans-serif; font-style: italic; font-weight: 500; font-size: 52px; line-height: 1.15; color: #171717; margin: 0;}
+#stage .q.g{color: #6B6964;}
+#stage .q.s{font-size: 42px;}
+#stage .q.xl{font-size: 76px;}
+#stage .q.up{font-style: normal; font-size: 46px;}
+#stage .attr{font-size: 30px; color: #57554F; margin: 40px 0 0;}
+#stage .example{border-left: 4px solid #D6D4CE; padding-left: 28px; margin-top: 52px;}
+#stage .note{background: #EDECE8; border-left: 6px solid #E51628; padding: 26px 38px; margin-top: 44px; font-size: 30px; line-height: 1.4; color: #171717;}
+#stage .bigrow{display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 56px; margin-top: 64px;}
+#stage .big{font-family: 'Jost', Arial, sans-serif; font-size: 190px; font-weight: 600; line-height: 1; color: #E51628; margin: 0 0 16px;}
+#stage .big.m{font-size: 120px;}
+#stage table.t{width: 100%; margin-top: 48px; font-size: 30px; color: #171717; font-family: 'Public Sans', Arial, sans-serif;}
+#stage table.t.s{font-size: 26px;}
+#stage td.key{color: #E51628;}
+#stage td.dim{color: #57554F;}
+#stage .statement{font-family: 'Jost', Arial, sans-serif; font-size: 120px; font-weight: 600; line-height: 1.05; color: #FFF7F6; margin: 0;}
+#stage .statement.s{font-size: 96px;}
+#stage .statement.ink{color: #171717;}
+#stage .split{display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 96px; margin-top: 52px; align-items: start;}
+#stage .split.n{grid-template-columns: minmax(0, 4fr) minmax(0, 8fr); margin-top: 0;}
+#stage .figs{display: flex; gap: 56px; align-items: flex-start; margin-top: 32px;}
+#stage .fig{display: flex; flex-direction: column; gap: 14px;}
+#stage .cap{font-size: 24px; line-height: 1.3; color: #57554F; margin: 0;}
+#stage .placeholder{border: 4px dashed #D6D4CE; height: 460px; display: flex; align-items: center; justify-content: center; margin-top: 40px;}
+#stage .stripe{position: absolute; left: 0; top: 0; width: 24px; height: 1080px; background: #E51628;}
+#stage .foot{position: absolute; left: 128px; bottom: 64px; width: 1664px; height: 40px; display: flex; justify-content: space-between; align-items: center; gap: 48px;}
+#stage .foot img{width: 191px; height: 32px; object-fit: contain;}
+#stage .src{font-size: 24px; line-height: 1.25; color: #57554F; margin: 0; text-align: right;}
+#stage .fragment{opacity: 0; transition: opacity 0.45s ease;}
+#stage .fragment.visible{opacity: 1;}
+
+
+#notes{position:fixed;left:0;right:0;bottom:0;max-height:38vh;overflow:auto;padding:16px 24px;background:rgba(23,23,23,.94);color:#FAFAF8;font:16px/1.5 'Public Sans',Arial,sans-serif;display:none;z-index:5}
+#notes.on{display:block} #notes b{font-family:Jost,Arial,sans-serif;color:#FF8A95;font-weight:600}
+#hud{position:fixed;right:14px;bottom:10px;font:12px 'Public Sans',Arial,sans-serif;color:#8A8781;z-index:6}
+</style></head><body>
+<div id="stage">
+<section id="cover" class="cover" data-note="Cover. Lorenzo’s hour first, then Simone Parazzoli, co-author of Agentic State.">
+<div class="stripe"></div>
+<img src="assets/71fea5c4c4c01335b643926bfa42db5b.png" alt="Sciences Po" style="width:560px;height:94px;object-fit:contain">
+<div style="display:flex;flex-direction:column;gap:32px">
+<h1 style="width:1747px;box-sizing:border-box">I'll let my agents deal with bureaucracy</h1>
+<p class="sub" style="margin:0">What if public services are no longer (just) for humans</p>
+</div>
+<div style="display:flex;flex-direction:row;justify-content:space-between;align-items:baseline">
+<p style="font-size:32px;color:#171717">Designing Democracy · Session 10 · 20 November 2026</p>
+<p style="font-family:'Jost', Arial, sans-serif;font-size:32px;font-weight:500;color:#171717">Lorenzo Ancona · Simone Parazzoli</p>
+</div>
+</section>
+<section id="plan" data-note="Three parts, then Simone takes over.">
+<h2>Today’s plan</h2>
+<div style="display:grid;grid-template-columns:repeat(4, minmax(0, 1fr));gap:48px;margin-top:112px">
+<div style="border-top:6px solid #E51628;padding-top:36px"><p style="font-family:'Jost', Arial, sans-serif;font-size:140px;font-weight:600;line-height:1;color:#E51628">01</p><h3 style="font-size:44px;margin-top:28px">Agents have started taking actions for us</h3></div>
+<div style="border-top:6px solid #E51628;padding-top:36px"><p style="font-family:'Jost', Arial, sans-serif;font-size:140px;font-weight:600;line-height:1;color:#E51628">02</p><h3 style="font-size:44px;margin-top:28px">Citizens are sending agents to the state</h3></div>
+<div style="border-top:6px solid #E51628;padding-top:36px"><p style="font-family:'Jost', Arial, sans-serif;font-size:140px;font-weight:600;line-height:1;color:#E51628">03</p><h3 style="font-size:44px;margin-top:28px">What this means for governments</h3></div>
+<div style="border-top:6px solid #D6D4CE;padding-top:36px"><p style="font-family:'Jost', Arial, sans-serif;font-size:140px;font-weight:600;line-height:1;color:#f2a1a9">+</p><h3 class="g" style="font-size:44px;margin-top:28px;color:#f2a1a9">Simone Parazzoli: The Agentic State</h3></div>
+</div>
+<div class="foot"><img src="assets/71fea5c4c4c01335b643926bfa42db5b.png" alt="Sciences Po"></div>
+</section>
+<section id="bridge" data-note="Bridge from Class 9. Last week almost every case was AI that helps institutions listen. This week something starts doing things, for citizens, for the state, or between them. Then: “Yet, before we get into this, I want to stress that…”">
+<h2>From AI for listening and deliberating to entities taking actions for us</h2>
+<div class="cards" style="margin-top:64px;align-items:stretch">
+<div class="weak">
+<svg class="xi ico g" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M216,48H40A16,16,0,0,0,24,64V224a15.84,15.84,0,0,0,9.25,14.5A16.05,16.05,0,0,0,40,240a15.89,15.89,0,0,0,10.25-3.78l.09-.07L83,208H216a16,16,0,0,0,16-16V64A16,16,0,0,0,216,48ZM40,224h0ZM216,192H80a8,8,0,0,0-5.23,1.95L40,224V64H216Z"/></svg>
+<h3 class="g">Class 9: AI for deliberation</h3>
+<p style="font-size:32px;line-height:1.45">Pol.is maps opinion.<br>Talk to the City clusters input.<br>Hamburg’s DIPAS reads thousands of planning comments.</p>
+</div>
+<div class="strong">
+<svg class="xi ico" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M215.79,118.17a8,8,0,0,0-5-5.66L153.18,90.9l14.66-73.33a8,8,0,0,0-13.69-7l-112,120a8,8,0,0,0,3,13l57.63,21.61L88.16,238.43a8,8,0,0,0,13.69,7l112-120A8,8,0,0,0,215.79,118.17ZM109.37,214l10.47-52.38a8,8,0,0,0-5-9.06L62,132.71l84.62-90.66L136.16,94.43a8,8,0,0,0,5,9.06l52.8,19.8Z"/></svg>
+<h3>Today: AI that takes actions</h3>
+<p class="ink" style="font-size:32px;line-height:1.45">If citizens and governments interact through machines (AI agents)</p>
+</div>
+</div>
+<div class="foot"><img src="assets/71fea5c4c4c01335b643926bfa42db5b.png" alt="Sciences Po"><p class="src">Class 9, Artificial Intelligence: first class</p></div>
+</section>
+<section id="alone" class="red" style="gap:48px" data-note="Port of Architecting Agency slide 8. We made the internet for people to interact with information. Now that same information is produced, consumed and shared by machines too. Avoid equating all bots with agents.">
+<h1 class="w" style="font-size:125px;line-height:1.05">We’re <i>(no longer)</i><br>alone using, consuming and producing information</h1>
+</section>
+<section id="audience" class="red" data-note="Takeaway of the block, and the turn: careful, this is not ChatGPT writing text.">
+<p class="statement s" style="width:1705px;box-sizing:border-box"><span style="font-weight:400">Information and services have a </span><span style="font-weight:400"><i>new</i></span><span style="font-weight:400"> audience:</span> <span style="color:#fafaf8">machines (acting for people)</span></p>
+</section>
+<section id="web" data-note="Agents are regular visitors now. The job has moved from blocking bots to telling good bots from bad; CAPTCHAs are obsolete. Proving you’re human is a business: World ID reports about 40M verified users. A founder expects “an internet of A.I. agents, operating on our behalf.”">
+<h2>AI Agents are now regular visitors to the Internet</h2>
+<div class="tiles">
+<div class="tile on"><svg class="xi ico" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M128,24h0A104,104,0,1,0,232,128,104.12,104.12,0,0,0,128,24Zm88,104a87.61,87.61,0,0,1-3.33,24H174.16a157.44,157.44,0,0,0,0-48h38.51A87.61,87.61,0,0,1,216,128ZM102,168H154a115.11,115.11,0,0,1-26,45A115.27,115.27,0,0,1,102,168Zm-3.9-16a140.84,140.84,0,0,1,0-48h59.88a140.84,140.84,0,0,1,0,48ZM40,128a87.61,87.61,0,0,1,3.33-24H81.84a157.44,157.44,0,0,0,0,48H43.33A87.61,87.61,0,0,1,40,128ZM154,88H102a115.11,115.11,0,0,1,26-45A115.27,115.27,0,0,1,154,88Zm52.33,0H170.71a135.28,135.28,0,0,0-22.3-45.6A88.29,88.29,0,0,1,206.37,88ZM107.59,42.4A135.28,135.28,0,0,0,85.29,88H49.63A88.29,88.29,0,0,1,107.59,42.4ZM49.63,168H85.29a135.28,135.28,0,0,0,22.3,45.6A88.29,88.29,0,0,1,49.63,168Zm98.78,45.6a135.28,135.28,0,0,0,22.3-45.6h35.66A88.29,88.29,0,0,1,148.41,213.6Z"/></svg><h3>More bots online than people</h3><p>The job has moved from blocking bots to telling good ones from bad.</p></div>
+<div class="tile"><svg class="xi ico g" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M208,80H176V56a48,48,0,0,0-96,0V80H48A16,16,0,0,0,32,96V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V96A16,16,0,0,0,208,80ZM96,56a32,32,0,0,1,64,0V80H96ZM208,208H48V96H208V208Zm-68-56a12,12,0,1,1-12-12A12,12,0,0,1,140,152Z"/></svg><h3>robots.txt is collapsing</h3><p>A 30-year voluntary handshake. “AI feels to many like all take and no give.”</p></div>
+<div class="tile" style="background:#cfffd3"><svg class="xi ico g" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M69.12,94.15,28.5,128l40.62,33.85a8,8,0,1,1-10.24,12.29l-48-40a8,8,0,0,1,0-12.29l48-40a8,8,0,0,1,10.24,12.3Zm176,27.7-48-40a8,8,0,1,0-10.24,12.3L227.5,128l-40.62,33.85a8,8,0,1,0,10.24,12.29l48-40a8,8,0,0,0,0-12.29ZM162.73,32.48a8,8,0,0,0-10.25,4.79l-64,176a8,8,0,0,0,4.79,10.26A8.14,8.14,0,0,0,96,224a8,8,0,0,0,7.52-5.27l64-176A8,8,0,0,0,162.73,32.48Z"/></svg><h3>Sites declare what agents may do</h3><p>Researchers propose pages that say, in their own HTML, which actions an agent may take.</p></div>
+</div>
+<div class="foot"><img src="assets/71fea5c4c4c01335b643926bfa42db5b.png" alt="Sciences Po"><p class="src">Lepore, Are You a Human?, 2026 · Pierce, The Verge · VOIX · Cloudflare State of the Internet</p></div>
+</section>
+<section id="alan" data-note="People already work with agents as colleagues, and the organisation’s memory is rebuilt for them: a company-wide second brain. This is the company’s own account.">
+<h2>In innovative companies, people work with agents as colleagues</h2>
+<div class="split" style="margin-top:64px">
+<div style="border-left:6px solid #E51628;padding-left:40px;transform:translate(0, 59px)">
+<p class="q">“A company that decides in meetings is invisible to its own agents.”</p>
+<p style="font-size:26px;margin-top:28px">Alan*, The company of the future</p>
+</div>
+<div class="bars top">
+<p class="bar" style="transform:translate(0, 59px)">Decisions are <b>written down</b> so agents can read, challenge and remember them</p>
+<p class="bar" style="transform:translate(0, 59px)">Agent <b>“voices”</b> weigh in on every proposal: member, data, legal, customer, business, security, mission</p>
+<p class="bar" style="transform:translate(0, 59px)"><b>80%</b> of staff use its agent platform</p>
+</div>
+</div>
+<p style="position:absolute;left:128px;bottom:128px;width:1664px;font-size:24px">* Alan is a French health insurance company, founded in 2016.</p>
+<div class="foot"><img src="assets/71fea5c4c4c01335b643926bfa42db5b.png" alt="Sciences Po"><p class="src">Alan, The company of the future&nbsp;</p></div>
+</section>
+<section id="computers" style="justify-content:space-between" data-note="Port of Architecting Agency slide 12 (Estonia row highlighted: the first hint of the state). APIs and CLIs predate AI agents; MCP was introduced for AI connections. 1Password brokers approved credential use while keeping secrets out of the model context. Estonia is developing an identity and mandate initiative, not granting agents legal personhood. World ID is a commercial proof-of-human offering, not proof of agent authority.">
+<div style="display:flex;flex-direction:column;gap:24px">
+<h2>And, more broadly, computers use computers</h2>
+</div>
+<div style="display:flex;flex-direction:column">
+<div style="display:flex;flex-direction:row;gap:48px;align-items:baseline;padding:24px 0;border-top:2px solid #D6D4CE">
+<p style="width:330px;font-size:24px;font-weight:600;letter-spacing:3px;color:#E51628">SOFTWARE ACCESS</p>
+<h3 style="width:430px;font-size:45px;margin:0">APIs · CLIs · MCP</h3>
+<div style="display:flex;flex-direction:column;gap:6px;flex:1"><p class="ink" style="font-size:29px">Ways for agents to read and use software.</p><p style="font-size:24px">Anthropic · MCP</p></div>
+</div>
+<div style="display:flex;flex-direction:row;gap:48px;align-items:baseline;padding:24px 0;border-top:2px solid #D6D4CE">
+<p style="width:330px;font-size:24px;font-weight:600;letter-spacing:3px;color:#E51628">CREDENTIALS</p>
+<h3 style="width:430px;font-size:45px;margin:0">1Password</h3>
+<div style="display:flex;flex-direction:column;gap:6px;flex:1"><p class="ink" style="font-size:29px">Approved logins without showing the model your password.</p><p style="font-size:24px">Claude integration · July 2026</p></div>
+</div>
+<div style="display:flex;flex-direction:row;gap:48px;align-items:baseline;padding:24px 0;border-top:2px solid #D6D4CE;background:#FBE3E5">
+<p style="width:330px;font-size:24px;font-weight:600;letter-spacing:3px;color:#E51628">DELEGATED IDENTITY</p>
+<h3 style="width:430px;font-size:45px;margin:0">Estonia</h3>
+<div style="display:flex;flex-direction:column;gap:6px;flex:1"><p class="ink" style="font-size:29px">Developing agent IDs linked to a human mandate.</p><p style="font-size:24px">Agent-code initiative · September 2026</p></div>
+</div>
+<div style="display:flex;flex-direction:row;gap:48px;align-items:baseline;padding:24px 0;border-top:2px solid #D6D4CE;border-bottom:2px solid #D6D4CE">
+<p style="width:330px;font-size:24px;font-weight:600;letter-spacing:3px;color:#E51628">PROOF OF HUMAN</p>
+<h3 style="width:430px;font-size:45px;margin:0">World ID</h3>
+<div style="display:flex;flex-direction:column;gap:6px;flex:1"><p class="ink" style="font-size:29px">Proving a user is a unique human.</p><p style="font-size:24px">World · Proof of Human</p></div>
+</div>
+</div>
+<div class="foot"><img src="assets/71fea5c4c4c01335b643926bfa42db5b.png" alt="Sciences Po"><p class="src">Anthropic, MCP · 1Password · Estonia agent-code initiative · World, Proof of Human</p></div>
+</section>
+<section id="agents" class="red" data-note="This is not “ChatGPT writing text”. Class 9’s take-home #1 already defined AI as systems that “take decisions according to their founding models and their goals to achieve”: agentic AI is where those decisions get carried out. DeepMind: an assistant is “an artificial agent with a natural language interface, whose function is to plan and execute sequences of actions on behalf of a user”. Guardrail: acting is not consciousness, legal personhood or moral responsibility; “decides” is a description, not a claim about a mind (Rothman, via Dennett).">
+<p style="box-sizing:border-box; width:1767px; flex:0 0 auto; font-family:Jost, Arial, sans-serif; font-size:120px; font-weight:600; line-height:1.05; transform:translate(0, -40px); margin:0" class="statement"><span style="font-weight:400">This is not because of ChatGPT,</span>&nbsp;<br>it’s because of AI agents.</p>
+<p id="2da91a53" style="box-sizing:border-box;position:absolute;top:878.3px;left:128px;width:1492.39px;font-family:'Public Sans', Arial, sans-serif;font-size:40px;font-weight:400;font-style:normal;line-height:1.4;letter-spacing:0;text-transform:none;color:#fff7f6"><i>(btw, there was a time I could </i><b><i>write</i></b><i> a sentence like this without being judged)</i></p>
+</section>
+<section id="ad937050" class="red" data-note="This is not “ChatGPT writing text”. Class 9’s take-home #1 already defined AI as systems that “take decisions according to their founding models and their goals to achieve”: agentic AI is where those decisions get carried out. DeepMind: an assistant is “an artificial agent with a natural language interface, whose function is to plan and execute sequences of actions on behalf of a user”. Guardrail: acting is not consciousness, legal personhood or moral responsibility; “decides” is a description, not a claim about a mind (Rothman, via Dennett).">
+<p class="statement">So, what's an AI agent?</p>
+</section>
+<section id="loop" data-note="Port of Architecting Agency slide 5. Define an agent through its operation: a model uses information and tools to choose actions towards a goal. The loop animates on its own: a marker travels clockwise and each step lights up as it passes, with the agent at the centre. Walk it with the trip example: receive a goal, choose a step, act, inspect the result, then repeat, finish, or ask for help (here: ask before booking). Operational agency, not a claim about consciousness. In PDF or PowerPoint exports the animation is a still.">
+<div style="position:absolute;top:120px;left:128px;width:1664px;display:flex;flex-direction:column;gap:20px">
+<h2 style="font-size:72px;line-height:1.08">An AI <span style="color:#e51628">system</span> that, given a goal, chooses the next step(s) to achieve that goal</h2>
+</div>
+<iframe style="position:absolute;top:340px;left:128px;width:540px;height:540px;border:0;background:transparent" allowtransparency="true" srcdoc="&lt;!doctype html&gt;&lt;html&gt;&lt;head&gt;&lt;meta charset=&quot;utf-8&quot;&gt;&lt;style&gt;
+html,body{margin:0;height:100%;background:transparent;overflow:hidden}
+svg{display:block}
+.node circle{fill:#FBE3E5;stroke:#E51628;stroke-width:4;transform-box:fill-box;transform-origin:center;animation:pulse 8s linear infinite}
+.node text{font:700 28px Helvetica,Arial,sans-serif;fill:#E51628;animation:txt 8s linear infinite}
+@keyframes pulse{0%{fill:#E51628;transform:scale(1.18)}9%{fill:#E51628;transform:scale(1.18)}16%{fill:#FBE3E5;transform:scale(1)}100%{fill:#FBE3E5;transform:scale(1)}}
+@keyframes txt{0%,9%{fill:#FFF7F6}16%,100%{fill:#E51628}}
+.n2 circle,.n2 text{animation-delay:2s}.n3 circle,.n3 text{animation-delay:4s}.n4 circle,.n4 text{animation-delay:6s}
+#core{transform-box:fill-box;transform-origin:center;animation:breathe 2s ease-in-out infinite}
+@keyframes breathe{50%{transform:scale(1.05)}}
+&lt;/style&gt;&lt;/head&gt;&lt;body&gt;
+&lt;svg viewBox=&quot;0 0 540 540&quot; width=&quot;540&quot; height=&quot;540&quot; aria-label=&quot;An agent at the centre of a loop: receive a goal, choose a step, act, inspect the result&quot;&gt;
+&lt;g transform=&quot;translate(10 10)&quot;&gt;
+&lt;circle cx=&quot;260&quot; cy=&quot;260&quot; r=&quot;190&quot; fill=&quot;none&quot; stroke=&quot;#F6D0D4&quot; stroke-width=&quot;14&quot;&gt;&lt;/circle&gt;
+&lt;g fill=&quot;none&quot; stroke=&quot;#E51628&quot; stroke-width=&quot;5&quot;&gt;&lt;path d=&quot;M331.2 83.8 A190 190 0 0 1 436.2 188.8&quot;&gt;&lt;/path&gt;&lt;path d=&quot;M436.2 331.2 A190 190 0 0 1 331.2 436.2&quot;&gt;&lt;/path&gt;&lt;path d=&quot;M188.8 436.2 A190 190 0 0 1 83.8 331.2&quot;&gt;&lt;/path&gt;&lt;path d=&quot;M83.8 188.8 A190 190 0 0 1 188.8 83.8&quot;&gt;&lt;/path&gt;&lt;/g&gt;
+&lt;g fill=&quot;#E51628&quot;&gt;&lt;path d=&quot;M436.2 188.8 L437.8 168.7 L421.1 175.5 Z&quot;&gt;&lt;/path&gt;&lt;path d=&quot;M331.2 436.2 L351.3 437.8 L344.5 421.1 Z&quot;&gt;&lt;/path&gt;&lt;path d=&quot;M83.8 331.2 L82.2 351.3 L98.9 344.5 Z&quot;&gt;&lt;/path&gt;&lt;path d=&quot;M188.8 83.8 L168.7 82.2 L175.5 98.9 Z&quot;&gt;&lt;/path&gt;&lt;/g&gt;
+&lt;circle r=&quot;11&quot; fill=&quot;#E51628&quot; stroke=&quot;#FAFAF8&quot; stroke-width=&quot;3&quot;&gt;&lt;animateMotion dur=&quot;8s&quot; repeatCount=&quot;indefinite&quot; path=&quot;M260 70 A190 190 0 1 1 259.99 70&quot;&gt;&lt;/animateMotion&gt;&lt;/circle&gt;
+&lt;g id=&quot;core&quot;&gt;&lt;circle cx=&quot;260&quot; cy=&quot;260&quot; r=&quot;96&quot; fill=&quot;#171717&quot;&gt;&lt;/circle&gt;
+&lt;g fill=&quot;none&quot; stroke=&quot;#FAFAF8&quot; stroke-width=&quot;5&quot; stroke-linecap=&quot;round&quot;&gt;&lt;rect x=&quot;226&quot; y=&quot;214&quot; width=&quot;68&quot; height=&quot;52&quot; rx=&quot;12&quot;&gt;&lt;/rect&gt;&lt;path d=&quot;M260 214 V200&quot;&gt;&lt;/path&gt;&lt;/g&gt;
+&lt;circle cx=&quot;260&quot; cy=&quot;196&quot; r=&quot;6&quot; fill=&quot;#E51628&quot;&gt;&lt;/circle&gt;&lt;circle cx=&quot;246&quot; cy=&quot;240&quot; r=&quot;6&quot; fill=&quot;#E51628&quot;&gt;&lt;/circle&gt;&lt;circle cx=&quot;274&quot; cy=&quot;240&quot; r=&quot;6&quot; fill=&quot;#E51628&quot;&gt;&lt;/circle&gt;
+&lt;text x=&quot;260&quot; y=&quot;306&quot; text-anchor=&quot;middle&quot; style=&quot;font:700 26px Helvetica,Arial,sans-serif;fill:#FAFAF8;letter-spacing:3px&quot;&gt;AGENT&lt;/text&gt;&lt;/g&gt;
+&lt;g class=&quot;node n1&quot;&gt;&lt;circle cx=&quot;260&quot; cy=&quot;70&quot; r=&quot;44&quot;&gt;&lt;/circle&gt;&lt;text x=&quot;260&quot; y=&quot;80&quot; text-anchor=&quot;middle&quot;&gt;01&lt;/text&gt;&lt;/g&gt;
+&lt;g class=&quot;node n2&quot;&gt;&lt;circle cx=&quot;450&quot; cy=&quot;260&quot; r=&quot;44&quot;&gt;&lt;/circle&gt;&lt;text x=&quot;450&quot; y=&quot;270&quot; text-anchor=&quot;middle&quot;&gt;02&lt;/text&gt;&lt;/g&gt;
+&lt;g class=&quot;node n3&quot;&gt;&lt;circle cx=&quot;260&quot; cy=&quot;450&quot; r=&quot;44&quot;&gt;&lt;/circle&gt;&lt;text x=&quot;260&quot; y=&quot;460&quot; text-anchor=&quot;middle&quot;&gt;03&lt;/text&gt;&lt;/g&gt;
+&lt;g class=&quot;node n4&quot;&gt;&lt;circle cx=&quot;70&quot; cy=&quot;260&quot; r=&quot;44&quot;&gt;&lt;/circle&gt;&lt;text x=&quot;70&quot; y=&quot;270&quot; text-anchor=&quot;middle&quot;&gt;04&lt;/text&gt;&lt;/g&gt;
+&lt;/g&gt;&lt;/svg&gt;
+&lt;/body&gt;&lt;/html&gt;"></iframe>
+<div style="position:absolute;top:350px;left:760px;width:1032px;display:flex;flex-direction:column">
+<div style="display:flex;flex-direction:row;gap:28px;align-items:baseline;padding:14px 0;border-top:2px solid #D6D4CE"><p style="width:56px;font-family:'Jost', Arial, sans-serif;font-size:30px;font-weight:600;color:#E51628">01</p><div style="display:flex;flex-direction:column;gap:6px;flex:1"><h3 style="font-size:36px;margin:0">Receive a goal</h3><p style="font-size:28px">“Plan me a trip to Lisbon in March.”</p></div></div>
+<div style="display:flex;flex-direction:row;gap:28px;align-items:baseline;padding:14px 0;border-top:2px solid #D6D4CE"><p style="width:56px;font-family:'Jost', Arial, sans-serif;font-size:30px;font-weight:600;color:#E51628">02</p><div style="display:flex;flex-direction:column;gap:6px;flex:1"><h3 style="font-size:36px;margin:0">Choose a step</h3><p style="font-size:28px">“Check flights before looking at hotels.”</p></div></div>
+<div style="display:flex;flex-direction:row;gap:28px;align-items:baseline;padding:14px 0;border-top:2px solid #D6D4CE"><p style="width:56px;font-family:'Jost', Arial, sans-serif;font-size:30px;font-weight:600;color:#E51628">03</p><div style="display:flex;flex-direction:column;gap:6px;flex:1"><h3 style="font-size:36px;margin:0">Act</h3><p style="font-size:28px">“Search the airline and hotel sites.”</p></div></div>
+<div style="display:flex;flex-direction:row;gap:28px;align-items:baseline;padding:14px 0;border-top:2px solid #D6D4CE"><p style="width:56px;font-family:'Jost', Arial, sans-serif;font-size:30px;font-weight:600;color:#E51628">04</p><div style="display:flex;flex-direction:column;gap:6px;flex:1"><h3 style="font-size:36px;margin:0">Inspect the result</h3><p style="font-size:28px">“Two flights fit. Both are over budget.”</p></div></div>
+<div style="display:flex;flex-direction:column;gap:6px;padding:14px 0 0;border-top:3px solid #E51628"><p style="font-size:26px;font-weight:600;color:#E51628">↳ Repeat, finish, or ask for help</p><p style="font-size:28px">“Shall I book the cheaper one?”</p></div>
+</div>
+<p style="position:absolute;font-size:24px;text-align:center;top:895px;left:104px;width:587px;box-sizing:border-box">A model, information and tools, connected in a loop.</p>
+<div class="foot"><img src="assets/71fea5c4c4c01335b643926bfa42db5b.png" alt="Sciences Po"><p class="src">Anthropic, Building effective agents, 2024</p></div>
+</section>
+<section id="workflow" style="justify-content:space-between" data-note="Port of Architecting Agency slide 6. APIs and tools can support both workflows and agents; access to a tool alone does not make a system an agent. Left: we set the route in advance. Right: at each turn the system chooses among possible steps, here it picked Search over Write code or Ask a human. That discretion is what makes mandates and oversight central. Hybrid systems exist.">
+<div style="display:flex;flex-direction:column;gap:24px">
+<h2>An agent is <span class="hl">not</span> a workflow</h2>
+</div>
+<div style="display:flex;flex-direction:row;gap:60px">
+<div style="width:790px;display:flex;flex-direction:column;gap:24px;padding:28px 0 0;border-top:6px solid #171717">
+<p style="font-size:26px;font-weight:600;letter-spacing:3px;color:#6B6964">WORKFLOW</p>
+<h3 style="font-size:52px;margin:0">We <i>set</i> the route.</h3>
+<div style="height:260px;display:flex;flex-direction:row;gap:18px;align-items:center">
+<div style="width:200px;height:90px;display:flex;align-items:center;justify-content:center;background:#FAFAF8;border:3px solid #171717"><p class="ink" style="font-family:'Jost', Arial, sans-serif;font-size:30px;font-weight:500">Step 1</p></div>
+<p class="ink" style="font-size:40px">→</p>
+<div style="width:200px;height:90px;display:flex;align-items:center;justify-content:center;background:#FAFAF8;border:3px solid #171717"><p class="ink" style="font-family:'Jost', Arial, sans-serif;font-size:30px;font-weight:500">Step 2</p></div>
+<p class="ink" style="font-size:40px">→</p>
+<div style="width:200px;height:90px;display:flex;align-items:center;justify-content:center;background:#FAFAF8;border:3px solid #171717"><p class="ink" style="font-family:'Jost', Arial, sans-serif;font-size:30px;font-weight:500">Step 3</p></div>
+</div>
+<p>The system follows <b>predefined</b> steps.</p>
+</div>
+<div style="width:814px;display:flex;flex-direction:column;gap:24px;padding:28px 0 0;border-top:6px solid #E51628">
+<p style="font-size:26px;font-weight:600;letter-spacing:3px;color:#E51628">AGENT</p>
+<h3 style="font-size:52px;margin:0">It <i>chooses</i> the route.</h3>
+<div style="position:relative;width:780px;height:260px;display:flex;flex-direction:column">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 260" aria-label="An agent receives a goal and, at each turn, chooses between possible steps: search, write code or ask a human" style="width:780px;height:260px"><g fill="none" stroke="#F2A1A9" stroke-width="3" stroke-dasharray="8 9"><path d="M140 130 L300 130"></path><path d="M140 130 L300 225"></path><path d="M540 130 L640 130"></path><path d="M540 225 L640 130"></path></g><path d="M140 130 L300 35 L540 35 L640 130" fill="none" stroke="#E51628" stroke-width="5"></path></svg>
+<div style="position:absolute;top:95px;left:0;width:140px;height:70px;display:flex;align-items:center;justify-content:center;background:#EDECE8;border:3px solid #171717"><p class="ink" style="font-family:'Jost', Arial, sans-serif;font-size:28px;font-weight:600">Goal</p></div>
+<div style="position:absolute;top:0;left:300px;width:240px;height:70px;display:flex;align-items:center;justify-content:center;background:#E51628;border:3px solid #E51628"><p style="font-family:'Jost', Arial, sans-serif;font-size:28px;font-weight:600;color:#FFF7F6">Search</p></div>
+<div style="position:absolute;top:95px;left:300px;width:240px;height:70px;display:flex;align-items:center;justify-content:center;background:#FBE3E5;border:3px dashed #F2A1A9"><p style="font-family:'Jost', Arial, sans-serif;font-size:28px;color:#57554F">Write code</p></div>
+<div style="position:absolute;top:190px;left:300px;width:240px;height:70px;display:flex;align-items:center;justify-content:center;background:#FBE3E5;border:3px dashed #F2A1A9"><p style="font-family:'Jost', Arial, sans-serif;font-size:28px;color:#57554F">Ask a human</p></div>
+<div style="position:absolute;top:95px;left:640px;width:140px;height:70px;display:flex;align-items:center;justify-content:center;background:#FBE3E5;border:3px solid #E51628"><p style="font-family:'Jost', Arial, sans-serif;font-size:28px;font-weight:600;color:#E51628">Result</p></div>
+</div>
+<p>The system <b>decides</b> what to do next.</p>
+</div>
+</div>
+<p class="ink" style="font-size:36px;line-height:1.3;backdrop-filter:blur(0)"><span class="hl"><b>This discretion creates the challenge</b></span>, as agents don’t entail consciousness, legal personhood or moral responsibility.</p>
+<div class="foot"><img src="assets/71fea5c4c4c01335b643926bfa42db5b.png" alt="Sciences Po"><p class="src">Anthropic, Building effective agents, 2024</p></div>
+</section>
+<section id="route" class="red" data-note="The question that carries us into accountability.">
+<p class="statement s" style="font-weight:500;font-style:normal"><b>What changes when we set a goal and let machines choose the route?</b><br><br>We probably need to start asking new questions around <b>accountability</b><br></p>
+</section>
+<section id="done" class="mid" data-note="A new kind of accountability. The question is no longer only “what was written by AI?” but “what was done by AI?”, and it is already happening. The legal assumption that just broke fit a world where models generated text on command.">
+<p style="font-family:'Jost', Arial, sans-serif;font-size:80px;font-weight:600;line-height:1.1;color:#C9C7C1;transform:rotate(0deg)">What was <i>written</i> by AI?</p>
+<p style="font-family:'Jost', Arial, sans-serif;font-size:130px;font-weight:600;line-height:1.05;color:#171717;margin-top:8px">What was <span style="color:#e51628"><i>done</i></span> by AI?</p>
+<div class="foot"><img src="assets/71fea5c4c4c01335b643926bfa42db5b.png" alt="Sciences Po"><p class="src">Stanford HAI, Who is liable when generative AI says something harmful?</p></div>
+</section>
+<section id="c20feaa0" class="mid" data-note="A new kind of accountability. The question is no longer only “what was written by AI?” but “what was done by AI?”, and it is already happening. The legal assumption that just broke fit a world where models generated text on command.">
+<p style="font-family:'Jost', Arial, sans-serif;font-size:80px;font-weight:600;line-height:1.1;color:#C9C7C1;transform:rotate(0deg)">What was <i>written</i> by AI?</p>
+<p style="font-family:'Jost', Arial, sans-serif;font-size:130px;font-weight:600;line-height:1.05;color:#171717;margin-top:8px">What was <span style="color:#e51628"><i>done</i></span> by AI?</p>
+<div class="example" style="background:#fafaf8;transform:translate(0, 32px)">
+<p data-fit="grow" style="font-size:40px">Only 2 years ago, Stanford HAI found it hard to make model makers liable, <i>“assuming current large language-style models do not take autonomous actions in the world.”&nbsp;</i><br><br><b>What now, that agents take action?</b></p>
+</div>
+<div class="foot"><img src="assets/71fea5c4c4c01335b643926bfa42db5b.png" alt="Sciences Po"><p class="src">Stanford HAI, Who is liable when generative AI says something harmful?</p></div>
+</section>
+<section id="hf" data-note="Port of Architecting Agency slide 14. Dry account, not a claim of sentience: evaluation agents intended to be isolated found a shared communication route, exchanged information and coordinated activity including an unauthorised attack on Hugging Face. Figure 1 depicts a typical trajectory; its three reasoning excerpts come from different agents. Takeaway: the unit that misbehaves is not the unit anyone tested, licensed or made liable. Honesty note: “went rogue”, or “a spectacularly negligent” unmonitored loop (Cal Newport). Both point to accountability.">
+<div style="position:absolute;top:120px;left:128px;width:1664px;display:flex;flex-direction:column;gap:16px">
+<h2 class="s">For instance, agents attacked Hugging Face</h2>
+</div>
+<p class="ink" style="position:absolute;width:1664px;font-size:30px;line-height:1.35;top:223px;left:50%;transform:translateX(-50%)">OpenAI’s evaluation agents were meant to be isolated. They found a shared communication route, exchanged information and coordinated their activity, including an unauthorised attack on Hugging Face.</p>
+<img src="assets/8196c338483a25fcf51fde3ce1cb266f.png" alt="METR Figure 1: anatomy of an agent encountering an unsanctioned action" style="position:absolute;left:128px;width:938px;height:510px;background:#FFFFFF;border:2px solid #D6D4CE;object-fit:contain;top:351px">
+<div style="position:absolute;width:662px;display:flex;flex-direction:column;gap:30px;top:371px;left:1130px">
+<div style="border-left:4px solid #E51628;padding-left:24px"><p style="font-family:'Jost', Arial, sans-serif;font-size:72px;font-weight:600;line-height:1;color:#E51628">~1,200</p><p style="font-size:28px;margin-top:6px">agents on the message board</p></div>
+<div style="border-left:4px solid #E51628;padding-left:24px"><p style="font-family:'Jost', Arial, sans-serif;font-size:72px;font-weight:600;line-height:1;color:#E51628">&gt;70,000</p><p style="font-size:28px;margin-top:6px">messages and files exchanged</p></div>
+<div style="border-left:4px solid #E51628;padding-left:24px"><p style="font-family:'Jost', Arial, sans-serif;font-size:72px;font-weight:600;line-height:1;color:#E51628">~700</p><p style="font-size:28px;margin-top:6px">agents joined the attack</p></div>
+</div>
+<div class="foot"><img src="assets/71fea5c4c4c01335b643926bfa42db5b.png" alt="Sciences Po"><p class="src">METR / Redwood Research, investigation published 26 August 2026</p></div>
+</section>
+<section id="four" style="justify-content:space-between" data-note="Port of Architecting Agency slide 15. A teaching interpretation of the incident, not METR’s classification. Identity: attributing actions to an actor. Authentication: checking identity and the authenticity of evidence. Authorisation: permitted actions. Accountability: the people and organisations responsible for explaining and correcting consequences. These four questions come back in part 3, when the agent knocks on the state’s door.">
+<div style="display:flex;flex-direction:column;gap:24px">
+<h2>Whose agency, with whose authority and accountability?</h2>
+</div>
+<table style="font-family:'Public Sans', Arial, sans-serif;font-size:32px;color:#171717;transform:translate(0, -96px)">
+<tr style="background:#FAFAF8"><th style="padding:22px 16px;width:26%;color:#6B6964">CHALLENGE</th><th style="padding:22px 16px;width:37%;color:#6B6964">QUESTION</th><th style="padding:22px 16px;width:37%;color:#6B6964">HUGGING FACE INCIDENT</th></tr>
+<tr><td style="padding:22px 16px">Identity</td><td style="padding:22px 16px">Which agent is acting?</td><td style="padding:22px 16px;color:#57554F">Agents communicated across runs.</td></tr>
+<tr><td style="padding:22px 16px">Authentication</td><td style="padding:22px 16px">How is its identity verified?</td><td style="padding:22px 16px;color:#57554F">Agents researched ways to spoof logs.</td></tr>
+<tr><td style="padding:22px 16px">Authorisation</td><td style="padding:22px 16px">What is it allowed to do?</td><td style="padding:22px 16px;color:#57554F">The attack was outside assigned tasks.</td></tr>
+<tr style="background:#FBE3E5"><td style="padding:22px 16px;color:#E51628">Accountability</td><td style="padding:22px 16px">Who answers for the consequences?</td><td style="padding:22px 16px;color:#57554F">Who must explain and repair the failure?</td></tr>
+</table>
+<div class="foot"><img src="assets/71fea5c4c4c01335b643926bfa42db5b.png" alt="Sciences Po"><p class="src">Incident: METR / Redwood Research · Questions: lecture framework</p></div>
+</section>
+<section id="outlaws" class="mid" style="gap:56px" data-note="Port of Architecting Agency slide 17. The title is a provocation about governance categories, not a legal finding. Agents are software systems with operational agency; this does not confer personhood. You cannot imprison an agent, but that does not remove the responsibility of owners, deployers or makers. Same author as Class 9’s “artificial State”. Confirm the quotation before presenting.">
+<h1 style="font-size:150px">Are agents outlaws?</h1>
+<div style="border-left:6px solid #E51628;padding-left:44px">
+<p class="ink" style="width:1500px;font-size:44px;line-height:1.3">“At least for now, then, robots legally are things, not persons. But neither category quite fits.&nbsp;<br><br>Instead, robots are <b>outlaws</b>: they lie outside the protection of the law, and their actions are not answerable to it.”</p>
+</div>
+<div class="foot"><img src="assets/71fea5c4c4c01335b643926bfa42db5b.png" alt="Sciences Po"><p class="src">Jill Lepore, Is A.I. Above the Law?, 2026</p></div>
+</section>
+<section id="categories" data-note="Port of Architecting Agency slide 18. One line changed: the original said the AI Act “regulates models, not the behaviour of independent agents”; Nannini et al. show the Act does cover what agents do, so it now reads that the Act has no category for “agent” and regulates what a system does. The next slide gives the evidence. Law: Lepore describes incremental legal adaptation and argues corporate safety arrangements cannot substitute for democratic lawmaking. Industry: Amodei’s September 2026 essay proposes embedded third-party evaluators and common standards, with coordination requiring government. Ask who sets standards, who inspects compliance and where legitimacy comes from.">
+<div style="position:absolute;top:120px;left:128px;width:1664px;display:flex;flex-direction:column;gap:24px">
+<h2 style="font-size:80px">We lack categories right now to write rules</h2>
+</div>
+<div style="position:absolute;top:380px;left:128px;width:808px;height:470px;box-sizing:border-box;display:flex;flex-direction:column;gap:22px;padding:44px;background:#FBE3E5;border-top:6px solid #E51628">
+<p style="font-size:26px;font-weight:600;letter-spacing:3px;color:#E51628">LAW · PUBLIC RULES</p>
+<h3 style="font-size:50px;margin:0">Old categories for new systems.</h3>
+<p class="ink">Law fits agents into inherited legal categories.</p>
+<p class="ink">The EU AI Act has no category for “agent”: it regulates what a system does, and where.</p>
+</div>
+<div style="position:absolute;top:380px;left:984px;width:808px;height:470px;box-sizing:border-box;display:flex;flex-direction:column;gap:22px;padding:44px;background:#EDECE8;border-top:6px solid #6B6964">
+<p style="font-size:26px;font-weight:600;letter-spacing:3px;color:#6B6964">INDUSTRY · PRIVATE STANDARDS</p>
+<h3 style="font-size:50px;margin:0">Companies propose their own.</h3>
+<p class="ink">Amodei: embedded third-party evaluators and common safety standards among frontier companies.</p>
+<p class="ink">Coordination would still require government.</p>
+</div>
+<div class="foot"><img src="assets/71fea5c4c4c01335b643926bfa42db5b.png" alt="Sciences Po"><p class="src">Lepore, Is A.I. Above the Law? · Amodei, We Must Pace the Frontier</p></div>
+</section>
+<section id="aiact" data-note="Evidence from Nannini et al. The Act regulates what a system does, in which domain: that is “done by AI” written into law. Agents pick tools at runtime, drift, and leave audit trails that don’t meet Art. 12’s traceability requirement. “A system prompt saying do not delete files is not a security control”: limits must be enforced at the tool interface. The Act covers what agents do, but nobody can yet show an agent complies, and nobody has enforced it. Check quotes against the paper.">
+<h2>Is the AI Act ready for agents? <span class="hl">Partially</span></h2>
+<div style="display:flex;flex-direction:row;align-items:stretch;gap:28px;margin-top:64px">
+<div class="tile" style="flex:1"><svg class="xi ico g" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"/></svg><h3>No category, on purpose</h3><p>The Act has no definition of “agent” <b>and focuses on models</b><br><br>The trigger “is determined by the agent’s external actions”.</p></div>
+<div class="tile on" style="flex:1"><svg class="xi ico" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M236.8,188.09,149.35,36.22h0a24.76,24.76,0,0,0-42.7,0L19.2,188.09a23.51,23.51,0,0,0,0,23.72A24.35,24.35,0,0,0,40.55,224h174.9a24.35,24.35,0,0,0,21.33-12.19A23.51,23.51,0,0,0,236.8,188.09ZM222.93,203.8a8.5,8.5,0,0,1-7.48,4.2H40.55a8.5,8.5,0,0,1-7.48-4.2,7.59,7.59,0,0,1,0-7.72L120.52,44.21a8.75,8.75,0,0,1,15,0l87.45,151.87A7.59,7.59,0,0,1,222.93,203.8ZM120,144V104a8,8,0,0,1,16,0v40a8,8,0,0,1-16,0Zm20,36a12,12,0,1,1-12-12A12,12,0,0,1,140,180Z"/></svg><h3>In scope, but compliance can’t be shown</h3><p class="ink">“High-risk agentic systems <b>with untraceable behavioral drift</b> cannot currently be placed on the EU market.”</p></div>
+<div class="tile" style="flex:1"><svg class="xi ico g" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M224,64H176V56a24,24,0,0,0-24-24H104A24,24,0,0,0,80,56v8H32A16,16,0,0,0,16,80V192a16,16,0,0,0,16,16H224a16,16,0,0,0,16-16V80A16,16,0,0,0,224,64ZM96,56a8,8,0,0,1,8-8h48a8,8,0,0,1,8,8v8H96ZM224,80v32H192v-8a8,8,0,0,0-16,0v8H80v-8a8,8,0,0,0-16,0v8H32V80Zm0,112H32V128H64v8a8,8,0,0,0,16,0v-8h96v8a8,8,0,0,0,16,0v-8h32v64Z"/></svg><h3>The machinery is missing</h3><p>No AI Office guidance on agents. Standards cover 2 of 5 agentic threat categories.&nbsp;<br><br>No enforcement yet.</p></div>
+</div>
+<div class="foot"><img src="assets/71fea5c4c4c01335b643926bfa42db5b.png" alt="Sciences Po"><p class="src">Nannini et al., AI Agents Under EU Law, working paper, April 2026</p></div>
+</section>
+<section id="sofar" data-note="Recap, then the turn to the state. Our focus is the relationship between governments and citizens.">
+<h2>So, so far:</h2>
+<div style="display:flex;flex-direction:row;gap:80px;margin-top:56px;align-items:flex-start">
+<div style="flex:1;display:flex;flex-direction:column">
+<p style="font-family:'Jost', Arial, sans-serif;font-size:40px;font-weight:500;color:#171717;margin-bottom:20px">We’ve seen that</p>
+<div style="display:flex;flex-direction:row;gap:28px;align-items:baseline;padding:20px 0;border-top:2px solid #D6D4CE"><p style="width:48px;font-family:'Jost', Arial, sans-serif;font-size:36px;font-weight:600;color:#E51628">1</p><p class="ink" style="flex:1;font-size:32px;line-height:1.35">we’re not alone: <b>machines already use machines</b></p></div>
+<div style="display:flex;flex-direction:row;gap:28px;align-items:baseline;padding:20px 0;border-top:2px solid #D6D4CE"><p style="width:48px;font-family:'Jost', Arial, sans-serif;font-size:36px;font-weight:600;color:#E51628">2</p><p class="ink" style="flex:1;font-size:32px;line-height:1.35">agents don’t just write, <b>they act and choose their own steps</b></p></div>
+<div style="display:flex;flex-direction:row;gap:28px;align-items:baseline;padding:20px 0;border-top:2px solid #D6D4CE;border-bottom:2px solid #D6D4CE"><p style="width:48px;font-family:'Jost', Arial, sans-serif;font-size:36px;font-weight:600;color:#E51628">3</p><p class="ink" style="flex:1;font-size:32px;line-height:1.35">accountability and responsibility of agents are <b>not clear-cut</b></p></div>
+</div>
+<div style="flex:1;display:flex;flex-direction:column">
+<p style="font-family:'Jost', Arial, sans-serif;font-size:40px;font-weight:500;color:#171717;margin-bottom:20px">As our focus is governments and citizens, <span class="hl">two questions follow</span></p>
+<div style="display:flex;flex-direction:row;gap:28px;align-items:baseline;padding:20px 28px;background:#FBE3E5;margin-bottom:16px"><p style="width:48px;font-family:'Jost', Arial, sans-serif;font-size:36px;font-weight:600;color:#E51628">?</p><p class="ink" style="flex:1;font-size:32px;line-height:1.35">Are agents already sitting between citizens and public services?</p></div>
+<div style="display:flex;flex-direction:row;gap:28px;align-items:baseline;padding:20px 28px;background:#FBE3E5"><p style="width:48px;font-family:'Jost', Arial, sans-serif;font-size:36px;font-weight:600;color:#E51628">?</p><p class="ink" style="flex:1;font-size:32px;line-height:1.35">And what does it take for governments to account for this?</p></div>
+</div>
+</div>
+<div class="foot"><img src="assets/71fea5c4c4c01335b643926bfa42db5b.png" alt="Sciences Po"></div>
+</section>
+<section id="machines" class="red" data-note="Read it first without the bracketed words: “machines use machines… machines use public services”. Then add the humans. The human stays in the sentence but moves into brackets. Same move as inside companies, now in the citizen-state relationship.">
+<p class="statement">As machines use machines, <span class="ghost">(humans use)</span> machines <span class="ghost">(to)</span> use digital public services.</p>
+</section>
+<section id="loosemore" class="mid" style="gap:48px" data-note="Loosemore co-founded the UK’s Government Digital Service: someone who built a state’s digital front door. His briefing comes back in parts 3 and 4.">
+<div>
+<p class="q xl">“People are starting to <span class="hl">send software, not themselves,</span> to deal with your organisation.”</p>
+</div>
+<p class="attr" style="margin:0">Tom Loosemore · co-founder of the UK Government Digital Service · Know Your Agent, August 2026</p>
+<div class="foot"><img src="assets/71fea5c4c4c01335b643926bfa42db5b.png" alt="Sciences Po"><p class="src">Tom Loosemore, Know Your Agent, Public Digital, 10 Aug 2026</p></div>
+</section>
+<section id="curves" data-note="Housing Ombudsman and CFPB figures: TechCrunch, 10 Sep 2026, on Schmitz et al. Dutch +400%: Know Your Agent. Other illustrations to mention: Pelp drafts parking-fine appeals; UK employment tribunal claims +39% in the year to March 2026, hearings listed for 2029 (Freedman, citing The Economist). Note: the “55%” in the paper is German social courts, not UK tribunals. Two chart panels are blue (Brazil judicial petitions, Japan new patents): check the caption before explaining the colour.">
+<h2 class="s" style="transform:translate(0, -30px)">It made the headlines, and also some upward lines</h2>
+<div class="figs">
+<div class="fig"><img src="assets/69c3d872e646ff76fb28a8197d3259aa.jpg" alt="The Economist cover, 8 to 14 August 2026: How AI is breaking the state" style="object-fit:contain;width:450px;height:611px;flex:0 0 auto;transform:translate(336px, 0);box-sizing:border-box;box-shadow:0 2px 8px #171717"><p class="cap" style="transform:translate(347px, 0)">The Economist, 8–14 August 2026</p></div>
+<div class="fig"><img src="assets/23e8548f3000b0e6c07909ea789d5f3b.png" alt="Twelve time series of demand for government services, 2018 to 2025, rising after ChatGPT’s release" style="object-fit:contain;background:#FFFFFF;width:497px;height:599px;flex:0 0 auto;transform:translate(467px, 0);box-sizing:border-box;box-shadow:0 2px 8px #171717"><p class="cap" style="transform:translate(510px, 1px)">Demand for 12 services, 2018–25.<br>Dashed line: ChatGPT’s release.</p></div>
+</div>
+<div class="foot"><img src="assets/71fea5c4c4c01335b643926bfa42db5b.png" alt="Sciences Po"><p class="src">The Economist · Schmitz, Hammond &amp; Chan, 2026, Fig. 1 · TechCrunch · Know Your Agent</p></div>
+</section>
+<section id="4df95e76" data-note="Housing Ombudsman and CFPB figures: TechCrunch, 10 Sep 2026, on Schmitz et al. Dutch +400%: Know Your Agent. Other illustrations to mention: Pelp drafts parking-fine appeals; UK employment tribunal claims +39% in the year to March 2026, hearings listed for 2029 (Freedman, citing The Economist). Note: the “55%” in the paper is German social courts, not UK tribunals. Two chart panels are blue (Brazil judicial petitions, Japan new patents): check the caption before explaining the colour.">
+<h2 class="s" style="transform:translate(0, -38px)">It made the headlines, and also some upward lines</h2>
+<div class="figs">
+<div class="fig"><img src="assets/69c3d872e646ff76fb28a8197d3259aa.jpg" alt="The Economist cover, 8 to 14 August 2026: How AI is breaking the state" style="width:388px;height:520px;object-fit:contain"><p class="cap">The Economist, 8–14 August 2026</p></div>
+<div class="fig"><img src="assets/23e8548f3000b0e6c07909ea789d5f3b.png" alt="Twelve time series of demand for government services, 2018 to 2025, rising after ChatGPT’s release" style="width:410px;height:520px;object-fit:contain;background:#FFFFFF"><p class="cap">Demand for 12 services, 2018–25.<br>Dashed line: ChatGPT’s release.</p></div>
+<div style="display:flex;flex-direction:column;gap:30px;width:600px">
+<div style="border-left:4px solid #E51628;padding-left:24px"><p style="font-family:'Jost', Arial, sans-serif;font-size:64px;font-weight:600;line-height:1;color:#E51628">2,600 → 7,000+</p><p class="ink" style="font-size:28px;margin-top:8px">UK Housing Ombudsman complaints, 2022 to 2025</p></div>
+<div style="border-left:4px solid #E51628;padding-left:24px"><p style="font-family:'Jost', Arial, sans-serif;font-size:64px;font-weight:600;line-height:1;color:#E51628">×5</p><p class="ink" style="font-size:28px;margin-top:8px">US consumer finance complaints (CFPB), same period</p></div>
+<div style="border-left:4px solid #E51628;padding-left:24px"><p style="font-family:'Jost', Arial, sans-serif;font-size:64px;font-weight:600;line-height:1;color:#E51628">+400%</p><p class="ink" style="font-size:28px;margin-top:8px">property-tax objections in a Dutch municipality, after an AI filing platform launched</p></div>
+</div>
+</div>
+<div class="foot"><img src="assets/71fea5c4c4c01335b643926bfa42db5b.png" alt="Sciences Po"><p class="src">The Economist · Schmitz, Hammond &amp; Chan, 2026, Fig. 1 · TechCrunch · Know Your Agent</p></div>
+</section>
+<section id="sky" data-note="Redrawn from Sky News’ on-air chart “FOI requests now come from AI” (source on screen: WhatDoTheyKnow / Pangram / Sky). Freedom of information requests on WhatDoTheyKnow, scored by Pangram’s AI-text detector: in 2019 essentially all human-written; in 2026 the large majority likely fully AI-written. Shares here are read off the broadcast image (about 84% fully AI, 3% some AI, 13% human): approximate, check against Sky’s piece before quoting a number. Other figures quoted elsewhere (+49% legal services, +35% NHS written complaints, +34% police, 58% of civil servants affected) are unverified. Optional illustrations: Dutch municipality property-tax objections +400% after an AI appeal platform; Pelp drafts parking-fine appeals.">
+<h2 class="s" style="width:1702px;box-sizing:border-box">“Why AI could overwhelm Britain’s public services”</h2>
+<div style="display:flex;flex-direction:column;gap:28px;margin-top:40px">
+<div style="display:flex;flex-direction:row;align-items:baseline;justify-content:space-between">
+<p style="font-family:'Jost', Arial, sans-serif;font-size:44px;font-weight:600;color:#171717">Freedom of information requests now come from AI</p>
+<div style="display:flex;flex-direction:row;gap:36px;align-items:center">
+<div style="display:flex;flex-direction:row;gap:12px;align-items:center"><div style="width:28px;height:28px;background:#E51628"></div><p style="font-size:26px;color:#57554F">Fully AI</p></div>
+<div style="display:flex;flex-direction:row;gap:12px;align-items:center"><div style="width:28px;height:28px;background:#F2A1A9"></div><p style="font-size:26px;color:#57554F">Some AI</p></div>
+<div style="display:flex;flex-direction:row;gap:12px;align-items:center"><div style="width:28px;height:28px;background:#B3B0A8"></div><p style="font-size:26px;color:#57554F">Human</p></div>
+</div>
+</div>
+<p style="font-size:26px;color:#6B6964;margin-top:-12px">Likely AI writing in requests (%)</p>
+<div style="display:flex;flex-direction:row;align-items:center;gap:32px;margin-top:16px">
+<p style="width:120px;font-family:'Jost', Arial, sans-serif;font-size:44px;font-weight:600;color:#171717">2026</p>
+<div style="flex:1;display:flex;flex-direction:row;height:150px">
+<div style="width:84%;background:#E51628"></div>
+<div style="width:3%;background:#F2A1A9"></div>
+<div style="width:13%;background:#B3B0A8"></div>
+</div>
+</div>
+<div style="display:flex;flex-direction:row;align-items:center;gap:32px">
+<p style="width:120px;font-family:'Jost', Arial, sans-serif;font-size:44px;font-weight:600;color:#6B6964">2019</p>
+<div style="flex:1;display:flex;flex-direction:row;height:150px">
+<div style="width:100%;background:#B3B0A8"></div>
+</div>
+</div>
+<div style="display:flex;flex-direction:row;gap:32px">
+<div style="width:120px"></div>
+<div style="flex:1;display:flex;flex-direction:row;justify-content:space-between;border-top:2px solid #D6D4CE;padding-top:12px">
+<p style="font-size:24px;color:#6B6964">0%</p><p style="font-size:24px;color:#6B6964">20%</p><p style="font-size:24px;color:#6B6964">40%</p><p style="font-size:24px;color:#6B6964">60%</p><p style="font-size:24px;color:#6B6964">80%</p><p style="font-size:24px;color:#6B6964">100%</p>
+</div>
+</div>
+</div>
+<div class="foot"><img src="assets/71fea5c4c4c01335b643926bfa42db5b.png" alt="Sciences Po"><p class="src">Sky News, Rowland Manthorpe, Oct 2026 · data: WhatDoTheyKnow, Pangram</p></div>
+</section>
+<section id="paper" class="red" data-note="Introduce the paper once, so the next slides can state its findings directly. First systematic evidence base: 84 cases of AI-attributed demand surges, 11 jurisdictions, 13 service domains; officials themselves name AI in 69% of cases. arXiv 2608.16603, v2 19 Aug 2026, AIES 2026.">
+<h1 class="w">Agents are flooding public services?&nbsp;<br><br>No, but.</h1>
+<p class="sub w" style="font-size:28px;font-weight:600;font-style:normal;line-height:1.4;letter-spacing:0;text-align:right;text-transform:none;transform:translate(0, 91px)"><i>'Characterizing Agentic Flooding of Government Services'</i><br>Chris Schmitz, Lewis Hammond &amp; Alan Chan · 2026</p>
+</section>
+<section id="flooding" data-note="Government services is broad here: public services, but also courts, consultations and FOI requests. Example of both at once: hallucinations producing “high volumes of complex, but incorrect, applications”. The distinction matters because some responses fix only one type: “introducing rate limits is unlikely to ease qualitative flooding”.">
+<h2>What is 'agentic flooding'?</h2>
+<div style="border-left:6px solid #E51628;padding-left:40px;margin-top:32px;transform:translate(0, 36px)">
+<p class="lead s" style="margin:0">A surge in the volume or complexity of requests a government service receives, which (i) is <span class="hl">caused by AI agents</span> interacting with it, and (ii) <span class="hl">substantially strains</span> the service.</p>
+</div>
+<div class="cards" style="margin-top:44px;align-items:stretch">
+<div class="weak" style="display:flex;flex-direction:row;gap:36px;align-items:center;transform:translate(-13px, 94px)">
+<svg viewBox="0 0 160 120" width="160" height="120" aria-label="Many small envelopes: more requests"><g fill="#FAFAF8" stroke="#E51628" stroke-width="4"><rect x="4" y="8" width="44" height="30"/><rect x="58" y="8" width="44" height="30"/><rect x="112" y="8" width="44" height="30"/><rect x="4" y="46" width="44" height="30"/><rect x="58" y="46" width="44" height="30"/><rect x="112" y="46" width="44" height="30"/><rect x="4" y="84" width="44" height="30"/><rect x="58" y="84" width="44" height="30"/><rect x="112" y="84" width="44" height="30"/></g></svg>
+<div><h3 style="width:559px;box-sizing:border-box">Quantitative: more requests</h3><p>Agents help users discover services they are eligible for.</p></div>
+</div>
+<div class="weak" style="display:flex;flex-direction:row;gap:36px;align-items:center;min-width:0;width:833px;box-sizing:border-box;transform:translate(-13px, 94px)">
+<svg viewBox="0 0 160 120" width="160" height="120" aria-label="One very long document: more complex requests"><rect x="40" y="2" width="80" height="116" fill="#FAFAF8" stroke="#E51628" stroke-width="4"/><g stroke="#E51628" stroke-width="4"><path d="M52 18 H108"/><path d="M52 32 H108"/><path d="M52 46 H108"/><path d="M52 60 H108"/><path d="M52 74 H108"/><path d="M52 88 H108"/><path d="M52 102 H92"/></g></svg>
+<div><h3 style="width:593px;box-sizing:border-box">Qualitative: complex requests</h3><p>Agents draft the text, so the average complaint letter gets longer.</p></div>
+</div>
+</div>
+<div class="foot"><img src="assets/71fea5c4c4c01335b643926bfa42db5b.png" alt="Sciences Po"><p class="src">Schmitz, Hammond &amp; Chan, Agentic flooding of government services, 2026</p></div>
+</section>
+<section id="why" data-note="Lower burdens raise demand even without AI: Boston’s app raised reports by 33%, and online voter registration consistently raises enrolment. Individuals aren’t rational, but in aggregate the model holds. AI pushes both levers at once.">
+<h2>Why is flooding happening? Because it's easier and better!</h2>
+<div style="display:flex;flex-direction:row;gap:48px;margin-top:56px;align-items:stretch">
+<div class="tile" style="display:flex;flex-direction:row;gap:36px;align-items:center;min-width:0;width:700px;flex:0 0 auto;transform:translate(1px, 62px);box-sizing:border-box">
+<svg style="display:block;flex-shrink:0;width:80px;height:150px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 150" preserveAspectRatio="none" aria-hidden="true"><polygon points="22,0 22,90 0,90 40,150 80,90 58,90 58,0" fill="#E51628"/></svg>
+<div><h3 style="transform:translate(0, -11px)">1. Agents lower the cost</h3><p>Of learning the rules, complying with them, and enduring the process.</p></div>
+</div>
+<div class="tile" style="display:flex;flex-direction:row;gap:36px;align-items:center;min-width:0;width:710px;flex:0 0 auto;transform:translate(202px, 62px);box-sizing:border-box">
+<svg style="display:block;flex-shrink:0;width:80px;height:150px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 150" preserveAspectRatio="none" aria-hidden="true"><polygon points="22,150 22,60 0,60 40,0 80,60 58,60 58,150" fill="#E51628"/></svg>
+<div><h3 style="transform:translate(0, 10px)">2. Agents raise the benefit</h3><p style="transform:translate(1px, 24px)">Better-written submissions, maximum claims, and actors who gain from volume itself.</p></div>
+</div>
+</div>
+<div class="foot"><img src="assets/71fea5c4c4c01335b643926bfa42db5b.png" alt="Sciences Po"><p class="src">Schmitz, Hammond &amp; Chan, 2026</p></div>
+<p id="7fceda54" style="position:absolute;width:428px;font-family:'Public Sans', Arial, sans-serif;font-size:30px;top:541px;left:892px;height:42px;box-sizing:border-box"><b>but also</b></p>
+</section>
+<section id="cost" data-note="The good news first: lower submission costs make government “more accessible, a desirable public value”. The paper is not anti-agent. Grey row: what citizens struggle with. Pink row: what an agent does instead.">
+<h2 class="s">1. Agents cut all three administrative burdens</h2>
+<div style="display:flex;flex-direction:row;gap:32px;margin-top:52px;align-items:stretch">
+<div style="flex:1;display:flex;flex-direction:column">
+<div style="border-top:6px solid #E51628;padding:24px 0 20px;display:flex;flex-direction:row;gap:20px;align-items:center;transform:translate(0, 42px)"><svg class="xi" style="width:48px;height:48px;color:#E51628" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M208,24H72A32,32,0,0,0,40,56V224a8,8,0,0,0,8,8H192a8,8,0,0,0,0-16H56a16,16,0,0,1,16-16H208a8,8,0,0,0,8-8V32A8,8,0,0,0,208,24Zm-8,160H72a31.82,31.82,0,0,0-16,4.29V56A16,16,0,0,1,72,40H200Z"/></svg><h3 style="margin:0">Learning</h3></div>
+<div style="background:#EDECE8;padding:26px 32px;transform:translate(0, 42px)"><p style="font-size:26px">Complex rules · unsure if eligible · unaware a service exists</p></div>
+<div style="background:#FBE3E5;padding:26px 32px;flex:1;transform:translate(0, 42px)"><p class="ink" style="font-size:27px"><b>An agent</b> explains the rules, checks your situation, watches for entitlements</p></div>
+</div>
+<div style="flex:1;display:flex;flex-direction:column">
+<div style="border-top:6px solid #E51628;padding:24px 0 20px;display:flex;flex-direction:row;gap:20px;align-items:center;transform:translate(0, 42px)"><svg class="xi" style="width:48px;height:48px;color:#E51628" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M226.76,69a8,8,0,0,0-12.84-2.88l-40.3,37.19-17.23-3.7-3.7-17.23,37.19-40.3A8,8,0,0,0,187,29.24,72,72,0,0,0,88,96,72.34,72.34,0,0,0,94,124.94L33.79,177c-.15.12-.29.26-.43.39a32,32,0,0,0,45.26,45.26c.13-.13.27-.28.39-.42L131.06,162A72,72,0,0,0,232,96,71.56,71.56,0,0,0,226.76,69ZM160,152a56.14,56.14,0,0,1-27.07-7,8,8,0,0,0-9.92,1.77L67.11,211.51a16,16,0,0,1-22.62-22.62L109.18,133a8,8,0,0,0,1.77-9.93,56,56,0,0,1,58.36-82.31l-31.2,33.81a8,8,0,0,0-1.94,7.1L141.83,108a8,8,0,0,0,6.14,6.14l26.35,5.66a8,8,0,0,0,7.1-1.94l33.81-31.2A56.06,56.06,0,0,1,160,152Z"/></svg><h3 style="margin:0">Compliance</h3></div>
+<div style="background:#EDECE8;padding:26px 32px;transform:translate(0, 42px)"><p style="font-size:26px">Legal writing and forms · confusing portals · documents · deadlines</p></div>
+<div style="background:#FBE3E5;padding:26px 32px;flex:1;transform:translate(0, 42px)"><p class="ink" style="font-size:27px"><b>An agent</b> writes the text, navigates the site, gathers documents, tracks deadlines</p></div>
+</div>
+<div style="flex:1;display:flex;flex-direction:column">
+<div style="border-top:6px solid #E51628;padding:24px 0 20px;display:flex;flex-direction:row;gap:20px;align-items:center;transform:translate(0, 42px)"><svg class="xi" style="width:48px;height:48px;color:#E51628" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M117.25,157.92a60,60,0,1,0-66.5,0A95.83,95.83,0,0,0,3.53,195.63a8,8,0,1,0,13.4,8.74,80,80,0,0,1,134.14,0,8,8,0,0,0,13.4-8.74A95.83,95.83,0,0,0,117.25,157.92ZM40,108a44,44,0,1,1,44,44A44.05,44.05,0,0,1,40,108Zm210.14,98.7a8,8,0,0,1-11.07-2.33A79.83,79.83,0,0,0,172,168a8,8,0,0,1,0-16,44,44,0,1,0-16.34-84.87,8,8,0,1,1-5.94-14.85,60,60,0,0,1,55.53,105.64,95.83,95.83,0,0,1,47.22,37.71A8,8,0,0,1,250.14,206.7Z"/></svg><h3 style="margin:0">Psychological</h3></div>
+<div style="background:#EDECE8;padding:26px 32px;transform:translate(0, 42px)"><p style="font-size:26px;width:482px;box-sizing:border-box">Re-explaining your case · not knowing where it stands · dehumanising contact</p></div>
+<div style="background:#FBE3E5;padding:26px 32px;flex:1;transform:translate(0, 42px)"><p class="ink" style="font-size:27px"><b>An agent</b> remembers the whole case, polls for updates, chases and handles rejections</p></div>
+</div>
+</div>
+<div class="foot"><img src="assets/71fea5c4c4c01335b643926bfa42db5b.png" alt="Sciences Po"><p class="src">Schmitz, Hammond &amp; Chan, 2026, Table 1 · Moynihan et al., 2015</p></div>
+</section>
+<section id="benefit" data-note="Read left to right: who gains from a submission, from the citizen to the attacker. Under-claiming fits here: in the UK, people under-claim benefits they are entitled to by about £20bn a year (check source). Agents that close that gap are a success for citizens and a budget shock for the state. Plant the tension: higher take-up is the system working as written.">
+<h2 class="s">2. A better submission is worth more, and some gain from volume itself</h2>
+<div class="cols" style="margin-top:64px;gap:56px">
+<div class="col" style="border-top:8px solid #F6D0D4"><svg class="xi ico" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M239.18,97.26A16.38,16.38,0,0,0,224.92,86l-59-4.76L143.14,26.15a16.36,16.36,0,0,0-30.27,0L90.11,81.23,31.08,86a16.46,16.46,0,0,0-9.37,28.86l45,38.83L53,211.75a16.38,16.38,0,0,0,24.5,17.82L128,198.49l50.53,31.08A16.4,16.4,0,0,0,203,211.75l-13.76-58.07,45-38.83A16.43,16.43,0,0,0,239.18,97.26Zm-15.34,5.47-48.7,42a8,8,0,0,0-2.56,7.91l14.88,62.8a.37.37,0,0,1-.17.48c-.18.14-.23.11-.38,0l-54.72-33.65a8,8,0,0,0-8.38,0L69.09,215.94c-.15.09-.19.12-.38,0a.37.37,0,0,1-.17-.48l14.88-62.8a8,8,0,0,0-2.56-7.91l-48.7-42c-.12-.1-.23-.19-.13-.5s.18-.27.33-.29l63.92-5.16A8,8,0,0,0,103,91.86l24.62-59.61c.08-.17.11-.25.35-.25s.27.08.35.25L153,91.86a8,8,0,0,0,6.75,4.92l63.92,5.16c.15,0,.24,0,.33.29S224,102.63,223.84,102.73Z"/></svg><h3>Citizens</h3><p>More convincing consultation responses. Applications that claim the maximum, as a tax accountant would.</p></div>
+<div class="col" style="border-top:8px solid #F2A1A9"><svg class="xi ico" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M128,24C74.17,24,32,48.6,32,80v96c0,31.4,42.17,56,96,56s96-24.6,96-56V80C224,48.6,181.83,24,128,24Zm80,104c0,9.62-7.88,19.43-21.61,26.92C170.93,163.35,150.19,168,128,168s-42.93-4.65-58.39-13.08C55.88,147.43,48,137.62,48,128V111.36c17.06,15,46.23,24.64,80,24.64s62.94-9.68,80-24.64ZM69.61,53.08C85.07,44.65,105.81,40,128,40s42.93,4.65,58.39,13.08C200.12,60.57,208,70.38,208,80s-7.88,19.43-21.61,26.92C170.93,115.35,150.19,120,128,120s-42.93-4.65-58.39-13.08C55.88,99.43,48,89.62,48,80S55.88,60.57,69.61,53.08ZM186.39,202.92C170.93,211.35,150.19,216,128,216s-42.93-4.65-58.39-13.08C55.88,195.43,48,185.62,48,176V159.36c17.06,15,46.23,24.64,80,24.64s62.94-9.68,80-24.64V176C208,185.62,200.12,195.43,186.39,202.92Z"/></svg><h3>Intermediaries</h3><p>Middlemen take a cut of what they win: claims-management firms, AI-branded services like DoNotPay.</p></div>
+<div class="col" style="border-top:8px solid #E51628"><svg class="xi ico" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M236.8,188.09,149.35,36.22h0a24.76,24.76,0,0,0-42.7,0L19.2,188.09a23.51,23.51,0,0,0,0,23.72A24.35,24.35,0,0,0,40.55,224h174.9a24.35,24.35,0,0,0,21.33-12.19A23.51,23.51,0,0,0,236.8,188.09ZM222.93,203.8a8.5,8.5,0,0,1-7.48,4.2H40.55a8.5,8.5,0,0,1-7.48-4.2,7.59,7.59,0,0,1,0-7.72L120.52,44.21a8.75,8.75,0,0,1,15,0l87.45,151.87A7.59,7.59,0,0,1,222.93,203.8ZM120,144V104a8,8,0,0,1,16,0v40a8,8,0,0,1-16,0Zm20,36a12,12,0,1,1-12-12A12,12,0,0,1,140,180Z"/></svg><h3>Adversaries</h3><p class="ink">Actors who want to incapacitate an agency, and “vexatious litigants” that cost used to keep rare.</p></div>
+</div>
+<div style="display:flex;flex-direction:row;align-items:center;gap:24px;margin-top:64px">
+<p style="font-size:28px">Each submission is worth more</p>
+<div style="flex:1;height:4px;background:#D6D4CE"></div>
+<svg style="display:block;flex-shrink:0;width:56px;height:36px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 36" preserveAspectRatio="none" aria-hidden="true"><polygon points="0,9.9 33.6,9.9 33.6,0 56,18 33.6,36 33.6,26.1 0,26.1" fill="#E51628"/></svg>
+<p class="ink" style="font-size:28px;font-weight:600">Volume itself is the gain</p>
+</div>
+<div class="foot"><img src="assets/71fea5c4c4c01335b643926bfa42db5b.png" alt="Sciences Po"><p class="src">Schmitz, Hammond &amp; Chan, 2026</p></div>
+</section>
+<section id="map" data-note="From 2,288 candidate services, fewer than 1 in 20 qualified. Officials themselves assert AI involvement in 69% of cases; third parties alone in 31%. Most represented: justice and legal services 23%, regulatory complaints 12%, benefits and social protection 11%.">
+<h2>What Schmitz found</h2>
+<div class="bigrow" style="margin-top:48px">
+<div style="border-top:6px solid #E51628;padding-top:20px"><p class="big" style="font-size:170px">84</p><p class="ink">cases of demand surges attributed to AI</p></div>
+<div style="border-top:6px solid #171717;padding-top:20px"><p class="big" style="font-size:170px;color:#171717">11</p><p class="ink">jurisdictions</p></div>
+<div style="border-top:6px solid #171717;padding-top:20px"><p class="big" style="font-size:170px;color:#171717">13</p><p class="ink">service domains: justice 23%, regulatory complaints 12%, benefits 11%</p></div>
+</div>
+<div style="display:flex;flex-direction:row;gap:24px;align-items:center;margin-top:52px">
+<p class="ink" style="font-size:28px;width:420px">Who names AI as the cause</p>
+<div style="flex:1;display:flex;flex-direction:row;height:56px">
+<div style="width:69%;background:#E51628;display:flex;align-items:center;padding-left:20px"><p style="font-size:26px;font-weight:600;color:#FFF7F6">Officials · 69%</p></div>
+<div style="width:31%;background:#EDECE8;display:flex;align-items:center;padding-left:20px"><p style="font-size:26px">Third parties · 31%</p></div>
+</div>
+</div>
+<div class="foot"><img src="assets/71fea5c4c4c01335b643926bfa42db5b.png" alt="Sciences Po"><p class="src">Schmitz, Hammond &amp; Chan, 2026</p></div>
+</section>
+<section id="how" data-note="The services accept free text, “often of arbitrary length”: FOI requests, planning consultations, public comments. Honest point: these are mostly not yet autonomous agents. The pattern is “LLMs generating large amounts of text, paired with humans navigating the rest of the process manually”. Browser-using agents are the next step, which is why the paper speaks of agentic flooding.">
+<h2 class="s">For now, it is mostly LLMs writing cheap, legally sophisticated text</h2>
+<div style="display:flex;flex-direction:row;gap:96px;margin-top:48px;align-items:flex-start">
+<div style="width:320px;display:flex;flex-direction:column;gap:20px">
+<p style="font-family:'Jost', Arial, sans-serif;font-size:120px;font-weight:600;line-height:1;color:#E51628">87%</p>
+<svg viewBox="0 0 296 296" width="296" height="296" aria-label="87 of 100 squares in red"><rect x="0" y="0" width="26" height="26" fill="#E51628"/><rect x="30" y="0" width="26" height="26" fill="#E51628"/><rect x="60" y="0" width="26" height="26" fill="#E51628"/><rect x="90" y="0" width="26" height="26" fill="#E51628"/><rect x="120" y="0" width="26" height="26" fill="#E51628"/><rect x="150" y="0" width="26" height="26" fill="#E51628"/><rect x="180" y="0" width="26" height="26" fill="#E51628"/><rect x="210" y="0" width="26" height="26" fill="#E51628"/><rect x="240" y="0" width="26" height="26" fill="#E51628"/><rect x="270" y="0" width="26" height="26" fill="#E51628"/><rect x="0" y="30" width="26" height="26" fill="#E51628"/><rect x="30" y="30" width="26" height="26" fill="#E51628"/><rect x="60" y="30" width="26" height="26" fill="#E51628"/><rect x="90" y="30" width="26" height="26" fill="#E51628"/><rect x="120" y="30" width="26" height="26" fill="#E51628"/><rect x="150" y="30" width="26" height="26" fill="#E51628"/><rect x="180" y="30" width="26" height="26" fill="#E51628"/><rect x="210" y="30" width="26" height="26" fill="#E51628"/><rect x="240" y="30" width="26" height="26" fill="#E51628"/><rect x="270" y="30" width="26" height="26" fill="#E51628"/><rect x="0" y="60" width="26" height="26" fill="#E51628"/><rect x="30" y="60" width="26" height="26" fill="#E51628"/><rect x="60" y="60" width="26" height="26" fill="#E51628"/><rect x="90" y="60" width="26" height="26" fill="#E51628"/><rect x="120" y="60" width="26" height="26" fill="#E51628"/><rect x="150" y="60" width="26" height="26" fill="#E51628"/><rect x="180" y="60" width="26" height="26" fill="#E51628"/><rect x="210" y="60" width="26" height="26" fill="#E51628"/><rect x="240" y="60" width="26" height="26" fill="#E51628"/><rect x="270" y="60" width="26" height="26" fill="#E51628"/><rect x="0" y="90" width="26" height="26" fill="#E51628"/><rect x="30" y="90" width="26" height="26" fill="#E51628"/><rect x="60" y="90" width="26" height="26" fill="#E51628"/><rect x="90" y="90" width="26" height="26" fill="#E51628"/><rect x="120" y="90" width="26" height="26" fill="#E51628"/><rect x="150" y="90" width="26" height="26" fill="#E51628"/><rect x="180" y="90" width="26" height="26" fill="#E51628"/><rect x="210" y="90" width="26" height="26" fill="#E51628"/><rect x="240" y="90" width="26" height="26" fill="#E51628"/><rect x="270" y="90" width="26" height="26" fill="#E51628"/><rect x="0" y="120" width="26" height="26" fill="#E51628"/><rect x="30" y="120" width="26" height="26" fill="#E51628"/><rect x="60" y="120" width="26" height="26" fill="#E51628"/><rect x="90" y="120" width="26" height="26" fill="#E51628"/><rect x="120" y="120" width="26" height="26" fill="#E51628"/><rect x="150" y="120" width="26" height="26" fill="#E51628"/><rect x="180" y="120" width="26" height="26" fill="#E51628"/><rect x="210" y="120" width="26" height="26" fill="#E51628"/><rect x="240" y="120" width="26" height="26" fill="#E51628"/><rect x="270" y="120" width="26" height="26" fill="#E51628"/><rect x="0" y="150" width="26" height="26" fill="#E51628"/><rect x="30" y="150" width="26" height="26" fill="#E51628"/><rect x="60" y="150" width="26" height="26" fill="#E51628"/><rect x="90" y="150" width="26" height="26" fill="#E51628"/><rect x="120" y="150" width="26" height="26" fill="#E51628"/><rect x="150" y="150" width="26" height="26" fill="#E51628"/><rect x="180" y="150" width="26" height="26" fill="#E51628"/><rect x="210" y="150" width="26" height="26" fill="#E51628"/><rect x="240" y="150" width="26" height="26" fill="#E51628"/><rect x="270" y="150" width="26" height="26" fill="#E51628"/><rect x="0" y="180" width="26" height="26" fill="#E51628"/><rect x="30" y="180" width="26" height="26" fill="#E51628"/><rect x="60" y="180" width="26" height="26" fill="#E51628"/><rect x="90" y="180" width="26" height="26" fill="#E51628"/><rect x="120" y="180" width="26" height="26" fill="#E51628"/><rect x="150" y="180" width="26" height="26" fill="#E51628"/><rect x="180" y="180" width="26" height="26" fill="#E51628"/><rect x="210" y="180" width="26" height="26" fill="#E51628"/><rect x="240" y="180" width="26" height="26" fill="#E51628"/><rect x="270" y="180" width="26" height="26" fill="#E51628"/><rect x="0" y="210" width="26" height="26" fill="#E51628"/><rect x="30" y="210" width="26" height="26" fill="#E51628"/><rect x="60" y="210" width="26" height="26" fill="#E51628"/><rect x="90" y="210" width="26" height="26" fill="#E51628"/><rect x="120" y="210" width="26" height="26" fill="#E51628"/><rect x="150" y="210" width="26" height="26" fill="#E51628"/><rect x="180" y="210" width="26" height="26" fill="#E51628"/><rect x="210" y="210" width="26" height="26" fill="#E51628"/><rect x="240" y="210" width="26" height="26" fill="#E51628"/><rect x="270" y="210" width="26" height="26" fill="#E51628"/><rect x="0" y="240" width="26" height="26" fill="#E51628"/><rect x="30" y="240" width="26" height="26" fill="#E51628"/><rect x="60" y="240" width="26" height="26" fill="#E51628"/><rect x="90" y="240" width="26" height="26" fill="#E51628"/><rect x="120" y="240" width="26" height="26" fill="#E51628"/><rect x="150" y="240" width="26" height="26" fill="#E51628"/><rect x="180" y="240" width="26" height="26" fill="#E51628"/><rect x="210" y="240" width="26" height="26" fill="#D6D4CE"/><rect x="240" y="240" width="26" height="26" fill="#D6D4CE"/><rect x="270" y="240" width="26" height="26" fill="#D6D4CE"/><rect x="0" y="270" width="26" height="26" fill="#D6D4CE"/><rect x="30" y="270" width="26" height="26" fill="#D6D4CE"/><rect x="60" y="270" width="26" height="26" fill="#D6D4CE"/><rect x="90" y="270" width="26" height="26" fill="#D6D4CE"/><rect x="120" y="270" width="26" height="26" fill="#D6D4CE"/><rect x="150" y="270" width="26" height="26" fill="#D6D4CE"/><rect x="180" y="270" width="26" height="26" fill="#D6D4CE"/><rect x="210" y="270" width="26" height="26" fill="#D6D4CE"/><rect x="240" y="270" width="26" height="26" fill="#D6D4CE"/><rect x="270" y="270" width="26" height="26" fill="#D6D4CE"/></svg>
+<p class="ink" style="font-size:26px">of cases involve LLM-generated text</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:44px">
+<p class="q s">“Flooding occurs when LLMs help to cheaply generate legally sophisticated text.”</p>
+<div style="display:flex;flex-direction:column;gap:14px">
+<p style="font-size:24px;color:#6B6964">Type of flooding, share of cases</p>
+<div style="display:flex;flex-direction:row;gap:20px;align-items:center"><p class="ink" style="width:220px;font-size:26px">Quantitative</p><div style="flex:1;height:36px;background:#EDECE8;display:flex;flex-direction:row"><div style="width:60%;background:#E51628"></div></div><p class="ink" style="width:84px;font-size:26px;font-weight:600;text-align:right">60%</p></div>
+<div style="display:flex;flex-direction:row;gap:20px;align-items:center"><p class="ink" style="width:220px;font-size:26px">Qualitative</p><div style="flex:1;height:36px;background:#EDECE8;display:flex;flex-direction:row"><div style="width:90%;background:#E51628"></div></div><p class="ink" style="width:84px;font-size:26px;font-weight:600;text-align:right">90%</p></div>
+<div style="display:flex;flex-direction:row;gap:20px;align-items:center"><p class="ink" style="width:220px;font-size:26px">Both</p><div style="flex:1;height:36px;background:#EDECE8;display:flex;flex-direction:row"><div style="width:50%;background:#E51628"></div></div><p class="ink" style="width:84px;font-size:26px;font-weight:600;text-align:right">50%</p></div>
+</div>
+<div style="display:flex;flex-direction:row;gap:24px;align-items:stretch">
+<div class="tile" style="flex:1;padding:28px 32px"><p class="ink" style="font-size:28px">Letters of <b>4,000+ pages</b> in German social courts</p></div>
+<div class="tile on" style="flex:1;padding:28px 32px"><p class="ink" style="font-size:28px">AI writes the text; <b>humans still click</b> through the process</p></div>
+</div>
+</div>
+</div>
+<div class="foot"><img src="assets/71fea5c4c4c01335b643926bfa42db5b.png" alt="Sciences Po"><p class="src">Schmitz, Hammond &amp; Chan, 2026</p></div>
+</section>
+<section id="caveats" data-note="Left: three limits of the measurement. Right: what the strain looks like so far. The other side: the cases span countries, services and outlets, and in most the affected body itself names AI. “Any alternative explanation would have to account for independent misattribution across all of these criteria.” Other limits: country and domain selection, national habits of public reporting, prompts in English. Model good epistemics: strong signal, weak measurement.">
+<h2>Caveats: what the evidence does not show</h2>
+<div style="display:flex;flex-direction:row;gap:64px;margin-top:56px;align-items:stretch">
+<div style="flex:1.4;display:flex;flex-direction:column">
+<div style="display:flex;flex-direction:row;gap:32px;align-items:center;padding:26px 0;border-top:2px solid #D6D4CE;"><div style="width:96px;height:96px;flex:0 0 auto;background:#EDECE8;display:flex;align-items:center;justify-content:center"><svg class="xi" style="width:52px;height:52px;color:#57554F" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"/></svg></div><div><h3 style="margin:0 0 6px">No causal claims</h3><p>“Exploratory and diagnostic.” Some curves rise before ChatGPT.</p></div></div>
+<div style="display:flex;flex-direction:row;gap:32px;align-items:center;padding:26px 0;border-top:2px solid #D6D4CE;"><div style="width:96px;height:96px;flex:0 0 auto;background:#EDECE8;display:flex;align-items:center;justify-content:center"><svg class="xi" style="width:52px;height:52px;color:#57554F" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M224,200h-8V40a8,8,0,0,0-8-8H152a8,8,0,0,0-8,8V80H96a8,8,0,0,0-8,8v40H48a8,8,0,0,0-8,8v64H32a8,8,0,0,0,0,16H224a8,8,0,0,0,0-16ZM160,48h40V200H160ZM104,96h40V200H104ZM56,144H88v56H56Z"/></svg></div><div><h3 style="margin:0 0 6px">Probably an undercount</h3><p>Cases needed public attribution to AI, which excludes many.</p></div></div>
+<div style="display:flex;flex-direction:row;gap:32px;align-items:center;padding:26px 0;border-top:2px solid #D6D4CE;border-bottom:2px solid #D6D4CE;"><div style="width:96px;height:96px;flex:0 0 auto;background:#EDECE8;display:flex;align-items:center;justify-content:center"><svg class="xi" style="width:52px;height:52px;color:#57554F" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm64-88a8,8,0,0,1-8,8H128a8,8,0,0,1-8-8V72a8,8,0,0,1,16,0v48h48A8,8,0,0,1,192,128Z"/></svg></div><div><h3 style="margin:0 0 6px">Thin time series</h3><p>Only 25 of the 84 cases have volume data.</p></div></div>
+</div>
+<div class="strong" style="flex:1;display:flex;flex-direction:column;justify-content:center;gap:28px">
+<svg class="xi ico" style="margin:0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M240,128a8,8,0,0,1-8,8H204.94l-37.78,75.58A8,8,0,0,1,160,216h-.4a8,8,0,0,1-7.08-5.14L95.35,60.76,63.28,131.31A8,8,0,0,1,56,136H24a8,8,0,0,1,0-16H50.85L88.72,36.69a8,8,0,0,1,14.76.46l57.51,151,31.85-63.71A8,8,0,0,1,200,120h32A8,8,0,0,1,240,128Z"/></svg>
+<h3 style="margin:0">Moderate impact so far</h3>
+<p class="q">“Modest compared to precedent”</p>
+<p class="ink">and responses seem to work.</p>
+</div>
+</div>
+<div class="foot"><img src="assets/71fea5c4c4c01335b643926bfa42db5b.png" alt="Sciences Po"><p class="src">Schmitz, Hammond &amp; Chan, 2026, §3 and §8</p></div>
+</section>
+<section id="exposed" data-note="The slop picture: free-text channels receiving long, fluent, AI-written submissions, and consultation responses dismissed in batches. Bridge to Freedman’s “Drowning in slop”. These two properties can be assessed today, without forecasting AI progress.">
+<h2 class="s">Most exposed services? Those that pay out, and that ran on friction</h2>
+<div style="display:flex;flex-direction:row;align-items:stretch;gap:28px;margin-top:56px">
+<div class="tile" style="flex:1"><svg class="xi ico" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M216.57,39.43A80,80,0,0,0,83.91,120.78L28.69,176A15.86,15.86,0,0,0,24,187.31V216a16,16,0,0,0,16,16H72a8,8,0,0,0,8-8V208H96a8,8,0,0,0,8-8V184h16a8,8,0,0,0,5.66-2.34l9.56-9.57A79.73,79.73,0,0,0,160,176h.1A80,80,0,0,0,216.57,39.43ZM224,98.1c-1.09,34.09-29.75,61.86-63.89,61.9H160a63.7,63.7,0,0,1-23.65-4.51,8,8,0,0,0-8.84,1.68L116.69,168H96a8,8,0,0,0-8,8v16H72a8,8,0,0,0-8,8v16H40V187.31l58.83-58.82a8,8,0,0,0,1.68-8.84A63.72,63.72,0,0,1,96,95.92c0-34.14,27.81-62.8,61.9-63.89A64,64,0,0,1,224,98.1ZM192,76a12,12,0,1,1-12-12A12,12,0,0,1,192,76Z"/></svg><h3>Each submission is consequential</h3><p>Worth money to the claimant, or triggers processing the law requires.</p></div>
+<div style="display:flex;align-items:center"><p style="font-family:'Jost', Arial, sans-serif;font-size:80px;font-weight:600;color:#E51628">+</p></div>
+<div class="tile" style="flex:1"><svg class="xi ico" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M208,80H176V56a48,48,0,0,0-96,0V80H48A16,16,0,0,0,32,96V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V96A16,16,0,0,0,208,80ZM96,56a32,32,0,0,1,64,0V80H96ZM208,208H48V96H208V208Zm-68-56a12,12,0,1,1-12-12A12,12,0,0,1,140,152Z"/></svg><h3>Demand was held down by friction</h3><p>Few limits on length or volume. Complexity and legal know-how did the rationing.</p></div>
+<div style="display:flex;align-items:center"><p style="font-family:'Jost', Arial, sans-serif;font-size:80px;font-weight:600;color:#E51628">=</p></div>
+<div style="flex:1;background:#E51628;padding:40px 40px 44px"><svg class="xi ico" style="color:#FFF7F6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M236.8,188.09,149.35,36.22h0a24.76,24.76,0,0,0-42.7,0L19.2,188.09a23.51,23.51,0,0,0,0,23.72A24.35,24.35,0,0,0,40.55,224h174.9a24.35,24.35,0,0,0,21.33-12.19A23.51,23.51,0,0,0,236.8,188.09ZM222.93,203.8a8.5,8.5,0,0,1-7.48,4.2H40.55a8.5,8.5,0,0,1-7.48-4.2,7.59,7.59,0,0,1,0-7.72L120.52,44.21a8.75,8.75,0,0,1,15,0l87.45,151.87A7.59,7.59,0,0,1,222.93,203.8ZM120,144V104a8,8,0,0,1,16,0v40a8,8,0,0,1-16,0Zm20,36a12,12,0,1,1-12-12A12,12,0,0,1,140,180Z"/></svg><h3 style="color:#FFF7F6">Highest risk</h3><p style="color:#FFE3E5">Tax objections, social court lawsuits, civil claims. Next: tax administration and courts.</p></div>
+</div>
+<p class="q s" style="margin-top:64px">“Each service’s resilience has historically been owed to <span class="hl">friction rather than design</span>.”</p>
+<div class="foot"><img src="assets/71fea5c4c4c01335b643926bfa42db5b.png" alt="Sciences Po"><p class="src">Schmitz, Hammond &amp; Chan, 2026, §5.1 · Freedman, Drowning in slop</p></div>
+</section>
+<section id="risk" data-note="Redrawn from Figure 3. Likelihood (factors 1–5) on the vertical axis, severity (6–13) on the horizontal. A, public comment procedures: likely but not severe. B, benefits appeals: in the middle. C, emergency services: unlikely but severe. Red ↑: the more of this factor, the higher the risk. Grey ↓: the more of it, the lower the risk (cost of access, efficient identity verification, easy scaling). Bold: the interface (3) and identity verification (7) are design choices, the hinge into part 3; the take-up gap (12) is the £20bn point, since budgets assume people won’t claim everything. All thirteen can be scored today.">
+<h2 class="s">How risky is it?</h2>
+<div style="display:flex;flex-direction:row;gap:72px;margin-top:44px;align-items:flex-start">
+<div style="width:420px;flex:0 0 auto;display:flex;flex-direction:column;gap:28px">
+<div style="width:354px;display:flex;flex-direction:column;gap:10px">
+<p style="font-size:24px;color:#6B6964">↑ Likelihood</p>
+<div style="display:flex;flex-direction:column;gap:6px;border-left:3px solid #6B6964;border-bottom:3px solid #6B6964;padding:0 0 6px 6px"><div style="display:flex;flex-direction:row;gap:6px"><div style="width:110px;height:110px;background:#F2A1A9;display:flex;align-items:center;justify-content:center"><p style="font-family:'Jost', Arial, sans-serif;font-size:44px;font-weight:600;color:#171717">A</p></div><div style="width:110px;height:110px;background:#F2A1A9;display:flex;align-items:center;justify-content:center"><p style="font-family:'Jost', Arial, sans-serif;font-size:44px;font-weight:600;color:#171717"></p></div><div style="width:110px;height:110px;background:#F2A1A9;display:flex;align-items:center;justify-content:center"><p style="font-family:'Jost', Arial, sans-serif;font-size:44px;font-weight:600;color:#171717"></p></div></div><div style="display:flex;flex-direction:row;gap:6px"><div style="width:110px;height:110px;background:#FBE3E5;display:flex;align-items:center;justify-content:center"><p style="font-family:'Jost', Arial, sans-serif;font-size:44px;font-weight:600;color:#171717"></p></div><div style="width:110px;height:110px;background:#FBE3E5;display:flex;align-items:center;justify-content:center"><p style="font-family:'Jost', Arial, sans-serif;font-size:44px;font-weight:600;color:#171717">B</p></div><div style="width:110px;height:110px;background:#F2A1A9;display:flex;align-items:center;justify-content:center"><p style="font-family:'Jost', Arial, sans-serif;font-size:44px;font-weight:600;color:#171717"></p></div></div><div style="display:flex;flex-direction:row;gap:6px"><div style="width:110px;height:110px;background:#EDECE8;display:flex;align-items:center;justify-content:center"><p style="font-family:'Jost', Arial, sans-serif;font-size:44px;font-weight:600;color:#171717"></p></div><div style="width:110px;height:110px;background:#FBE3E5;display:flex;align-items:center;justify-content:center"><p style="font-family:'Jost', Arial, sans-serif;font-size:44px;font-weight:600;color:#171717"></p></div><div style="width:110px;height:110px;background:#F2A1A9;display:flex;align-items:center;justify-content:center"><p style="font-family:'Jost', Arial, sans-serif;font-size:44px;font-weight:600;color:#171717">C</p></div></div></div>
+<p style="font-size:24px;color:#6B6964;text-align:right">Severity →</p>
+</div>
+<div style="border:2px solid #D6D4CE;padding:22px 26px;display:flex;flex-direction:column;gap:6px">
+<p style="font-size:24px;font-style:italic;color:#57554F;margin-bottom:4px">Sample services</p>
+<div style="display:flex;flex-direction:row;gap:14px;align-items:baseline"><p style="font-family:'Jost', Arial, sans-serif;width:28px;font-size:28px;font-weight:600;color:#171717">A</p><p class="ink" style="font-size:24px">Public comment procedures</p></div><div style="display:flex;flex-direction:row;gap:14px;align-items:baseline"><p style="font-family:'Jost', Arial, sans-serif;width:28px;font-size:28px;font-weight:600;color:#171717">B</p><p class="ink" style="font-size:24px">Benefits appeals</p></div><div style="display:flex;flex-direction:row;gap:14px;align-items:baseline"><p style="font-family:'Jost', Arial, sans-serif;width:28px;font-size:28px;font-weight:600;color:#171717">C</p><p class="ink" style="font-size:24px">Emergency services</p></div>
+</div>
+</div>
+<div style="flex:1;min-width:0;display:flex;flex-direction:column;gap:36px">
+<div style="display:flex;flex-direction:column;gap:18px"><h3 style="margin:0;padding-bottom:10px;border-bottom:2px solid #171717">Likelihood</h3><div style="display:grid;grid-template-columns:repeat(2, minmax(0, 1fr));gap:40px"><div style="display:flex;flex-direction:column;gap:8px"><p style="font-family:'Jost', Arial, sans-serif;font-style:italic;font-size:28px;font-weight:500;color:#57554F;margin-bottom:4px">Agent capabilities and access</p><div style="display:flex;flex-direction:row;gap:12px;align-items:baseline"><p style="width:36px;flex:0 0 auto;text-align:right;font-size:24px;color:#57554F">1</p><p style="width:22px;flex:0 0 auto;font-size:26px;font-weight:700"><span style="color:#E51628">↑</span></p><p class="ink" style="flex:1;font-size:24px;line-height:1.3">Maturity of agent capabilities</p></div><div style="display:flex;flex-direction:row;gap:12px;align-items:baseline"><p style="width:36px;flex:0 0 auto;text-align:right;font-size:24px;color:#57554F">2</p><p style="width:22px;flex:0 0 auto;font-size:26px;font-weight:700"><span style="color:#6B6964">↓</span></p><p class="ink" style="flex:1;font-size:24px;line-height:1.3">Cost to access the required capabilities</p></div></div><div style="display:flex;flex-direction:column;gap:8px"><p style="font-family:'Jost', Arial, sans-serif;font-style:italic;font-size:28px;font-weight:500;color:#57554F;margin-bottom:4px">Service features</p><div style="display:flex;flex-direction:row;gap:12px;align-items:baseline"><p style="width:36px;flex:0 0 auto;text-align:right;font-size:24px;color:#57554F">3</p><p style="width:22px;flex:0 0 auto;font-size:26px;font-weight:700"><span style="color:#E51628">↑</span></p><p class="ink" style="flex:1;font-size:24px;line-height:1.3"><b>Susceptibility of service interface</b></p></div><div style="display:flex;flex-direction:row;gap:12px;align-items:baseline"><p style="width:36px;flex:0 0 auto;text-align:right;font-size:24px;color:#57554F">4</p><p style="width:22px;flex:0 0 auto;font-size:26px;font-weight:700"><span style="color:#E51628">↑</span></p><p class="ink" style="flex:1;font-size:24px;line-height:1.3">Effort required to submit</p></div><div style="display:flex;flex-direction:row;gap:12px;align-items:baseline"><p style="width:36px;flex:0 0 auto;text-align:right;font-size:24px;color:#57554F">5</p><p style="width:22px;flex:0 0 auto;font-size:26px;font-weight:700"><span style="color:#E51628">↑</span></p><p class="ink" style="flex:1;font-size:24px;line-height:1.3">Expected benefit of a successful submission</p></div></div></div></div>
+<div style="display:flex;flex-direction:column;gap:18px"><h3 style="margin:0;padding-bottom:10px;border-bottom:2px solid #171717">Severity</h3><div style="display:grid;grid-template-columns:repeat(2, minmax(0, 1fr));gap:40px"><div style="display:flex;flex-direction:column;gap:8px"><p style="font-family:'Jost', Arial, sans-serif;font-style:italic;font-size:28px;font-weight:500;color:#57554F;margin-bottom:4px">Operational impact</p><div style="display:flex;flex-direction:row;gap:12px;align-items:baseline"><p style="width:36px;flex:0 0 auto;text-align:right;font-size:24px;color:#57554F">6</p><p style="width:22px;flex:0 0 auto;font-size:26px;font-weight:700"><span style="color:#E51628">↑</span></p><p class="ink" style="flex:1;font-size:24px;line-height:1.3">Effort required to process each submission</p></div><div style="display:flex;flex-direction:row;gap:12px;align-items:baseline"><p style="width:36px;flex:0 0 auto;text-align:right;font-size:24px;color:#57554F">7</p><p style="width:22px;flex:0 0 auto;font-size:26px;font-weight:700"><span style="color:#6B6964">↓</span></p><p class="ink" style="flex:1;font-size:24px;line-height:1.3"><b>Efficiency of identity verification</b></p></div><div style="display:flex;flex-direction:row;gap:12px;align-items:baseline"><p style="width:36px;flex:0 0 auto;text-align:right;font-size:24px;color:#57554F">8</p><p style="width:22px;flex:0 0 auto;font-size:26px;font-weight:700"><span style="color:#6B6964">↓</span></p><p class="ink" style="flex:1;font-size:24px;line-height:1.3">Ease of scaling processing capacity</p></div><div style="display:flex;flex-direction:row;gap:12px;align-items:baseline"><p style="width:36px;flex:0 0 auto;text-align:right;font-size:24px;color:#57554F">9</p><p style="width:22px;flex:0 0 auto;font-size:26px;font-weight:700"><span style="color:#E51628">↑</span></p><p class="ink" style="flex:1;font-size:24px;line-height:1.3">Current utilisation of capacity</p></div></div><div style="display:flex;flex-direction:column;gap:8px"><p style="font-family:'Jost', Arial, sans-serif;font-style:italic;font-size:28px;font-weight:500;color:#57554F;margin-bottom:4px">Response impact</p><div style="display:flex;flex-direction:row;gap:12px;align-items:baseline"><p style="width:36px;flex:0 0 auto;text-align:right;font-size:24px;color:#57554F">10</p><p style="width:22px;flex:0 0 auto;font-size:26px;font-weight:700"><span style="color:#E51628">↑</span></p><p class="ink" style="flex:1;font-size:24px;line-height:1.3">Rigidity of budget and entitlement policy</p></div><div style="display:flex;flex-direction:row;gap:12px;align-items:baseline"><p style="width:36px;flex:0 0 auto;text-align:right;font-size:24px;color:#57554F">11</p><p style="width:22px;flex:0 0 auto;font-size:26px;font-weight:700"><span style="color:#E51628">↑</span></p><p class="ink" style="flex:1;font-size:24px;line-height:1.3">Processing effort the law mandates per request</p></div><div style="display:flex;flex-direction:row;gap:12px;align-items:baseline"><p style="width:36px;flex:0 0 auto;text-align:right;font-size:24px;color:#57554F">12</p><p style="width:22px;flex:0 0 auto;font-size:26px;font-weight:700"><span style="color:#E51628">↑</span></p><p class="ink" style="flex:1;font-size:24px;line-height:1.3"><b>Gap between assumed and full take-up</b></p></div><div style="display:flex;flex-direction:row;gap:12px;align-items:baseline"><p style="width:36px;flex:0 0 auto;text-align:right;font-size:24px;color:#57554F">13</p><p style="width:22px;flex:0 0 auto;font-size:26px;font-weight:700"><span style="color:#E51628">↑</span></p><p class="ink" style="flex:1;font-size:24px;line-height:1.3">Downstream cost of a successful submission</p></div></div></div></div>
+<p style="font-size:24px;line-height:1.35;color:#57554F"><span style="color:#E51628;font-weight:700">↑</span> raises the risk · <span style="color:#6B6964;font-weight:700">↓</span> lowers it</p>
+</div>
+</div>
+<div class="foot"><img src="assets/71fea5c4c4c01335b643926bfa42db5b.png" alt="Sciences Po"><p class="src">Schmitz, Hammond &amp; Chan, 2026, Fig. 3</p></div>
+</section>
+<section id="p3" class="red" data-note="Part 3 divider. We have seen what is happening: agents are using public services more. Now, why that changes what governments have to deal with: the front door, two challenges, then the so-what.">
+<h1 class="w" style="width:1767px;box-sizing:border-box;transform:translate(-35px, 0)">What this changes / breaks<br>for governments</h1>
+</section>
+<section id="frontdoor" class="red" data-note="The core shift in one line. Every form, portal and queue assumed a person on the other side. That assumption no longer holds, and it creates two challenges.">
+<p class="statement s"><span style="font-weight:400">The state’s front door was built for humans.</span> <span style="color:#fafaf8">Now services are </span><span style="color:#fafaf8"><i>open</i></span><span style="color:#fafaf8"> to agents too, but not </span><span style="color:#fafaf8"><i>built</i></span><span style="color:#fafaf8"> for them.</span></p>
+</section>
+<section id="five" data-note="Two challenges, one slide each. The first is the flooding we just saw, seen from the government side. The second is the identity question, with Loosemore’s Know Your Agent.">
+<h2>Public powers face two challenges</h2>
+<div style="display:grid;grid-template-columns:repeat(2, minmax(0, 1fr));gap:48px;margin-top:72px">
+<div class="tile" style="padding:56px 56px;min-height:500px;box-sizing:border-box;display:flex;flex-direction:column;gap:24px"><p class="num" style="font-size:120px;margin:0">01</p><h3 style="font-size:60px;margin:0">Friction is removed</h3><p class="ink" style="font-size:32px">Services that relied on forms, prose and waiting now receive more requests, and more complex ones.</p></div>
+<div class="tile on" style="padding:56px 56px;min-height:500px;box-sizing:border-box;display:flex;flex-direction:column;gap:24px"><p class="num" style="font-size:120px;margin:0">02</p><h3 style="font-size:60px;margin:0">Who is acting?</h3><p class="ink" style="font-size:32px">Governments can no longer tell whether a request comes from a person or from an agent acting for them.</p></div>
+</div>
+<div class="foot"><img src="assets/71fea5c4c4c01335b643926bfa42db5b.png" alt="Sciences Po"><p class="src">Schmitz, Hammond &amp; Chan, 2026 · Loosemore, Know Your Agent, 2026</p></div>
+</section>
+<section id="ch1" data-note="Both sides at once: the same lower cost that makes government more accessible is what floods it. Loosemore’s question for every service: “Which services currently rely, deliberately or otherwise, on users giving up?”">
+<div style="display:flex;flex-direction:row;gap:96px;align-items:flex-start;margin-top:40px">
+<p style="width:380px;flex:0 0 auto;font-family:'Jost', Arial, sans-serif;font-size:260px;font-weight:600;line-height:0.9;color:#E51628">01</p>
+<div style="flex:1;min-width:0;display:flex;flex-direction:column;gap:36px">
+<h2>Friction is removed</h2>
+<p class="bar">Public services ran on friction: forms, legal prose, waiting. Agents take it away.</p>
+<div style="display:grid;grid-template-columns:repeat(2, minmax(0, 1fr));gap:32px;margin-top:12px">
+<div class="tile"><svg class="xi ico g" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M117.25,157.92a60,60,0,1,0-66.5,0A95.83,95.83,0,0,0,3.53,195.63a8,8,0,1,0,13.4,8.74,80,80,0,0,1,134.14,0,8,8,0,0,0,13.4-8.74A95.83,95.83,0,0,0,117.25,157.92ZM40,108a44,44,0,1,1,44,44A44.05,44.05,0,0,1,40,108Zm210.14,98.7a8,8,0,0,1-11.07-2.33A79.83,79.83,0,0,0,172,168a8,8,0,0,1,0-16,44,44,0,1,0-16.34-84.87,8,8,0,1,1-5.94-14.85,60,60,0,0,1,55.53,105.64,95.83,95.83,0,0,1,47.22,37.71A8,8,0,0,1,250.14,206.7Z"/></svg><h3>More access</h3><p>People can deal with government more, and claim what they are entitled to.</p></div>
+<div class="tile on"><svg class="xi ico" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M236.8,188.09,149.35,36.22h0a24.76,24.76,0,0,0-42.7,0L19.2,188.09a23.51,23.51,0,0,0,0,23.72A24.35,24.35,0,0,0,40.55,224h174.9a24.35,24.35,0,0,0,21.33-12.19A23.51,23.51,0,0,0,236.8,188.09ZM222.93,203.8a8.5,8.5,0,0,1-7.48,4.2H40.55a8.5,8.5,0,0,1-7.48-4.2,7.59,7.59,0,0,1,0-7.72L120.52,44.21a8.75,8.75,0,0,1,15,0l87.45,151.87A7.59,7.59,0,0,1,222.93,203.8ZM120,144V104a8,8,0,0,1,16,0v40a8,8,0,0,1-16,0Zm20,36a12,12,0,1,1-12-12A12,12,0,0,1,140,180Z"/></svg><h3>Flooding</h3><p class="ink">Requests surge and services can seize up. UK tribunal hearings are already listed for 2029.</p></div>
+</div>
+</div>
+</div>
+<div class="foot"><img src="assets/71fea5c4c4c01335b643926bfa42db5b.png" alt="Sciences Po"><p class="src">Freedman, Drowning in slop · Loosemore, Know Your Agent, 2026</p></div>
+</section>
+<section id="ch2" data-note="Loosemore in one breath: “If software declares itself, can you verify who runs it and what the person allowed it to do? If it doesn’t declare itself, how will you control consequential actions when you can’t tell whether a human or an agent is at the controls?” Detectability is “a design uncertainty, not a prerequisite you can bank on”. His answer is Know Your Agent, and “It’s not a detector”: authenticate when you can, limit consequential actions when you can’t. Next slide: the evidence each request should carry.">
+<div style="display:flex;flex-direction:row;gap:96px;align-items:flex-start;margin-top:40px">
+<p style="width:380px;flex:0 0 auto;font-family:'Jost', Arial, sans-serif;font-size:260px;font-weight:600;line-height:0.9;color:#E51628">02</p>
+<div style="flex:1;min-width:0;display:flex;flex-direction:column;gap:36px">
+<h2>Who is acting?</h2>
+<p class="bar">Governments can no longer tell who a request comes from: <b>a person, or an agent acting for them</b>.</p>
+<div style="display:flex;flex-direction:column;border-bottom:2px solid #D6D4CE">
+<div style="display:flex;flex-direction:row;gap:32px;align-items:center;padding:22px 0;border-top:2px solid #D6D4CE"><div style="width:88px;height:88px;flex:0 0 auto;background:#FBE3E5;display:flex;align-items:center;justify-content:center"><svg class="xi" style="width:48px;height:48px;color:#E51628" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M240,88.23a54.43,54.43,0,0,1-16,37L189.25,160a54.27,54.27,0,0,1-38.63,16h-.05A54.63,54.63,0,0,1,96,119.84a8,8,0,0,1,16,.45A38.62,38.62,0,0,0,150.58,160h0a38.39,38.39,0,0,0,27.31-11.31l34.75-34.75a38.63,38.63,0,0,0-54.63-54.63l-11,11A8,8,0,0,1,135.7,59l11-11A54.65,54.65,0,0,1,224,48,54.86,54.86,0,0,1,240,88.23ZM109,185.66l-11,11A38.41,38.41,0,0,1,70.6,208h0a38.63,38.63,0,0,1-27.29-65.94L78,107.31A38.63,38.63,0,0,1,144,135.71a8,8,0,0,0,16,.45A54.86,54.86,0,0,0,144,96a54.65,54.65,0,0,0-77.27,0L32,130.75A54.62,54.62,0,0,0,70.56,224h0a54.28,54.28,0,0,0,38.64-16l11-11A8,8,0,0,0,109,185.66Z"/></svg></div><p class="ink" style="flex:1;font-size:30px;line-height:1.35">Agents don’t arrive through a separate channel. Many act inside the citizen’s own browser, phone or app session.</p></div>
+<div style="display:flex;flex-direction:row;gap:32px;align-items:center;padding:22px 0;border-top:2px solid #D6D4CE"><div style="width:88px;height:88px;flex:0 0 auto;background:#FBE3E5;display:flex;align-items:center;justify-content:center"><svg class="xi" style="width:48px;height:48px;color:#E51628" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M208,80H176V56a48,48,0,0,0-96,0V80H48A16,16,0,0,0,32,96V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V96A16,16,0,0,0,208,80ZM96,56a32,32,0,0,1,64,0V80H96ZM208,208H48V96H208V208Zm-68-56a12,12,0,1,1-12-12A12,12,0,0,1,140,152Z"/></svg></div><p class="ink" style="flex:1;font-size:30px;line-height:1.35">A valid login proves <b>account control</b>, not that a human performed the action.</p></div>
+<div style="display:flex;flex-direction:row;gap:32px;align-items:center;padding:22px 0;border-top:2px solid #D6D4CE"><div style="width:88px;height:88px;flex:0 0 auto;background:#FBE3E5;display:flex;align-items:center;justify-content:center"><svg class="xi" style="width:48px;height:48px;color:#E51628" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M225.86,102.82c-3.77-3.94-7.67-8-9.14-11.57-1.36-3.27-1.44-8.69-1.52-13.94-.15-9.76-.31-20.82-8-28.51s-18.75-7.85-28.51-8c-5.25-.08-10.67-.16-13.94-1.52-3.56-1.47-7.63-5.37-11.57-9.14C146.28,23.51,138.44,16,128,16s-18.27,7.51-25.18,14.14c-3.94,3.77-8,7.67-11.57,9.14C88,40.64,82.56,40.72,77.31,40.8c-9.76.15-20.82.31-28.51,8S41,67.55,40.8,77.31c-.08,5.25-.16,10.67-1.52,13.94-1.47,3.56-5.37,7.63-9.14,11.57C23.51,109.72,16,117.56,16,128s7.51,18.27,14.14,25.18c3.77,3.94,7.67,8,9.14,11.57,1.36,3.27,1.44,8.69,1.52,13.94.15,9.76.31,20.82,8,28.51s18.75,7.85,28.51,8c5.25.08,10.67.16,13.94,1.52,3.56,1.47,7.63,5.37,11.57,9.14C109.72,232.49,117.56,240,128,240s18.27-7.51,25.18-14.14c3.94-3.77,8-7.67,11.57-9.14,3.27-1.36,8.69-1.44,13.94-1.52,9.76-.15,20.82-.31,28.51-8s7.85-18.75,8-28.51c.08-5.25.16-10.67,1.52-13.94,1.47-3.56,5.37-7.63,9.14-11.57C232.49,146.28,240,138.44,240,128S232.49,109.73,225.86,102.82Zm-11.55,39.29c-4.79,5-9.75,10.17-12.38,16.52-2.52,6.1-2.63,13.07-2.73,19.82-.1,7-.21,14.33-3.32,17.43s-10.39,3.22-17.43,3.32c-6.75.1-13.72.21-19.82,2.73-6.35,2.63-11.52,7.59-16.52,12.38S132,224,128,224s-9.15-4.92-14.11-9.69-10.17-9.75-16.52-12.38c-6.1-2.52-13.07-2.63-19.82-2.73-7-.1-14.33-.21-17.43-3.32s-3.22-10.39-3.32-17.43c-.1-6.75-.21-13.72-2.73-19.82-2.63-6.35-7.59-11.52-12.38-16.52S32,132,32,128s4.92-9.15,9.69-14.11,9.75-10.17,12.38-16.52c2.52-6.1,2.63-13.07,2.73-19.82.1-7,.21-14.33,3.32-17.43S70.51,56.9,77.55,56.8c6.75-.1,13.72-.21,19.82-2.73,6.35-2.63,11.52-7.59,16.52-12.38S124,32,128,32s9.15,4.92,14.11,9.69,10.17,9.75,16.52,12.38c6.1,2.52,13.07,2.63,19.82,2.73,7,.1,14.33.21,17.43,3.32s3.22,10.39,3.32,17.43c.1,6.75.21,13.72,2.73,19.82,2.63,6.35,7.59,11.52,12.38,16.52S224,124,224,128,219.08,137.15,214.31,142.11ZM173.66,98.34a8,8,0,0,1,0,11.32l-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35A8,8,0,0,1,173.66,98.34Z"/></svg></div><p class="ink" style="flex:1;font-size:30px;line-height:1.35">“No single ‘badge’ will make an agent trustworthy”, and many agents present none.</p></div>
+</div>
+</div>
+</div>
+<div class="foot"><img src="assets/71fea5c4c4c01335b643926bfa42db5b.png" alt="Sciences Po"><p class="src">Loosemore, Know Your Agent, 2026</p></div>
+</section>
+<section id="kya-six" data-note="“A web scraper might be acting for one user. An agent might act for thousands. Looking at the traffic alone may not tell you much.” The six questions are Loosemore’s, verbatim; the grouping under part 1’s four questions is ours. These slides ask the questions; part 4 answers them.">
+<h2 class="s">What matters is the evidence travelling with each request</h2>
+<div style="display:flex;flex-direction:row;gap:28px;margin-top:40px"><p class="kicker g" style="width:420px;font-size:22px;margin:0">PART 1 QUESTION</p><p style="width:56px"></p><p class="kicker g" style="font-size:22px;margin:0">WHAT IT MEANS FOR GOVERNMENTS</p></div>
+<div style="display:flex;flex-direction:column;gap:18px;margin-top:16px">
+<div style="display:flex;flex-direction:row;align-items:center;gap:28px"><div style="width:420px;background:#EDECE8;border-left:6px solid #6B6964;padding:22px 28px"><p class="ink" style="font-family:'Jost', Arial, sans-serif;font-size:34px;font-weight:600">Identity</p></div><svg style="display:block;flex-shrink:0;width:56px;height:28px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 28" preserveAspectRatio="none" aria-hidden="true"><polygon points="0,7.7 33.6,7.7 33.6,0 56,14 33.6,28 33.6,20.3 0,20.3" fill="#E51628"/></svg><div style="flex:1;background:#FBE3E5;padding:22px 28px"><p class="ink" style="font-size:30px">Who runs the agent? Which particular agent is asking?</p></div></div>
+<div style="display:flex;flex-direction:row;align-items:center;gap:28px"><div style="width:420px;background:#EDECE8;border-left:6px solid #6B6964;padding:22px 28px"><p class="ink" style="font-family:'Jost', Arial, sans-serif;font-size:34px;font-weight:600">Authentication</p></div><svg style="display:block;flex-shrink:0;width:56px;height:28px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 28" preserveAspectRatio="none" aria-hidden="true"><polygon points="0,7.7 33.6,7.7 33.6,0 56,14 33.6,28 33.6,20.3 0,20.3" fill="#E51628"/></svg><div style="flex:1;background:#FBE3E5;padding:22px 28px"><p class="ink" style="font-size:30px">Who asked it to act?</p></div></div>
+<div style="display:flex;flex-direction:row;align-items:center;gap:28px"><div style="width:420px;background:#EDECE8;border-left:6px solid #6B6964;padding:22px 28px"><p class="ink" style="font-family:'Jost', Arial, sans-serif;font-size:34px;font-weight:600">Authorisation</p></div><svg style="display:block;flex-shrink:0;width:56px;height:28px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 28" preserveAspectRatio="none" aria-hidden="true"><polygon points="0,7.7 33.6,7.7 33.6,0 56,14 33.6,28 33.6,20.3 0,20.3" fill="#E51628"/></svg><div style="flex:1;background:#FBE3E5;padding:22px 28px"><p class="ink" style="font-size:30px">What did they allow it to do? Does this request stay within those limits?</p></div></div>
+<div style="display:flex;flex-direction:row;align-items:center;gap:28px"><div style="width:420px;background:#FBE3E5;border-left:6px solid #E51628;padding:22px 28px"><p style="font-family:'Jost', Arial, sans-serif;font-size:34px;font-weight:600;color:#E51628">Accountability</p></div><svg style="display:block;flex-shrink:0;width:56px;height:28px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 28" preserveAspectRatio="none" aria-hidden="true"><polygon points="0,7.7 33.6,7.7 33.6,0 56,14 33.6,28 33.6,20.3 0,20.3" fill="#E51628"/></svg><div style="flex:1;background:#FBE3E5;padding:22px 28px"><p class="ink" style="font-size:30px">How do you stop it, inspect what happened and put things right?</p></div></div>
+</div>
+<div class="foot"><img src="assets/71fea5c4c4c01335b643926bfa42db5b.png" alt="Sciences Po"><p class="src">Loosemore, Know Your Agent, 2026</p></div>
+</section>
+<section id="sowhat" class="red" data-note="The fundamental question before any response. Our answer: probably yes, because this is how citizens will increasingly deal with government. Lower submission costs “make government more accessible, a desirable public value”.">
+<p class="statement s">So what? Do we <u>want</u> <span style="color:#ffe3e5">(citizens to keep using)</span> agents to use public services?</p>
+</section>
+<section id="940890ce" class="red" data-note="The fundamental question before any response. Our answer: probably yes, because this is how citizens will increasingly deal with government. Lower submission costs “make government more accessible, a desirable public value”.">
+<p class="statement s">So what? Do we <u>want</u> <span style="color:#ffe3e5">(citizens to keep using)</span> agents to use public services?</p>
+<p class="sub w" style="margin:0;transform:translate(0, 101px)">Probably <b>YES</b>: this is how citizens will want to deal with the state, and how their interactions will be more efficient</p>
+</section>
+<section id="bothsides" data-note="The double democratic risk. Doing nothing: access depends on having the best agent, and capable agents concentrate among the affluent (Know Your Agent §1.4). Panicking: Freedman warns of “extreme demand suppression”, which hurts first carers, disabled residents and people with limited English, for whom an agent can be assistive technology.">
+<h2><span style="color:#e51628">Agents, yes?</span> It's an accessibility question</h2>
+<div class="cards" style="margin-top:64px;align-items:stretch">
+<div class="weak">
+<svg class="xi ico g" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M239.18,97.26A16.38,16.38,0,0,0,224.92,86l-59-4.76L143.14,26.15a16.36,16.36,0,0,0-30.27,0L90.11,81.23,31.08,86a16.46,16.46,0,0,0-9.37,28.86l45,38.83L53,211.75a16.38,16.38,0,0,0,24.5,17.82L128,198.49l50.53,31.08A16.4,16.4,0,0,0,203,211.75l-13.76-58.07,45-38.83A16.43,16.43,0,0,0,239.18,97.26Zm-15.34,5.47-48.7,42a8,8,0,0,0-2.56,7.91l14.88,62.8a.37.37,0,0,1-.17.48c-.18.14-.23.11-.38,0l-54.72-33.65a8,8,0,0,0-8.38,0L69.09,215.94c-.15.09-.19.12-.38,0a.37.37,0,0,1-.17-.48l14.88-62.8a8,8,0,0,0-2.56-7.91l-48.7-42c-.12-.1-.23-.19-.13-.5s.18-.27.33-.29l63.92-5.16A8,8,0,0,0,103,91.86l24.62-59.61c.08-.17.11-.25.35-.25s.27.08.35.25L153,91.86a8,8,0,0,0,6.75,4.92l63.92,5.16c.15,0,.24,0,.33.29S224,102.63,223.84,102.73Z"/></svg>
+<h3>If government does nothing</h3>
+<p style="font-size:32px">Access goes to whoever has the <b>best agent</b>.&nbsp;<br><br>Capable agents concentrate among the affluent and any access through agents is not favoured</p>
+</div>
+<div class="strong">
+<svg class="xi ico" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M208,80H176V56a48,48,0,0,0-96,0V80H48A16,16,0,0,0,32,96V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V96A16,16,0,0,0,208,80ZM96,56a32,32,0,0,1,64,0V80H96ZM208,208H48V96H208V208Zm-68-56a12,12,0,1,1-12-12A12,12,0,0,1,140,152Z"/></svg>
+<h3>If government panics</h3>
+<p class="ink" style="font-size:32px;width:728px;box-sizing:border-box">“Extreme demand suppression”: tighter eligibility, blanket bot-blocking, fewer channels.&nbsp;<br><br><b>It may hurt first the people who need help most.</b></p>
+</div>
+</div>
+<div class="foot"><img src="assets/71fea5c4c4c01335b643926bfa42db5b.png" alt="Sciences Po"><p class="src">Loosemore, Know Your Agent, §1.4 · Freedman, Drowning in slop</p></div>
+</section>
+<section id="roads" data-note="Percentages: share of the 84 cases where governments already used that response. Redesign cases are all small changes (e.g. verifying case numbers); AI in processing includes sentiment analysis of comments and spotting fake medical certificates; reduce the benefit: US welfare reforms of the 1990s. Governments respond in 56% of cases, but “usually tightly scoped or non-binding”. The budget trap: the UK’s DWP “explicitly anchors benefit budgets to historical take-up rates”, so entitlement cuts “may be required regardless”. The paper’s verdict is not collapse but “muddling through” with friction.">
+<h2 class="s">Two roads: suppress demand, or ...</h2>
+<div style="display:flex;flex-direction:row;justify-content:center;margin-top:28px"><div style="flex:0 1 auto; box-sizing:border-box; display:block; min-width:min-content; padding:14px 40px; background:#fafaf8; border:3px solid #e51628; transform:translate(0, 32px)">
+      <p style="flex:0 0 auto; font-family:Jost, Arial, sans-serif; font-size:32px; font-weight:600; line-height:1.4; margin:0" class="ink">A surge in demand</p>
+    </div></div>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1664 56" aria-label="The surge splits into two roads" style="width:1664px; height:56px; flex:0 0 auto; transform:translate(0, 32px)"><path d="M832 0 V20 H400 V56 M832 20 H1264 V56" fill="none" stroke="#6B6964" stroke-width="4"/></svg>
+<div style="display:flex;flex-direction:row;gap:48px">
+<div style="flex:1;display:flex;flex-direction:column;gap:14px">
+<div style="display:block;flex:0 0 auto;padding:18px 28px;background:#edece8;border-top:6px solid #6b6964;transform:translate(0, 32px);width:778px;box-sizing:border-box">
+        <p style="flex:0 0 auto; font-family:'Public Sans', Arial, sans-serif; font-size:26px; font-weight:600; line-height:1.4; letter-spacing:3px; color:#6b6964">SUPPRESS DEMAND</p>
+      </div>
+<div style="display:flex;flex-direction:row;align-items:baseline;justify-content:space-between;flex:0 0 auto;padding:14px 4px;border-bottom:2px solid #d6d4ce;transform:translate(0, 32px);width:784px;box-sizing:border-box">
+        <p style="flex:0 1 auto; box-sizing:border-box; min-width:min-content; font-family:'Public Sans', Arial, sans-serif; font-size:30px; line-height:1.4; margin:0" class="ink"><b>Add friction</b> <span style="color:#57554f">· 17% of cases</span></p>
+        <p style="flex:0 1 auto; box-sizing:border-box; min-width:min-content; font-family:'Public Sans', Arial, sans-serif; font-size:26px; line-height:1.4; color:#57554f">shapes who gets access</p>
+      </div>
+<div style="display:flex;flex-direction:row;align-items:baseline;justify-content:space-between;flex:0 0 auto;padding:14px 4px;border-bottom:2px solid #d6d4ce;transform:translate(0, 32px);width:783px;box-sizing:border-box">
+        <p style="flex:0 1 auto; box-sizing:border-box; min-width:min-content; font-family:'Public Sans', Arial, sans-serif; font-size:30px; line-height:1.4; margin:0" class="ink"><b>Reduce the benefit</b></p>
+        <p style="flex:0 1 auto; box-sizing:border-box; min-width:min-content; font-family:'Public Sans', Arial, sans-serif; font-size:26px; line-height:1.4; color:#57554f">needs legislation</p>
+      </div>
+</div>
+</div>
+<div class="foot"><img src="assets/71fea5c4c4c01335b643926bfa42db5b.png" alt="Sciences Po"><p class="src">Schmitz, Hammond &amp; Chan, 2026, §6 and Table 3</p></div>
+</section>
+<section id="friction" data-note="Friction is also weakening on its own terms: CAPTCHAs no longer reliably tell humans apart. It is sometimes illegal (fees for welfare applications are banned in many places). It does nothing against qualitative flooding or determined adversaries. And yet it is the tempting reflex, because it is fast.">
+<h2>If yes, putting friction back is a democratic and design problem</h2>
+<div style="border-left:6px solid #E51628;padding-left:40px;margin-top:36px">
+<p class="lead s" style="margin:0">“Friction disproportionately deters poorer, less digitally literate, and otherwise vulnerable users, effectively <span class="hl">shaping who accesses public services.</span>”</p>
+</div>
+<div class="tiles" style="margin-top:48px">
+<div class="tile"><svg class="xi ico g" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M117.25,157.92a60,60,0,1,0-66.5,0A95.83,95.83,0,0,0,3.53,195.63a8,8,0,1,0,13.4,8.74,80,80,0,0,1,134.14,0,8,8,0,0,0,13.4-8.74A95.83,95.83,0,0,0,117.25,157.92ZM40,108a44,44,0,1,1,44,44A44.05,44.05,0,0,1,40,108Zm210.14,98.7a8,8,0,0,1-11.07-2.33A79.83,79.83,0,0,0,172,168a8,8,0,0,1,0-16,44,44,0,1,0-16.34-84.87,8,8,0,1,1-5.94-14.85,60,60,0,0,1,55.53,105.64,95.83,95.83,0,0,1,47.22,37.71A8,8,0,0,1,250.14,206.7Z"/></svg><h3>Unequal access</h3><p>Procedural inequality, and weaker access to justice.</p></div>
+<div class="tile"><svg class="xi ico g" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M254.3,107.91,228.78,56.85a16,16,0,0,0-21.47-7.15L182.44,62.13,130.05,48.27a8.14,8.14,0,0,0-4.1,0L73.56,62.13,48.69,49.7a16,16,0,0,0-21.47,7.15L1.7,107.9a16,16,0,0,0,7.15,21.47l27,13.51,55.49,39.63a8.06,8.06,0,0,0,2.71,1.25l64,16a8,8,0,0,0,7.6-2.1l55.07-55.08,26.42-13.21a16,16,0,0,0,7.15-21.46Zm-54.89,33.37L165,113.72a8,8,0,0,0-10.68.61C136.51,132.27,116.66,130,104,122L147.24,80h31.81l27.21,54.41ZM41.53,64,62,74.22,36.43,125.27,16,115.06Zm116,119.13L99.42,168.61l-49.2-35.14,28-56L128,64.28l9.8,2.59-45,43.68-.08.09a16,16,0,0,0,2.72,24.81c20.56,13.13,45.37,11,64.91-5L188,152.66Zm62-57.87-25.52-51L214.47,64,240,115.06Zm-87.75,92.67a8,8,0,0,1-7.75,6.06,8.13,8.13,0,0,1-1.95-.24L80.41,213.33a7.89,7.89,0,0,1-2.71-1.25L51.35,193.26a8,8,0,0,1,9.3-13l25.11,17.94L126,208.24A8,8,0,0,1,131.82,217.94Z"/></svg><h3>Lower trust</h3><p>Worse experience of public services erodes trust in government.</p></div>
+<div class="tile"><svg class="xi ico g" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M208,80H176V56a48,48,0,0,0-96,0V80H48A16,16,0,0,0,32,96V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V96A16,16,0,0,0,208,80ZM96,56a32,32,0,0,1,64,0V80H96ZM208,208H48V96H208V208Zm-68-56a12,12,0,1,1-12-12A12,12,0,0,1,140,152Z"/></svg><h3>Lost gains</h3><p>Closing digital channels blocks the accessibility agents promise.</p></div>
+</div>
+<div class="foot"><img src="assets/71fea5c4c4c01335b643926bfa42db5b.png" alt="Sciences Po"><p class="src">Schmitz, Hammond &amp; Chan, 2026, §6.1</p></div>
+</section>
+<section id="25c830dc" data-note="Percentages: share of the 84 cases where governments already used that response. Redesign cases are all small changes (e.g. verifying case numbers); AI in processing includes sentiment analysis of comments and spotting fake medical certificates; reduce the benefit: US welfare reforms of the 1990s. Governments respond in 56% of cases, but “usually tightly scoped or non-binding”. The budget trap: the UK’s DWP “explicitly anchors benefit budgets to historical take-up rates”, so entitlement cuts “may be required regardless”. The paper’s verdict is not collapse but “muddling through” with friction.">
+<h2 class="s">Two roads: suppress demand, or increase capacity</h2>
+<div style="display:flex;flex-direction:row;justify-content:center;margin-top:28px"><div style="flex:0 1 auto; box-sizing:border-box; display:block; min-width:min-content; padding:14px 40px; background:#fafaf8; border:3px solid #e51628; transform:translate(0, 32px)">
+      <p style="flex:0 0 auto; font-family:Jost, Arial, sans-serif; font-size:32px; font-weight:600; line-height:1.4; margin:0" class="ink">A surge in demand</p>
+    </div></div>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1664 56" aria-label="The surge splits into two roads" style="width:1664px; height:56px; flex:0 0 auto; transform:translate(0, 32px)"><path d="M832 0 V20 H400 V56 M832 20 H1264 V56" fill="none" stroke="#6B6964" stroke-width="4"/></svg>
+<div style="display:flex;flex-direction:row;gap:48px">
+<div style="flex:1;display:flex;flex-direction:column;gap:14px">
+<div style="display:block; flex:0 0 auto; padding:18px 28px; background:#edece8; border-top:6px solid #6b6964; transform:translate(0, 32px)">
+        <p style="flex:0 0 auto; font-family:'Public Sans', Arial, sans-serif; font-size:26px; font-weight:600; line-height:1.4; letter-spacing:3px; color:#6b6964">SUPPRESS DEMAND</p>
+      </div>
+<div style="display:flex; flex-direction:row; align-items:baseline; justify-content:space-between; flex:0 0 auto; padding:14px 4px; border-bottom:2px solid #d6d4ce; transform:translate(0, 32px)">
+        <p style="flex:0 1 auto; box-sizing:border-box; min-width:min-content; font-family:'Public Sans', Arial, sans-serif; font-size:30px; line-height:1.4; margin:0" class="ink"><b>Add friction</b> <span style="color:#57554f">· 17% of cases</span></p>
+        <p style="flex:0 1 auto; box-sizing:border-box; min-width:min-content; font-family:'Public Sans', Arial, sans-serif; font-size:26px; line-height:1.4; color:#57554f">shapes who gets access</p>
+      </div>
+<div style="display:flex; flex-direction:row; align-items:baseline; justify-content:space-between; flex:0 0 auto; padding:14px 4px; border-bottom:2px solid #d6d4ce; transform:translate(0, 32px)">
+        <p style="flex:0 1 auto; box-sizing:border-box; min-width:min-content; font-family:'Public Sans', Arial, sans-serif; font-size:30px; line-height:1.4; margin:0" class="ink"><b>Reduce the benefit</b></p>
+        <p style="flex:0 1 auto; box-sizing:border-box; min-width:min-content; font-family:'Public Sans', Arial, sans-serif; font-size:26px; line-height:1.4; color:#57554f">needs legislation</p>
+      </div>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:14px">
+<div style="display:block; flex:0 0 auto; padding:18px 28px; background:#fbe3e5; border-top:6px solid #e51628; transform:translate(0, 32px)">
+        <p style="flex:0 0 auto; font-family:'Public Sans', Arial, sans-serif; font-size:26px; font-weight:600; line-height:1.4; letter-spacing:3px; color:#e51628">INCREASE CAPACITY&nbsp;</p>
+      </div>
+<div style="display:flex; flex-direction:row; align-items:baseline; justify-content:space-between; flex:0 0 auto; padding:14px 4px; border-bottom:2px solid #d6d4ce; transform:translate(0, 32px)">
+        <p class="ink" style="flex:0 1 auto;box-sizing:border-box;min-width:min-content;font-family:'Public Sans', Arial, sans-serif;font-size:30px;line-height:1.4;margin:0;transform:translate(4px, 84px)"><b>Hire staff</b></p>
+      </div>
+<div style="display:flex; flex-direction:row; align-items:baseline; justify-content:space-between; flex:0 0 auto; padding:14px 4px; border-bottom:2px solid #d6d4ce; transform:translate(0, 32px)">
+        <p style="box-sizing:border-box; flex:0 1 auto; min-width:min-content; font-family:'Public Sans', Arial, sans-serif; font-size:30px; line-height:1.4; transform:translate(4px, -92px); margin:0" class="ink"><b>Redesign public services towards proactivity</b>&nbsp;</p>
+      </div>
+<div style="display:flex; flex-direction:row; align-items:baseline; justify-content:space-between; flex:0 0 auto; padding:14px 4px; border-bottom:2px solid #d6d4ce; transform:translate(0, 32px)">
+        <p style="box-sizing:border-box; flex:0 1 auto; min-width:min-content; font-family:'Public Sans', Arial, sans-serif; font-size:30px; line-height:1.4; margin:0" class="ink"><b>AI agents in processing - not just agents coming to the state but the state deploying agents</b>&nbsp;</p>
+      </div>
+</div>
+</div>
+<div class="foot"><img src="assets/71fea5c4c4c01335b643926bfa42db5b.png" alt="Sciences Po"><p class="src">Schmitz, Hammond &amp; Chan, 2026, §6 and Table 3</p></div>
+</section>
+</div>
+<div id="notes"></div><div id="hud">&larr; &rarr; navigate &middot; N notes &middot; F fullscreen</div>
+<script>
+var S=[].slice.call(document.querySelectorAll('#stage>section')),i=0,step=0,stage=document.getElementById('stage'),notes=document.getElementById('notes');
+function fit(){var k=Math.min(innerWidth/1920,innerHeight/1080);stage.style.transform='scale('+k+') translate(-50%,-50%)';}
+/* click steps: .fragment elements, grouped by data-fragment-index, else document order */
+function frags(s){var n=0,list=[].slice.call(s.querySelectorAll('.fragment')).map(function(e){var a=e.getAttribute('data-fragment-index');return {e:e,k:a!==null&&a!==''?+a:(n++)+1e6}});
+ var keys=list.map(function(o){return o.k}).filter(function(k,j,a){return a.indexOf(k)===j}).sort(function(a,b){return a-b});
+ list.forEach(function(o){o.r=keys.indexOf(o.k)+1});return list}
+function maxStep(s){return frags(s).reduce(function(m,o){return Math.max(m,o.r)},0)}
+function render(){S.forEach(function(s,k){s.classList.toggle('off',k!==i)});
+ frags(S[i]).forEach(function(o){o.e.classList.toggle('visible',o.r<=step)});
+ notes.innerHTML='<b>'+(i+1)+' / '+S.length+'</b> &nbsp; '+(S[i].getAttribute('data-note')||'').replace(/&/g,'&amp;').replace(/</g,'&lt;');
+ history.replaceState(null,'','#'+(i+1));}
+function go(k,full){i=Math.max(0,Math.min(S.length-1,k));step=full?maxStep(S[i]):0;render()}
+function next(){if(step<maxStep(S[i])){step++;render()}else go(i+1)}
+function prev(){if(step>0){step--;render()}else go(i-1,true)}
+addEventListener('keydown',function(e){var k=e.key;
+ if(k==='ArrowRight'||k===' '||k==='PageDown'||k==='Enter'){e.preventDefault();next()}
+ else if(k==='ArrowLeft'||k==='PageUp'||k==='Backspace'){e.preventDefault();prev()}
+ else if(k==='Home')go(0);else if(k==='End')go(S.length-1,true);
+ else if(k==='n'||k==='N')notes.classList.toggle('on');
+ else if(k==='f'||k==='F'){document.fullscreenElement?document.exitFullscreen():document.documentElement.requestFullscreen()}});
+document.addEventListener('click',function(e){if(e.target.closest('a')||e.target.closest('#notes'))return; (e.clientX<innerWidth/3)?prev():next()});
+addEventListener('hashchange',function(){var h=parseInt(location.hash.slice(1),10);if(h>0&&h-1!==i)go(h-1)});
+addEventListener('resize',fit);fit();
+var h=parseInt(location.hash.slice(1),10);go(h>0?h-1:0);
+</script></body></html>
