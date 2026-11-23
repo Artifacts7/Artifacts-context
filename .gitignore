@@ -17,12 +17,8 @@
 !artifacts/**
 !commands/
 !commands/**
-!lecture-ai-safety-advocacy/
-!lecture-ai-safety-advocacy/**
-!lecture-architecting-agency/
-!lecture-architecting-agency/**
-!lecture-designing-an-agentic-state/
-!lecture-designing-an-agentic-state/**
+!lectures/
+!lectures/**
 !.claude/
 !.claude/skills/
 !.claude/skills/**

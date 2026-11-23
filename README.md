@@ -37,6 +37,10 @@ The stored inventory in `.archive/archive-list.json` is used automatically when 
 
 Changes are local until committed and pushed to the repository.
 
+## Lectures
+
+`lectures/` holds Lorenzo's lectures and talks, one folder per lecture, with an index in [lectures/README.md](lectures/README.md). Each folder keeps the deck (usually a standalone `slides.html` exported from the Claude Slides artifact), speaker notes, the outline and any brief or sources. Lectures reuse newsletter themes, but they are not part of the published archive and are not voice references for the newsletter.
+
 ## Skills
 
 `.claude/skills/` holds reusable skills kept with this repo. `artifacts-slides` builds presentation decks in the Artifacts visual identity (see its `SKILL.md`). It works project-scoped automatically when working inside this repo.

@@ -66,6 +66,10 @@ Treat published wording as the reference, including its qualifications and imper
 - **Event recaps are different**: Don't force the typical interface-as-lede structure. Event recaps are structured as "here's what the bubble is discussing"—different format, different rules.
 - Polish, don't rewrite — preserve Lorenzo's voice
 
+## Lectures
+
+Lorenzo's lectures and talks are in `~/Artifacts-context/lectures/`, one folder each, indexed in `lectures/README.md` (AI safety advocacy, Architecting Agency, Designing an Agentic State). Read the relevant folder's README and outline when a lecture, talk or course session comes up. Lectures are not newsletter issues and not voice references.
+
 ## General Preferences
 
 - Be direct and concise. Skip filler.
