@@ -6,6 +6,7 @@ Lorenzo's lectures and talks, one folder each. A folder holds what is needed to 
 |---|---|---|
 | [`ai-safety-advocacy/`](ai-safety-advocacy/) | Please Regulate Us: how AI labs advocate for AI safety regulation | Global advocacy course (political science), autumn 2026 |
 | [`architecting-agency/`](architecting-agency/) | Architecting Agency: managing entities that act on our behalf | *Outthinking the Algorithm: Managing in the Age of AI*, Sciences Po, November 2026 |
+| [`moderation-design-transparency/`](moderation-design-transparency/) | Moderation, Design & Transparency: content moderation as design decisions, transparency reports and risk assessments (with Laura Zurdo) | Sciences Po Digital Justice Clinic, 2026 |
 | [`designing-an-agentic-state/`](designing-an-agentic-state/) | Designing an Agentic State: citizens sending agents to the state | *Designing Democracy* (KAFP 4215), Sciences Po, Session 10, 20 November 2026 |
 
 Each folder has its own `README.md` (or `CONTEXT.md` for AI safety advocacy) describing its files. Lectures draw on the newsletter's themes but are separate from the published archive in `artifacts/`: they are not newsletter issues and not voice references for the newsletter.
