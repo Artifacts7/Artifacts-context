@@ -6,6 +6,7 @@ The files in `superseded/` preserve local drafts exactly as they existed before 
 |---|---|
 | `superseded/DRAFT-agents-reading-the-web.md` | [What’s there, behind the wall?](../artifacts/whats-there-behind-the-wall.md) |
 | `superseded/DRAFT-italian-tech-week-2026.md` | [That’s the Wave](../artifacts/thats-the-wave.md) |
+| `superseded/DRAFT-ai-goes-too-fast.md` | [Please, go ahead](../artifacts/go-ahead.md) |
 | `superseded/decoding-it.md` | [Decoding it](../artifacts/decoding-it.md) |
 
 Keep new drafts here or in `working/`, never in the published archive.

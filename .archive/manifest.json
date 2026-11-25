@@ -1,5 +1,28 @@
 [
   {
+    "slug": "go-ahead",
+    "title": "Please, go ahead",
+    "subtitle": "If AI is producing more than we can think through, and a few questions to ask",
+    "date": "2026-11-25",
+    "url": "https://artifactstech.substack.com/p/go-ahead",
+    "captured": "2026-11-25",
+    "file": "artifacts/go-ahead.md",
+    "source": ".archive/sources/go-ahead.json",
+    "source_sha256": "25b421cd7a187a92c1aab30e9cf37faca2cdf01dc50d143187d3562d2dbc5928",
+    "markdown_sha256": "79d710495c3a01db9561c967f6d824a91e58cf5ed793d8fd0d5d68d79d7d1e2a",
+    "normalized_text_sha256": "c52735e732ec7f1b48e8dd051ef28966b07e143a068fd71cbbf869d37ae747ee",
+    "words": 1574,
+    "links": 33,
+    "images": 2,
+    "embeds": [],
+    "inline_html_emphasis": false,
+    "removed_ui": {
+      "subscription_widgets": 1,
+      "image_controls": 4
+    },
+    "verification": "text, links, and images round-trip passed"
+  },
+  {
     "slug": "who-takes-the-blame",
     "title": "Who takes the blame?",
     "subtitle": "A chat over a coffee in Paris on what’s at stake when writing with AI",
